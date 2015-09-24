@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualPlay.Api", "VirtualPlay.Api\VirtualPlay.Api.csproj", "{4951696C-EFB1-4229-8D8A-5C8C54BAE793}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualPlay.SMTP.Email", "VirtualPlay.SMTP.Email\VirtualPlay.SMTP.Email.csproj", "{C948814E-FBBE-4677-A87E-15E772D64BA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualPlay.Web.Admin", "VirtualPlay.Web.Admin\VirtualPlay.Web.Admin.csproj", "{86A775E6-045A-4021-B53D-574266FE3099}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualPlay.Direct100.SMS", "VirtualPlay.Direct100.SMS\VirtualPlay.Direct100.SMS.csproj", "{73B4A44A-E2EA-4B54-8025-850A03CF5526}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualPlay.MyAccount", "VirtualPlay.MyAccount\VirtualPlay.MyAccount.csproj", "{2E2BDF64-22AF-43CC-845E-D1A6A7D1F528}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4951696C-EFB1-4229-8D8A-5C8C54BAE793} = {4951696C-EFB1-4229-8D8A-5C8C54BAE793}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualPlay.Business", "VirtualPlay.Business\VirtualPlay.Business.csproj", "{0F068582-456C-4312-ADE2-FBA0BECCCE5F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4951696C-EFB1-4229-8D8A-5C8C54BAE793}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4951696C-EFB1-4229-8D8A-5C8C54BAE793}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4951696C-EFB1-4229-8D8A-5C8C54BAE793}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4951696C-EFB1-4229-8D8A-5C8C54BAE793}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4951696C-EFB1-4229-8D8A-5C8C54BAE793}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C948814E-FBBE-4677-A87E-15E772D64BA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C948814E-FBBE-4677-A87E-15E772D64BA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C948814E-FBBE-4677-A87E-15E772D64BA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C948814E-FBBE-4677-A87E-15E772D64BA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86A775E6-045A-4021-B53D-574266FE3099}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86A775E6-045A-4021-B53D-574266FE3099}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86A775E6-045A-4021-B53D-574266FE3099}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86A775E6-045A-4021-B53D-574266FE3099}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73B4A44A-E2EA-4B54-8025-850A03CF5526}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73B4A44A-E2EA-4B54-8025-850A03CF5526}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73B4A44A-E2EA-4B54-8025-850A03CF5526}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73B4A44A-E2EA-4B54-8025-850A03CF5526}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E2BDF64-22AF-43CC-845E-D1A6A7D1F528}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E2BDF64-22AF-43CC-845E-D1A6A7D1F528}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E2BDF64-22AF-43CC-845E-D1A6A7D1F528}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E2BDF64-22AF-43CC-845E-D1A6A7D1F528}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F068582-456C-4312-ADE2-FBA0BECCCE5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F068582-456C-4312-ADE2-FBA0BECCCE5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F068582-456C-4312-ADE2-FBA0BECCCE5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F068582-456C-4312-ADE2-FBA0BECCCE5F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

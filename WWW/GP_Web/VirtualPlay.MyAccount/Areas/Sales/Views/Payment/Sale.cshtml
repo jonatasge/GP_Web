@@ -1,0 +1,276 @@
+﻿@using VirtualPlay.Business;
+@using PagedList.Mvc;
+@model PagedList.IPagedList<VirtualPlay.Business.Models.Pay_Transaction>
+@{
+    ViewBag.Title = "Minhas Vendas";
+}
+<h2>Minhas Vendas</h2>
+@using (Html.BeginForm("Sale", "Sales", FormMethod.Get))
+{
+    <p>
+        Operação:
+       @* @Html.DropDownList("operation")*@
+        <input class="btn btn-default" type="submit" value="Consultar" />
+        
+    Página @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) de @Model.PageCount
+    </p>
+}
+@if (Model.Count() > 0)
+{
+    <table class="table">
+        <tr>
+            <th>Data
+            </th>
+            <th>Hora
+            </th>
+            <th style="text-align: right;">Valor
+            </th>
+            <th>Operação
+            </th>
+            <th>Status
+            </th>
+            <th>Bandeira
+            </th>
+            <th>E-mail Cliente
+            </th>
+            <th>Celular Cliente
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.ValueFor(modelItem => item.dtCreate, "{0:dd/MM/yy}")
+                </td>
+                <td>
+                    @Html.ValueFor(modelItem => item.dtCreate, "{0:HH:mm:ss}")
+                </td>
+                <td style="text-align: right;">
+                    @{
+            string value = "";
+            if (item.operation != 8 && item.operation != 9)
+            {
+                value = string.Format("R$ {0}", item.value);
+            }
+                    }
+                    @value
+                </td>
+                <td>
+                    @{
+            string operation = "";
+
+            if (!string.IsNullOrEmpty(item.paymentFunctionDescription))
+            {
+                operation = item.paymentFunctionDescription;
+            }
+            else
+            {
+                operation = Description.getOperation((Enums.Operation)item.operation.Value);
+            }        
+                    }
+                    @operation
+                </td>
+                <td>
+                    @{
+            string status = "";
+            string toolTip = "";
+
+            if (item.state == 0)
+            {
+                status = "Pendente";
+                toolTip = "Operação iniciada.";
+            }
+            else if (!string.IsNullOrEmpty(item.acquirerNSU) && !string.IsNullOrEmpty(item.authorizationNumber))
+            {
+                status = "Autorizada";
+                if (item.operation.Value != 5)
+                {
+                    toolTip = "Operação aceita pelo autorizador.";
+                }
+                else
+                {
+                    toolTip = "Operação cancelada pelo autorizador.";
+                }
+            }
+            else if (item.statusCode == 10000)
+            {
+                switch (item.state)
+                {
+                    case 0:
+                    case 1:
+                        status = "Pendente";
+                        toolTip = "Operação iniciada.";
+                        break;
+                    case 2:
+                        status = "Gerando recibo";
+                        toolTip = "Operação em andamento...";
+                        break;
+                    case 3:
+                        status = "Finalizando...";
+                        toolTip = "Operação em andamento...";
+                        break;
+                    case 4:
+                        if (item.type != 8 && item.type != 9)
+                        {
+                            if (item.statusCode == -40)
+                            {
+                                status = "Não Autorizada";
+                                toolTip = "Transação negada pelo SiTef.";
+                            }
+                            else
+                            {
+                                status = "Não Autorizada";
+                                toolTip = "Transação negada pelo SiTef.";
+                            }
+                        }
+                        else
+                        {
+                            status = "Sucesso";
+                            toolTip = "Operação finalizada sem erros.";
+                        }
+                        break;
+                    case 5:
+                        status = "Cancelando...";
+                        toolTip = "Operação em andamento...";
+                        break;
+                    case 6:
+                        status = "Cancelada";
+                        toolTip = "Operação em andamento...";
+                        break;
+                }
+            }
+            else if (item.statusCode > 0 && item.statusCode != 10000)
+            {
+                status = "Não Autorizada";
+                toolTip = "Negada pelo autorizador.";
+            }
+            else
+            {
+                switch (item.statusCode)
+                {
+                    case -1:
+                        status = "Falha";
+                        toolTip = "Módulo não inicializado. O PDV tentou chamar alguma rotina sem antes executar a função configura.";
+                        break;
+                    case -2:
+                        status = "Operação Cancelada";
+                        toolTip = "Operação cancelada pelo operador.";
+                        break;
+                    case -3:
+                        status = "Falha";
+                        toolTip = "O parâmetro função / modalidade é inválido.";
+                        break;
+                    case -4:
+                        status = "Falha";
+                        toolTip = "Falta de memória no PDV.";
+                        break;
+                    case -5:
+                        status = "Sem Comunicação";
+                        toolTip = "Sem comunicação com o SiTef.";
+                        break;
+                    case -6:
+                        status = "Operação Cancelada";
+                        toolTip = "Operação cancelada pelo usuário (no pinpad).";
+                        break;
+                    case -7:
+                        status = "Falha";
+                        toolTip = "Reservado";
+                        break;
+                    case -8:
+                        status = "Falha";
+                        toolTip = "A CliSiTef não possui a implementação da função necessária, provavelmente está desatualizada (a CliSiTefI é mais recente).";
+                        break;
+                    case -9:
+                        status = "Falha";
+                        toolTip = "A automação chamou a rotina ContinuaFuncaoSiTefInterativo sem antes iniciar uma função iterativa.";
+                        break;
+                    case -10:
+                        status = "Falha";
+                        toolTip = "Algum parâmetro obrigatório não foi passado pela automação comercial.";
+                        break;
+                    case -12:
+                        status = "Falha";
+                        toolTip = "Erro na execução da rotina iterativa. Provavelmente o processo iterativo anterior não foi finalizado até o final (enquanto o retorno for igual a 10000).";
+                        break;
+                    case -15:
+                        status = "Operação Cancelada";
+                        toolTip = "Operação cancelada pela automação comercial.";
+                        break;
+                    case -20:
+                        status = "Falha";
+                        toolTip = "Parâmetro inválido passado para a função.";
+                        break;
+                    case -25:
+                        status = "Falha";
+                        toolTip = "Erro no Correspondente bancário: Deve realizar sangria.";
+                        break;
+                    case -30:
+                        status = "Falha";
+                        toolTip = "Erro de acesso ao arquivo. Certifique-se que o usuário que roda a aplicação tem direitos de leitura/escrita.";
+                        break;
+                    case -40:
+                        status = "Não Autorizada";
+                        toolTip = "Transação negada pelo SiTef.";
+                        break;
+                    case -41:
+                        status = "Falha";
+                        toolTip = "Dados inválidos.";
+                        break;
+                    case -42:
+                        status = "Falha";
+                        toolTip = "Reservado";
+                        break;
+                    case -43:
+                        status = "Falha no Pinpad";
+                        toolTip = "Problema na execução de alguma das rotinas no pinpad.";
+                        break;
+                    case -50:
+                        status = "Falha";
+                        toolTip = "Transação não segura.";
+                        break;
+                    case -100:
+                        status = "Falha";
+                        toolTip = "Erro interno do módulo.";
+                        break;
+                    default:
+                        status = "Falha";
+                        toolTip = "Erros detectados internamente pela rotina.";
+                        break;
+                }
+            }
+                    }
+                    <label title="@toolTip">@status</label>
+                </td>
+                <td>
+                    @{
+            string bandeira = "";
+
+            if (!string.IsNullOrEmpty(item.cardBrand))
+            {
+                bandeira = Description.getCardBrand((Enums.CardBrand)int.Parse(item.cardBrand));
+            }
+            else
+            {
+                bandeira = Description.getCardBrand(Enums.CardBrand.UNDEFINED);
+            }
+                    }
+                    @bandeira
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.customerEmail)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.customerPhone)
+                </td>
+                <td style="text-align: right;">
+                    @Html.ActionLink("Detalhes", "Details", new { id = item.idTransaction })
+                </td>
+            </tr>
+        }
+
+    </table>
+    @Html.PagedListPager(Model, page => Url.Action("Sale", 
+            new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+}

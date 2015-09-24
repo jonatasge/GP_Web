@@ -1,0 +1,80 @@
+﻿@model VirtualPlay.Business.Models.Sys_User
+
+@{
+    ViewBag.Title = "Minha Conta";
+}
+
+<h2>Minha Conta</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Alterar Dados</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.idUser)
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="nmUser">Nome</label>
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.nmUser)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="dsEmail">E-mail</label>
+            <div class="col-md-10">
+                @Html.DisplayFor(model => model.dsEmail)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="dsPassword">Senha Atual</label>
+            <div class="col-md-10">
+                @Html.PasswordFor(model => model.dsPassword)
+                @Html.ValidationMessageFor(model => model.dsPassword)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="dsNewPassword">Nova Senha</label>
+            <div class="col-md-10">
+                @Html.Password("newPassword")
+                @Html.ValidationMessageFor(model => model.dsPassword)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="dsNewPassword">Confirmar Nova Senha</label>
+            <div class="col-md-10">
+                @Html.Password("confirmNewPassword")
+                @Html.ValidationMessageFor(model => model.dsPassword)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="dtCreate">Data de Cadastro</label>
+            <div class="col-md-10">
+                @Html.ValueFor(model => model.dtCreate, "{0:dd/MM/yyyy}")
+                @Html.ValidationMessageFor(model => model.dtCreate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Salvar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Details")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

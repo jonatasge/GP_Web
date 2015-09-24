@@ -1,0 +1,40 @@
+﻿@model IEnumerable<VirtualPlay.Business.Models.Pay_Transaction>
+
+@{
+    ViewBag.Title = "Dashboard";
+}
+
+<h2>Dashboard</h2>
+
+<div>
+    <h4>Minhas Vendas</h4>
+	<hr />
+</div>
+<div id="visualization">
+
+</div>
+
+<script type="text/javascript" src="https://www.google.com/jsapi" />
+
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+
+        });
+
+        function drawChart(d) {
+            var chartData = d;
+            var data = null;
+
+            data = google.visualization.arrayToDataTable(chartData);
+
+            var view = new google.visualization.DataView(data);
+            view.setColumns([0, {
+                type: 'number',
+                label: data.getColumnLabel(0),
+                calc :  function() { return 0; }
+            }]);
+
+        google.load('visualization', '1', { packages: ['corechart'] });
+    </script>
+}

@@ -1,0 +1,581 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAnWyZ9YKfbk+YB87zr+oBKQAAAAACAAAAAAAQZgAAAAEAACAAAAACfSvsJSxGOd6kpV7FttyLoLlwmORfCcWqUpiJ9q/vqwAAAAAOgAAAAAIAACAAAABxpBU+c7u9xibg2sjpQ7Tjux7s3eBPRR2CNSWTvQ5ZAyAAAADHxj9r75nnTAAWs/DQxhqvxZ6TOGCsU5cUSnhasrD7H0AAAADuULUMkMA7qGNxiCH99JbOtWAkWjHnIgklRJbsUC3LTssDWUT2HsiGfOOZvdrxLHLrsmgAuGstd4ORaPQXoOfg</EncryptedPassword>
+    <_PublishTargetUrl>ftp://200.98.200.83:2122</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="Areas/MyAccount/Views/Profile/Details.cshtml">
+      <publishTime>09/09/2015 22:40:15</publishTime>
+    </File>
+    <File Include="Areas/MyAccount/Views/Profile/Edit.cshtml">
+      <publishTime>09/09/2015 22:54:19</publishTime>
+    </File>
+    <File Include="Areas/MyAccount/Views/Shared/_Layout.cshtml">
+      <publishTime>09/09/2015 21:42:34</publishTime>
+    </File>
+    <File Include="Areas/MyAccount/Views/web.config">
+      <publishTime>09/09/2015 21:41:15</publishTime>
+    </File>
+    <File Include="Areas/MyAccount/Views/_ViewStart.cshtml">
+      <publishTime>09/09/2015 21:48:05</publishTime>
+    </File>
+    <File Include="Areas/Sales/Views/Dashboard/Index.cshtml">
+      <publishTime>09/22/2015 15:14:19</publishTime>
+    </File>
+    <File Include="Areas/Sales/Views/Payment/Create.cshtml">
+      <publishTime>02/09/2015 19:49:11</publishTime>
+    </File>
+    <File Include="Areas/Sales/Views/Payment/Dashboard.cshtml">
+      <publishTime>09/18/2015 11:29:28</publishTime>
+    </File>
+    <File Include="Areas/Sales/Views/Payment/Delete.cshtml">
+      <publishTime>02/09/2015 19:49:12</publishTime>
+    </File>
+    <File Include="Areas/Sales/Views/Payment/Details.cshtml">
+      <publishTime>09/18/2015 11:44:15</publishTime>
+    </File>
+    <File Include="Areas/Sales/Views/Payment/Edit.cshtml">
+      <publishTime>02/09/2015 19:49:13</publishTime>
+    </File>
+    <File Include="Areas/Sales/Views/Payment/Sale.cshtml">
+      <publishTime>09/17/2015 19:29:03</publishTime>
+    </File>
+    <File Include="Areas/Sales/Views/PaymentSignature/Create.cshtml">
+      <publishTime>09/10/2015 19:04:15</publishTime>
+    </File>
+    <File Include="Areas/Sales/Views/PaymentSignature/Delete.cshtml">
+      <publishTime>09/10/2015 19:04:16</publishTime>
+    </File>
+    <File Include="Areas/Sales/Views/PaymentSignature/Details.cshtml">
+      <publishTime>09/10/2015 19:04:17</publishTime>
+    </File>
+    <File Include="Areas/Sales/Views/PaymentSignature/Edit.cshtml">
+      <publishTime>09/10/2015 19:04:18</publishTime>
+    </File>
+    <File Include="Areas/Sales/Views/PaymentSignature/Index.cshtml">
+      <publishTime>09/10/2015 19:04:19</publishTime>
+    </File>
+    <File Include="Areas/Sales/Views/Shared/_Layout.cshtml">
+      <publishTime>02/09/2015 19:49:11</publishTime>
+    </File>
+    <File Include="Areas/Sales/Views/web.config">
+      <publishTime>02/09/2015 19:48:03</publishTime>
+    </File>
+    <File Include="Areas/Sales/Views/_ViewStart.cshtml">
+      <publishTime>02/09/2015 20:00:49</publishTime>
+    </File>
+    <File Include="bin/ADC.GMaps.ApiHandler.dll">
+      <publishTime>09/15/2015 22:18:38</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>08/14/2015 09:34:10</publishTime>
+    </File>
+    <File Include="bin/BouncyCastle.Crypto.dll">
+      <publishTime>09/15/2015 22:34:55</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>11/05/2015 21:23:30</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>11/05/2015 21:23:30</publishTime>
+    </File>
+    <File Include="bin/Google.Apis.Auth.dll">
+      <publishTime>09/15/2015 22:34:55</publishTime>
+    </File>
+    <File Include="bin/Google.Apis.Auth.PlatformServices.dll">
+      <publishTime>09/15/2015 22:34:55</publishTime>
+    </File>
+    <File Include="bin/Google.Apis.Core.dll">
+      <publishTime>09/15/2015 22:34:55</publishTime>
+    </File>
+    <File Include="bin/Google.Apis.dll">
+      <publishTime>09/15/2015 22:34:55</publishTime>
+    </File>
+    <File Include="bin/Google.Apis.MapsEngine.exp2.dll">
+      <publishTime>09/15/2015 22:16:09</publishTime>
+    </File>
+    <File Include="bin/Google.Apis.MapsEngine.v1.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="bin/Google.Apis.PlatformServices.dll">
+      <publishTime>09/15/2015 22:34:55</publishTime>
+    </File>
+    <File Include="bin/Google.Maps.dll">
+      <publishTime>09/15/2015 22:34:54</publishTime>
+    </File>
+    <File Include="bin/Google.Maps.Proxy.dll">
+      <publishTime>09/15/2015 22:16:35</publishTime>
+    </File>
+    <File Include="bin/GoogleMaps.LocationServices.dll">
+      <publishTime>09/15/2015 22:18:04</publishTime>
+    </File>
+    <File Include="bin/GoogleMapsApi.dll">
+      <publishTime>09/15/2015 22:17:17</publishTime>
+    </File>
+    <File Include="bin/GoogleMapsHelpers.dll">
+      <publishTime>09/15/2015 22:18:46</publishTime>
+    </File>
+    <File Include="bin/Jmelosegui.Mvc.GoogleMap.dll">
+      <publishTime>09/15/2015 22:24:23</publishTime>
+    </File>
+    <File Include="bin/log4net.dll">
+      <publishTime>09/15/2015 22:11:59</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
+      <publishTime>08/23/2015 11:30:30</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
+      <publishTime>08/23/2015 11:30:30</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
+      <publishTime>01/09/2015 17:53:50</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>01/09/2015 17:53:51</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
+      <publishTime>01/09/2015 17:53:51</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Cookies.dll">
+      <publishTime>01/09/2015 17:53:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>01/09/2015 17:53:51</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Facebook.dll">
+      <publishTime>01/09/2015 17:53:52</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Google.dll">
+      <publishTime>01/09/2015 17:53:53</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.MicrosoftAccount.dll">
+      <publishTime>01/09/2015 17:53:53</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
+      <publishTime>01/09/2015 17:53:53</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Twitter.dll">
+      <publishTime>01/09/2015 17:53:53</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Threading.Tasks.dll">
+      <publishTime>08/23/2015 11:31:10</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Threading.Tasks.Extensions.Desktop.dll">
+      <publishTime>08/23/2015 11:31:11</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Threading.Tasks.Extensions.dll">
+      <publishTime>08/23/2015 11:31:11</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>11/05/2015 21:17:00</publishTime>
+    </File>
+    <File Include="bin/Mvc.GoogleMaps.dll">
+      <publishTime>09/15/2015 22:19:11</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>08/14/2015 09:35:34</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>01/09/2015 17:53:54</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Extensions.dll">
+      <publishTime>08/14/2015 09:21:58</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Formatting.dll">
+      <publishTime>08/14/2015 12:17:24</publishTime>
+    </File>
+    <File Include="bin/System.Net.Http.Primitives.dll">
+      <publishTime>08/14/2015 09:21:58</publishTime>
+    </File>
+    <File Include="bin/System.Web.Helpers.dll">
+      <publishTime>08/14/2015 11:31:19</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.dll">
+      <publishTime>08/14/2015 11:31:19</publishTime>
+    </File>
+    <File Include="bin/System.Web.Http.WebHost.dll">
+      <publishTime>08/14/2015 11:31:19</publishTime>
+    </File>
+    <File Include="bin/System.Web.Mvc.dll">
+      <publishTime>08/14/2015 11:31:19</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>08/14/2015 09:30:57</publishTime>
+    </File>
+    <File Include="bin/System.Web.Razor.dll">
+      <publishTime>08/14/2015 12:17:24</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Deployment.dll">
+      <publishTime>08/14/2015 11:31:19</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.dll">
+      <publishTime>08/14/2015 11:31:19</publishTime>
+    </File>
+    <File Include="bin/System.Web.WebPages.Razor.dll">
+      <publishTime>08/14/2015 11:31:19</publishTime>
+    </File>
+    <File Include="bin/VirtualPlay.Api.dll">
+      <publishTime>09/22/2015 15:31:11</publishTime>
+    </File>
+    <File Include="bin/VirtualPlay.Business.dll">
+      <publishTime>09/22/2015 15:31:10</publishTime>
+    </File>
+    <File Include="bin/VirtualPlay.Direct100.SMS.dll">
+      <publishTime>08/25/2015 22:22:43</publishTime>
+    </File>
+    <File Include="bin/VirtualPlay.MyAccount.dll">
+      <publishTime>09/22/2015 15:31:13</publishTime>
+    </File>
+    <File Include="bin/VirtualPlay.SMTP.Email.dll">
+      <publishTime>08/25/2015 18:57:49</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>08/14/2015 09:30:44</publishTime>
+    </File>
+    <File Include="bin/Zlib.Portable.dll">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css">
+      <publishTime>01/09/2015 12:29:06</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css.map">
+      <publishTime>01/09/2015 12:29:06</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.min.css">
+      <publishTime>01/09/2015 12:29:06</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>09/18/2015 12:10:52</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css.map">
+      <publishTime>01/09/2015 12:29:06</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>09/22/2015 15:30:10</publishTime>
+    </File>
+    <File Include="Content/Images/arrow.png">
+      <publishTime>02/09/2015 12:40:14</publishTime>
+    </File>
+    <File Include="Content/Images/beautyful-teplates.png">
+      <publishTime>02/09/2015 12:40:14</publishTime>
+    </File>
+    <File Include="Content/Images/beautyful-teplates_t.png">
+      <publishTime>02/09/2015 12:40:14</publishTime>
+    </File>
+    <File Include="Content/Images/bg01.png">
+      <publishTime>02/09/2015 12:40:14</publishTime>
+    </File>
+    <File Include="Content/Images/customer-img1.jpg">
+      <publishTime>02/09/2015 12:40:15</publishTime>
+    </File>
+    <File Include="Content/Images/customer-img2.jpg">
+      <publishTime>02/09/2015 12:40:15</publishTime>
+    </File>
+    <File Include="Content/Images/customer-img2_t.jpg">
+      <publishTime>02/09/2015 12:40:15</publishTime>
+    </File>
+    <File Include="Content/Images/customer-img3.jpg">
+      <publishTime>02/09/2015 12:40:15</publishTime>
+    </File>
+    <File Include="Content/Images/customer-img3_t.jpg">
+      <publishTime>02/09/2015 12:40:15</publishTime>
+    </File>
+    <File Include="Content/Images/dashboard.JPG">
+      <publishTime>02/09/2015 12:40:15</publishTime>
+    </File>
+    <File Include="Content/Images/dashboard1.jpg">
+      <publishTime>02/09/2015 12:40:15</publishTime>
+    </File>
+    <File Include="Content/Images/facebook.png">
+      <publishTime>02/09/2015 12:40:15</publishTime>
+    </File>
+    <File Include="Content/Images/favicon.ico">
+      <publishTime>03/09/2015 00:33:00</publishTime>
+    </File>
+    <File Include="Content/Images/favicon_1.ico">
+      <publishTime>03/09/2015 00:39:23</publishTime>
+    </File>
+    <File Include="Content/Images/favicon_2.ico">
+      <publishTime>03/09/2015 00:39:27</publishTime>
+    </File>
+    <File Include="Content/Images/favicon_3.ico">
+      <publishTime>03/09/2015 00:39:30</publishTime>
+    </File>
+    <File Include="Content/Images/favicon_4.ico">
+      <publishTime>03/09/2015 00:39:39</publishTime>
+    </File>
+    <File Include="Content/Images/googleplus.png">
+      <publishTime>02/09/2015 12:40:15</publishTime>
+    </File>
+    <File Include="Content/Images/icon-remove.png">
+      <publishTime>02/09/2015 12:40:15</publishTime>
+    </File>
+    <File Include="Content/Images/icon_maps.png">
+      <publishTime>09/16/2015 17:21:13</publishTime>
+    </File>
+    <File Include="Content/Images/icon_pinpad_maps.png">
+      <publishTime>09/16/2015 19:57:59</publishTime>
+    </File>
+    <File Include="Content/Images/ipad.png">
+      <publishTime>02/09/2015 12:40:15</publishTime>
+    </File>
+    <File Include="Content/Images/likedin.png">
+      <publishTime>02/09/2015 12:40:15</publishTime>
+    </File>
+    <File Include="Content/Images/logo.png">
+      <publishTime>02/09/2015 12:40:15</publishTime>
+    </File>
+    <File Include="Content/Images/logo_white.png">
+      <publishTime>09/16/2015 20:38:18</publishTime>
+    </File>
+    <File Include="Content/Images/mobile.png">
+      <publishTime>02/09/2015 12:40:15</publishTime>
+    </File>
+    <File Include="Content/Images/mobile1.png">
+      <publishTime>02/09/2015 12:40:15</publishTime>
+    </File>
+    <File Include="Content/Images/payment.png">
+      <publishTime>02/09/2015 12:40:15</publishTime>
+    </File>
+    <File Include="Content/Images/payment_t.png">
+      <publishTime>02/09/2015 12:40:15</publishTime>
+    </File>
+    <File Include="Content/Images/pinpad.png">
+      <publishTime>09/16/2015 19:36:41</publishTime>
+    </File>
+    <File Include="Content/Images/pinterest.png">
+      <publishTime>02/09/2015 12:40:15</publishTime>
+    </File>
+    <File Include="Content/Images/play-icon.png">
+      <publishTime>02/09/2015 12:40:15</publishTime>
+    </File>
+    <File Include="Content/Images/security.png">
+      <publishTime>02/09/2015 12:40:15</publishTime>
+    </File>
+    <File Include="Content/Images/security_t.png">
+      <publishTime>02/09/2015 12:40:15</publishTime>
+    </File>
+    <File Include="Content/Images/Thumbs.db">
+      <publishTime>02/09/2015 12:40:15</publishTime>
+    </File>
+    <File Include="Content/Images/tickmark-icon.png">
+      <publishTime>02/09/2015 12:40:15</publishTime>
+    </File>
+    <File Include="Content/Images/touch.png">
+      <publishTime>02/09/2015 12:40:15</publishTime>
+    </File>
+    <File Include="Content/Images/twitter.png">
+      <publishTime>02/09/2015 12:40:15</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>05/18/2014 19:00:18</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>03/09/2015 00:33:00</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>01/09/2015 12:29:06</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>01/09/2015 12:29:06</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>01/09/2015 12:29:06</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>01/09/2015 12:29:06</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>01/09/2015 12:29:06</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>01/09/2015 14:56:04</publishTime>
+    </File>
+    <File Include="GoogleMaps.LocationServices.readme.txt">
+      <publishTime>09/15/2015 22:18:04</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>09/15/2015 22:35:10</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>01/09/2015 12:29:06</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>01/09/2015 12:29:06</publishTime>
+    </File>
+    <File Include="Scripts/css/mapstyle-ie.css">
+      <publishTime>09/15/2015 22:35:10</publishTime>
+    </File>
+    <File Include="Scripts/css/mapstyle.css">
+      <publishTime>09/15/2015 22:35:10</publishTime>
+    </File>
+    <File Include="Scripts/css/mapstyle.min.css">
+      <publishTime>09/15/2015 22:35:10</publishTime>
+    </File>
+    <File Include="Scripts/google/maps/api/js.js">
+      <publishTime>09/18/2015 11:35:50</publishTime>
+    </File>
+    <File Include="Scripts/html/popup-template-circle.html">
+      <publishTime>09/15/2015 22:35:10</publishTime>
+    </File>
+    <File Include="Scripts/html/popup-template-marker.html">
+      <publishTime>09/15/2015 22:35:10</publishTime>
+    </File>
+    <File Include="Scripts/html/popup-template-polygon.html">
+      <publishTime>09/15/2015 22:35:10</publishTime>
+    </File>
+    <File Include="Scripts/html/popup-template-polyline.html">
+      <publishTime>09/15/2015 22:35:10</publishTime>
+    </File>
+    <File Include="Scripts/html/popup-template-rectangle.html">
+      <publishTime>09/15/2015 22:35:10</publishTime>
+    </File>
+    <File Include="Scripts/img/current-location.png">
+      <publishTime>09/15/2015 22:35:10</publishTime>
+    </File>
+    <File Include="Scripts/img/fit-bounds.png">
+      <publishTime>09/15/2015 22:35:10</publishTime>
+    </File>
+    <File Include="Scripts/img/map-load.gif">
+      <publishTime>09/15/2015 22:35:10</publishTime>
+    </File>
+    <File Include="Scripts/img/pin/flag-azure.png">
+      <publishTime>09/15/2015 22:35:10</publishTime>
+    </File>
+    <File Include="Scripts/img/pin/flag-green.png">
+      <publishTime>09/15/2015 22:35:10</publishTime>
+    </File>
+    <File Include="Scripts/img/pin/needle-pink.png">
+      <publishTime>09/15/2015 22:35:10</publishTime>
+    </File>
+    <File Include="Scripts/img/pin/niddle-green.png">
+      <publishTime>09/15/2015 22:35:10</publishTime>
+    </File>
+    <File Include="Scripts/img/pin/pin-azure.png">
+      <publishTime>09/15/2015 22:35:10</publishTime>
+    </File>
+    <File Include="Scripts/img/pin/pin-green.png">
+      <publishTime>09/15/2015 22:35:10</publishTime>
+    </File>
+    <File Include="Scripts/img/pin/pin-pink.png">
+      <publishTime>09/15/2015 22:35:10</publishTime>
+    </File>
+    <File Include="Scripts/jmelosegui.googlemap.js">
+      <publishTime>09/15/2015 22:24:23</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.1.4.js">
+      <publishTime>01/09/2015 12:29:03</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.1.4.min.js">
+      <publishTime>01/09/2015 12:29:03</publishTime>
+    </File>
+    <File Include="Scripts/jquery-2.1.4.min.map">
+      <publishTime>01/09/2015 12:29:03</publishTime>
+    </File>
+    <File Include="Scripts/jquery.googlemaps.js">
+      <publishTime>09/15/2015 22:35:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery.googlemaps.min.js">
+      <publishTime>09/15/2015 22:35:10</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.js">
+      <publishTime>01/09/2015 12:29:12</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.min.js">
+      <publishTime>01/09/2015 12:29:12</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.js">
+      <publishTime>01/09/2015 12:29:27</publishTime>
+    </File>
+    <File Include="Scripts/jquery.validate.unobtrusive.min.js">
+      <publishTime>05/18/2014 19:00:18</publishTime>
+    </File>
+    <File Include="Scripts/markerclusterer.js">
+      <publishTime>09/15/2015 22:24:23</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.8.3.js">
+      <publishTime>01/09/2015 12:29:32</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>05/18/2014 19:00:18</publishTime>
+    </File>
+    <File Include="Scripts/respond.matchmedia.addListener.js">
+      <publishTime>01/09/2015 12:29:33</publishTime>
+    </File>
+    <File Include="Scripts/respond.matchmedia.addListener.min.js">
+      <publishTime>01/09/2015 12:29:33</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>05/18/2014 19:00:18</publishTime>
+    </File>
+    <File Include="Scripts/styles.json">
+      <publishTime>09/15/2015 22:35:10</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>01/09/2015 12:29:32</publishTime>
+    </File>
+    <File Include="typings/google.maps.d.ts">
+      <publishTime>09/15/2015 22:16:50</publishTime>
+    </File>
+    <File Include="Views/Account/ExternalLoginConfirmation.cshtml">
+      <publishTime>01/09/2015 16:19:31</publishTime>
+    </File>
+    <File Include="Views/Account/ExternalLoginFailure.cshtml">
+      <publishTime>05/18/2014 19:00:18</publishTime>
+    </File>
+    <File Include="Views/Account/Login.cshtml">
+      <publishTime>03/09/2015 14:06:45</publishTime>
+    </File>
+    <File Include="Views/Account/Manage.cshtml">
+      <publishTime>01/09/2015 16:16:04</publishTime>
+    </File>
+    <File Include="Views/Account/Register.cshtml">
+      <publishTime>03/09/2015 14:06:07</publishTime>
+    </File>
+    <File Include="Views/Account/_ChangePasswordPartial.cshtml">
+      <publishTime>01/09/2015 16:16:04</publishTime>
+    </File>
+    <File Include="Views/Account/_ExternalLoginsListPartial.cshtml">
+      <publishTime>05/18/2014 19:00:18</publishTime>
+    </File>
+    <File Include="Views/Account/_RemoveAccountPartial.cshtml">
+      <publishTime>05/18/2014 19:00:18</publishTime>
+    </File>
+    <File Include="Views/Account/_SetPasswordPartial.cshtml">
+      <publishTime>01/09/2015 16:16:04</publishTime>
+    </File>
+    <File Include="Views/Home/About.cshtml">
+      <publishTime>03/09/2015 00:44:12</publishTime>
+    </File>
+    <File Include="Views/Home/Contact.cshtml">
+      <publishTime>03/09/2015 00:43:45</publishTime>
+    </File>
+    <File Include="Views/Home/Index.cshtml">
+      <publishTime>09/18/2015 13:08:09</publishTime>
+    </File>
+    <File Include="Views/Shared/Error.cshtml">
+      <publishTime>05/18/2014 19:00:18</publishTime>
+    </File>
+    <File Include="Views/Shared/_Layout.cshtml">
+      <publishTime>09/18/2015 11:20:42</publishTime>
+    </File>
+    <File Include="Views/Shared/_LoginPartial.cshtml">
+      <publishTime>03/09/2015 00:31:01</publishTime>
+    </File>
+    <File Include="Views/Web.config">
+      <publishTime>01/09/2015 16:16:04</publishTime>
+    </File>
+    <File Include="Views/_ViewStart.cshtml">
+      <publishTime>05/18/2014 19:00:18</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>09/18/2015 11:45:18</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

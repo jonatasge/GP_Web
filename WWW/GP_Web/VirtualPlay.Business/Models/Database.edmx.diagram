@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="2278dca92d404f57b216472be763eb1e" Name="Diagram1">
+        <EntityTypeShape EntityType="VirtualPlayModel.Ent_Address" Width="1.5" PointX="3" PointY="49.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualPlayModel.Ent_Document" Width="1.5" PointX="6" PointY="50" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualPlayModel.Ent_DocumentType" Width="1.5" PointX="11.25" PointY="26.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualPlayModel.Ent_Enterprise" Width="1.5" PointX="0.75" PointY="49.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualPlayModel.Ent_Telephone" Width="1.5" PointX="3" PointY="45.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualPlayModel.Pay_Transaction" Width="1.5" PointX="13.5" PointY="65.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualPlayModel.Pay_TransactionSignature" Width="1.5" PointX="15.75" PointY="69.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualPlayModel.Per_Address" Width="1.5" PointX="13.5" PointY="49.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualPlayModel.Per_Document" Width="1.5" PointX="16.5" PointY="48.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualPlayModel.Per_DocumentType" Width="1.5" PointX="11.25" PointY="40.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualPlayModel.Per_Person" Width="1.5" PointX="11.25" PointY="43.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualPlayModel.Per_Telephone" Width="1.5" PointX="16.5" PointY="53.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualPlayModel.Pos_PinPad" Width="1.5" PointX="11.25" PointY="49.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualPlayModel.Sys_Access" Width="1.5" PointX="13.5" PointY="60.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualPlayModel.Sys_File" Width="1.5" PointX="11.25" PointY="58.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualPlayModel.Sys_ForgotPassword" Width="1.5" PointX="11.25" PointY="62.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualPlayModel.Sys_Merchant" Width="1.5" PointX="11.25" PointY="68.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualPlayModel.Sys_MerchantPinPad" Width="1.5" PointX="13.5" PointY="57.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualPlayModel.Sys_Module" Width="1.5" PointX="11.25" PointY="76.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualPlayModel.Sys_Role" Width="1.5" PointX="11.25" PointY="80.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualPlayModel.Sys_SmsLog" Width="1.5" PointX="14.25" PointY="44.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualPlayModel.Sys_System" Width="1.5" PointX="16.5" PointY="72.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualPlayModel.Sys_SystemType" Width="1.5" PointX="11.25" PointY="93.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualPlayModel.Sys_User" Width="1.5" PointX="9" PointY="44.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualPlayModel.Sys_UserLoginHistory" Width="1.5" PointX="18.75" PointY="59.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualPlayModel.Sys_UserPasswordHistory" Width="1.5" PointX="11.25" PointY="97.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualPlayModel.Sys_UserSystem" Width="1.5" PointX="16.5" PointY="64.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualPlayModel.Sys_WebmailConf" Width="1.5" PointX="19.5" PointY="63.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="VirtualPlayModel.Sys_WebmailLog" Width="1.5" PointX="21.75" PointY="60.375" IsExpanded="true" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Ent_Address_Enterprise" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Ent_Address_UserCreate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Ent_Address_UserLastUpdate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Ent_Document_Enterprise" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Ent_Document_File" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Ent_Document_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Ent_Document_UserCreate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Ent_Document_UserLastUpdate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Ent_DocumentType_UserCreate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Ent_DocumentType_UserLastUpdate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Ent_Enterprise_UserCreate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Ent_Enterprise_UserLastUpdate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Ent_Telephone_Enterprise" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_User_Enterprise" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Ent_Telephone_UserCreate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Ent_Telephone_UserLastUpdate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Pay_Transaction_Merchant" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Pay_TransactionSignature_Transaction" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Per_Address_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Per_Address_UserCreate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Per_Address_UserLastUpdate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Per_Document_File" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Per_Document_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Per_Document_TpDocument" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Per_Document_UserCreate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Per_Document_UserLastUpdate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Per_DocumentType_UserCreate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Per_DocumentType_UserLastUpdate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Per_Person_UserCreate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Per_Person_UserLastUpdate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Per_Telephone_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_User_Person" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Per_Telephone_UserCreate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Per_Telephone_UserLastUpdate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Pos_PinPad_UserCreate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Pos_PinPad_UserLastUpdate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_MerchantPinPad_PinPad" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_Access_Module" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_Access_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_Access_UserCreate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_Access_UserLastUpdate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_File_UserCreate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_File_UserLastUpdate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_ForgotPassword_User" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_Merchant_UserCreate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_Merchant_UserLastUpdate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_MerchantPinPad_Merchant" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_MerchantPinPad_UserLastUpdate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_Module_UserCreate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_Module_UserLastUpdate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_Role_UserCreate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_Role_UserLastUpdate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_User_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_UserSystem_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_SmsLog_System" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_SmsLog_User" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_System_Type" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_System_UserCreate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_System_UserLastUpdate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_UserLoginHistory_System" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_UserSystem_System" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_WebmailLog_System" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_SystemType_UserCreate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_SystemType_UserLastUpdate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_User_UserCreate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_User_UserLastUpdate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_UserLoginHistory_User" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_UserPasswordHistory_User" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_UserPasswordHistory_UserCreate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_UserPasswordHistory_UserLastUpdate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_UserSystem_User" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_UserSystem_UserLastUpdate" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_WebmailLog_User" ManuallyRouted="false" />
+        <AssociationConnector Association="VirtualPlayModel.FK_VP_Sys_WebmailLog_Conf" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
