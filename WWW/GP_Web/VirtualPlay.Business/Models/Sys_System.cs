@@ -21,6 +21,7 @@ namespace VirtualPlay.Business.Models
             this.Sys_UserLoginHistory = new HashSet<Sys_UserLoginHistory>();
             this.Sys_UserSystem = new HashSet<Sys_UserSystem>();
             this.Sys_WebmailLog = new HashSet<Sys_WebmailLog>();
+            this.Sys_UserSession = new HashSet<Sys_UserSession>();
         }
     
         public int idSystem { get; set; }
@@ -45,5 +46,7 @@ namespace VirtualPlay.Business.Models
         public virtual ICollection<Sys_UserSystem> Sys_UserSystem { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sys_WebmailLog> Sys_WebmailLog { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Sys_UserSession> Sys_UserSession { get; set; }
     }
 }

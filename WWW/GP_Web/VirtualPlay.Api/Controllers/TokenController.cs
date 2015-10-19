@@ -123,7 +123,6 @@ namespace VirtualPlay.Api.Controllers
         {
             bool isValid = false;
 
-
             string validAccessToken = "";
 
             //create new instance of md5

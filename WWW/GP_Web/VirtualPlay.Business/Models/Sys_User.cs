@@ -65,6 +65,16 @@ namespace VirtualPlay.Business.Models
             this.Sys_UserSystem = new HashSet<Sys_UserSystem>();
             this.Sys_UserSystem1 = new HashSet<Sys_UserSystem>();
             this.Sys_WebmailLog = new HashSet<Sys_WebmailLog>();
+            this.Sys_UserSession = new HashSet<Sys_UserSession>();
+            this.Sys_UserSession1 = new HashSet<Sys_UserSession>();
+            this.Pay_CashReceipt = new HashSet<Pay_CashReceipt>();
+            this.Pay_CashReceipt1 = new HashSet<Pay_CashReceipt>();
+            this.Pay_Rate = new HashSet<Pay_Rate>();
+            this.Pay_Rate1 = new HashSet<Pay_Rate>();
+            this.Pay_RateItems = new HashSet<Pay_RateItems>();
+            this.Pay_RateItems1 = new HashSet<Pay_RateItems>();
+            this.Sys_MerchantReceipt = new HashSet<Sys_MerchantReceipt>();
+            this.Sys_MerchantReceipt1 = new HashSet<Sys_MerchantReceipt>();
         }
     
         public int idUser { get; set; }
@@ -186,5 +196,25 @@ namespace VirtualPlay.Business.Models
         public virtual ICollection<Sys_UserSystem> Sys_UserSystem1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Sys_WebmailLog> Sys_WebmailLog { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Sys_UserSession> Sys_UserSession { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Sys_UserSession> Sys_UserSession1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Pay_CashReceipt> Pay_CashReceipt { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Pay_CashReceipt> Pay_CashReceipt1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Pay_Rate> Pay_Rate { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Pay_Rate> Pay_Rate1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Pay_RateItems> Pay_RateItems { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Pay_RateItems> Pay_RateItems1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Sys_MerchantReceipt> Sys_MerchantReceipt { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Sys_MerchantReceipt> Sys_MerchantReceipt1 { get; set; }
     }
 }

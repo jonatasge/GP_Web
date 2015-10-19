@@ -56,6 +56,11 @@ namespace VirtualPlay.Business.Models
         public virtual DbSet<Sys_UserSystem> Sys_UserSystem { get; set; }
         public virtual DbSet<Sys_WebmailConf> Sys_WebmailConf { get; set; }
         public virtual DbSet<Sys_WebmailLog> Sys_WebmailLog { get; set; }
+        public virtual DbSet<Sys_UserSession> Sys_UserSession { get; set; }
+        public virtual DbSet<Pay_CashReceipt> Pay_CashReceipt { get; set; }
+        public virtual DbSet<Pay_Rate> Pay_Rate { get; set; }
+        public virtual DbSet<Pay_RateItems> Pay_RateItems { get; set; }
+        public virtual DbSet<Sys_MerchantReceipt> Sys_MerchantReceipt { get; set; }
     
         public virtual ObjectResult<Pay_TransactionChartCardBrand_Result> Pay_TransactionChartCardBrand(Nullable<int> idMerchant, Nullable<int> idYear, Nullable<int> idMonth, Nullable<int> idDay)
         {
@@ -275,6 +280,48 @@ namespace VirtualPlay.Business.Models
                 new ObjectParameter("idUserCreate", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("Sys_WebmailLogInsert", idWebmailParameter, idSequenceParameter, idSystemParameter, dsMailToParameter, dsErrorParameter, dsSubjectParameter, dsMessageParameter, dsExtraParameter, cdTemplateParameter, cdIdentification1Parameter, cdIdentification2Parameter, cdIdentification3Parameter, flSentParameter, idUserCreateParameter);
+        }
+    
+        public virtual ObjectResult<Pay_TransactionChartSale_Result> Pay_TransactionChartSale(Nullable<int> idMerchant, Nullable<int> idYear, Nullable<int> idMonth, Nullable<int> idDay)
+        {
+            var idMerchantParameter = idMerchant.HasValue ?
+                new ObjectParameter("idMerchant", idMerchant) :
+                new ObjectParameter("idMerchant", typeof(int));
+    
+            var idYearParameter = idYear.HasValue ?
+                new ObjectParameter("idYear", idYear) :
+                new ObjectParameter("idYear", typeof(int));
+    
+            var idMonthParameter = idMonth.HasValue ?
+                new ObjectParameter("idMonth", idMonth) :
+                new ObjectParameter("idMonth", typeof(int));
+    
+            var idDayParameter = idDay.HasValue ?
+                new ObjectParameter("idDay", idDay) :
+                new ObjectParameter("idDay", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Pay_TransactionChartSale_Result>("Pay_TransactionChartSale", idMerchantParameter, idYearParameter, idMonthParameter, idDayParameter);
+        }
+    
+        public virtual ObjectResult<Pay_TransactionChartRefund_Result> Pay_TransactionChartRefund(Nullable<int> idMerchant, Nullable<int> idYear, Nullable<int> idMonth, Nullable<int> idDay)
+        {
+            var idMerchantParameter = idMerchant.HasValue ?
+                new ObjectParameter("idMerchant", idMerchant) :
+                new ObjectParameter("idMerchant", typeof(int));
+    
+            var idYearParameter = idYear.HasValue ?
+                new ObjectParameter("idYear", idYear) :
+                new ObjectParameter("idYear", typeof(int));
+    
+            var idMonthParameter = idMonth.HasValue ?
+                new ObjectParameter("idMonth", idMonth) :
+                new ObjectParameter("idMonth", typeof(int));
+    
+            var idDayParameter = idDay.HasValue ?
+                new ObjectParameter("idDay", idDay) :
+                new ObjectParameter("idDay", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Pay_TransactionChartRefund_Result>("Pay_TransactionChartRefund", idMerchantParameter, idYearParameter, idMonthParameter, idDayParameter);
         }
     }
 }

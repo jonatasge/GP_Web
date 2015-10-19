@@ -18,6 +18,9 @@ namespace VirtualPlay.Business.Models
         public Pay_Transaction()
         {
             this.Pay_TransactionSignature = new HashSet<Pay_TransactionSignature>();
+            this.Pay_Transaction1 = new HashSet<Pay_Transaction>();
+            this.Pay_CashReceipt = new HashSet<Pay_CashReceipt>();
+            this.Sys_MerchantReceipt = new HashSet<Sys_MerchantReceipt>();
         }
     
         public System.Guid idTransaction { get; set; }
@@ -69,9 +72,18 @@ namespace VirtualPlay.Business.Models
         public Nullable<double> latitude { get; set; }
         public Nullable<double> longitude { get; set; }
         public Nullable<long> idSignature { get; set; }
+        public string cardType { get; set; }
+        public Nullable<System.Guid> idTransactionParent { get; set; }
     
         public virtual Sys_Merchant Sys_Merchant { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pay_TransactionSignature> Pay_TransactionSignature { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Pay_Transaction> Pay_Transaction1 { get; set; }
+        public virtual Pay_Transaction Pay_Transaction2 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Pay_CashReceipt> Pay_CashReceipt { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Sys_MerchantReceipt> Sys_MerchantReceipt { get; set; }
     }
 }

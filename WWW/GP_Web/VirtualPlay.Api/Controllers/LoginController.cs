@@ -65,7 +65,7 @@ namespace VirtualPlay.Api.Controllers
 
                             if (!string.IsNullOrEmpty(password))
                             {
-                                string newSession = NewSession(email);
+                                string newSession = SessionController.New(email);
 
                                 ObjectResult<Sys_UserLogin_Result> listUser = db.Sys_UserLogin(email, PasswordEncrypt(password), idSystem, ipAddress, dsAgent, accessToken, newSession);
 
@@ -114,6 +114,8 @@ namespace VirtualPlay.Api.Controllers
                                     dsEmail = (string)listUserLogin[0].dsEmail;
                                     stUser = (string)listUserLogin[0].stUser;
                                     session = newSession;
+
+                                    SessionController.Write(newSession, idUser, idSystem);
 
                                     if (listUserLogin[0].dtExpire != null)
                                         expire_at = (DateTime)listUserLogin[0].dtExpire;
@@ -232,7 +234,7 @@ namespace VirtualPlay.Api.Controllers
 
         // POST: /checkSession/
         [HttpPost]
-        public JsonResult generateNewSession(string session, string email)
+        public JsonResult generateNewSession(string session, string email, int system)
         {
             using (var db = new Entities())
             {
@@ -260,15 +262,14 @@ namespace VirtualPlay.Api.Controllers
                                 active_session = timeSpan.Minutes;
                             }
 
-                            if (active_session <= 60 && participant.dsSession.Equals(session))
+                            Sys_UserSession sysSession = participant.Sys_UserSession.Where(s => s.idUser == participant.idUser && s.idSystem == system).FirstOrDefault();
+
+                            if (active_session <= 60 && sysSession.dsSession.Equals(session))
                             {
-                                participant.dtLastSession = DateTime.Now;
-                                participant.dsSession = NewSession(email);
+                                string newSession = SessionController.New(email);
+                                SessionController.Write(newSession, participant.idUser, system);
 
-                                db.Entry(participant).State = EntityState.Modified;
-                                db.SaveChanges();
-
-                                response = new Login(participant.idUser, participant.idRole.Value, participant.idPerson.Value, participant.idPerson.Value, participant.idMerchant.Value, 0, participant.nmUser, email, participant.dsSession);
+                                response = new Login(participant.idUser, participant.idRole.Value, participant.idPerson.Value, participant.idPerson.Value, participant.idMerchant.Value, system, participant.nmUser, email, newSession);
                             }
                             else
                             {
@@ -292,20 +293,6 @@ namespace VirtualPlay.Api.Controllers
 
                 return Json(response, JsonRequestBehavior.AllowGet);
             }
-        }
-
-        public static string NewSession(string email)
-        {
-            //create new instance of md5
-            MD5 md5 = MD5.Create();
-
-            string validSession = string.Concat(email, ".", DateTime.Now.ToString("yyyy-MM-dd.HH:mm"));
-
-            byte[] hashData = md5.ComputeHash(Encoding.Default.GetBytes(validSession));
-
-            string resultSession = BitConverter.ToString(hashData).Replace("-", "");
-
-            return resultSession;
         }
 
         protected override void Dispose(bool disposing)

@@ -33,6 +33,7 @@ namespace VirtualPlay.Business.Models
         public System.DateTime dtCreate { get; set; }
         public Nullable<int> idUserLastUpdate { get; set; }
         public System.DateTime dtLastUpdate { get; set; }
+        public string flAnticipated { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Pay_Transaction> Pay_Transaction { get; set; }

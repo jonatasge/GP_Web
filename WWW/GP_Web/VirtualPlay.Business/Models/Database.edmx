@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="VirtualPlayModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="VirtualPlayModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Ent_Address">
           <Key>
             <PropertyRef Name="idAddress" />
@@ -85,11 +85,76 @@
           <Property Name="idUserLastUpdate" Type="int" Nullable="false" />
           <Property Name="dtLastUpdate" Type="datetime" Nullable="false" />
         </EntityType>
+        <EntityType Name="Pay_CashReceipt">
+          <Key>
+            <PropertyRef Name="idCashReceipt" />
+          </Key>
+          <Property Name="idCashReceipt" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idTransaction" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="installmentNumber" Type="int" Nullable="false" />
+          <Property Name="installmentAmount" Type="int" Nullable="false" />
+          <Property Name="installmentValue" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="value" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="idRate" Type="int" Nullable="false" />
+          <Property Name="rateCash" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="rateCredit" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="rateInstallment" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="rateAnticipated" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="bankOrigin" Type="varchar" MaxLength="255" />
+          <Property Name="agencyOrigin" Type="varchar" MaxLength="255" />
+          <Property Name="accountOrigin" Type="varchar" MaxLength="255" />
+          <Property Name="accountTypeOrigin" Type="varchar" MaxLength="255" />
+          <Property Name="operationOrigin" Type="varchar" MaxLength="255" />
+          <Property Name="bankDestination" Type="varchar" MaxLength="255" />
+          <Property Name="agencyDestination" Type="varchar" MaxLength="255" />
+          <Property Name="accountDestination" Type="varchar" MaxLength="255" />
+          <Property Name="accountTypeDestination" Type="varchar" MaxLength="255" />
+          <Property Name="operationDestination" Type="varchar" MaxLength="255" />
+          <Property Name="dtPaymentMade" Type="datetime" Nullable="false" />
+          <Property Name="dtPayment" Type="datetime" Nullable="false" />
+          <Property Name="flAnticipated" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="flStatus" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="idUserCreate" Type="int" Nullable="false" />
+          <Property Name="idUserLastUpdate" Type="int" />
+          <Property Name="dtCreate" Type="datetime" Nullable="false" />
+          <Property Name="dtLastUpdate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Pay_Rate">
+          <Key>
+            <PropertyRef Name="idRate" />
+          </Key>
+          <Property Name="idRate" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cdRate" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="nmRate" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="flMerchant" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="flAnticipated" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="flStatus" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="idUserCreate" Type="int" Nullable="false" />
+          <Property Name="idUserLastUpdate" Type="int" />
+          <Property Name="dtCreate" Type="datetime" Nullable="false" />
+          <Property Name="dtLastUpdate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Pay_RateItems">
+          <Key>
+            <PropertyRef Name="idRate" />
+            <PropertyRef Name="idRateItem" />
+          </Key>
+          <Property Name="idRate" Type="int" Nullable="false" />
+          <Property Name="idRateItem" Type="int" Nullable="false" />
+          <Property Name="nmRateItem" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="value" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="nbDays" Type="int" Nullable="false" />
+          <Property Name="flStatus" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="idUserCreate" Type="int" Nullable="false" />
+          <Property Name="idUserLastUpdate" Type="int" />
+          <Property Name="dtCreate" Type="datetime" Nullable="false" />
+          <Property Name="dtLastUpdate" Type="datetime" />
+        </EntityType>
         <EntityType Name="Pay_Transaction">
           <Key>
             <PropertyRef Name="idTransaction" />
           </Key>
-          <Property Name="idTransaction" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="idTransaction" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="idMobile" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idMerchant" Type="int" Nullable="false" />
           <Property Name="dtCreate" Type="datetime" />
@@ -138,6 +203,8 @@
           <Property Name="latitude" Type="float" />
           <Property Name="longitude" Type="float" />
           <Property Name="idSignature" Type="bigint" />
+          <Property Name="cardType" Type="varchar" MaxLength="255" />
+          <Property Name="idTransactionParent" Type="uniqueidentifier" />
         </EntityType>
         <EntityType Name="Pay_TransactionSignature">
           <Key>
@@ -300,6 +367,7 @@
           <Property Name="dtCreate" Type="datetime" Nullable="false" />
           <Property Name="idUserLastUpdate" Type="int" />
           <Property Name="dtLastUpdate" Type="datetime" Nullable="false" />
+          <Property Name="flAnticipated" Type="char" MaxLength="1" />
         </EntityType>
         <EntityType Name="Sys_MerchantPinPad">
           <Key>
@@ -312,6 +380,41 @@
           <Property Name="dtCreate" Type="datetime" Nullable="false" />
           <Property Name="idUserLastUpdate" Type="int" Nullable="false" />
           <Property Name="dtLastUpdate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sys_MerchantReceipt">
+          <Key>
+            <PropertyRef Name="idMerchantReceipt" />
+          </Key>
+          <Property Name="idMerchantReceipt" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idTransaction" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="idCashReceipt" Type="bigint" Nullable="false" />
+          <Property Name="installmentNumber" Type="int" Nullable="false" />
+          <Property Name="installmentAmount" Type="int" Nullable="false" />
+          <Property Name="installmentValue" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="value" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="idRate" Type="int" Nullable="false" />
+          <Property Name="rateCash" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="rateCredit" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="rateInstallment" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="rateAnticipated" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="bankOrigin" Type="varchar" MaxLength="255" />
+          <Property Name="agencyOrigin" Type="varchar" MaxLength="255" />
+          <Property Name="accountOrigin" Type="varchar" MaxLength="255" />
+          <Property Name="accountTypeOrigin" Type="varchar" MaxLength="255" />
+          <Property Name="operationOrigin" Type="varchar" MaxLength="255" />
+          <Property Name="bankDestination" Type="varchar" MaxLength="255" />
+          <Property Name="agencyDestination" Type="varchar" MaxLength="255" />
+          <Property Name="accountDestination" Type="varchar" MaxLength="255" />
+          <Property Name="accountTypeDestination" Type="varchar" MaxLength="255" />
+          <Property Name="operationDestination" Type="varchar" MaxLength="255" />
+          <Property Name="dtPaymentMade" Type="datetime" Nullable="false" />
+          <Property Name="dtPayment" Type="datetime" Nullable="false" />
+          <Property Name="flAnticipated" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="flStatus" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="idUserCreate" Type="int" Nullable="false" />
+          <Property Name="idUserLastUpdate" Type="int" />
+          <Property Name="dtCreate" Type="datetime" Nullable="false" />
+          <Property Name="dtLastUpdate" Type="datetime" />
         </EntityType>
         <EntityType Name="Sys_Module">
           <Key>
@@ -424,6 +527,19 @@
           <Property Name="idUser" Type="int" Nullable="false" />
           <Property Name="dsPassword" Type="varchar" MaxLength="255" Nullable="false" />
           <Property Name="idUserCreate" Type="int" Nullable="false" />
+          <Property Name="dtCreate" Type="datetime" Nullable="false" />
+          <Property Name="idUserLastUpdate" Type="int" Nullable="false" />
+          <Property Name="dtLastUpdate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sys_UserSession">
+          <Key>
+            <PropertyRef Name="idUser" />
+            <PropertyRef Name="idSystem" />
+          </Key>
+          <Property Name="idUser" Type="int" Nullable="false" />
+          <Property Name="idSystem" Type="int" Nullable="false" />
+          <Property Name="dsSession" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="flStatus" Type="char" MaxLength="1" Nullable="false" />
           <Property Name="dtCreate" Type="datetime" Nullable="false" />
           <Property Name="idUserLastUpdate" Type="int" Nullable="false" />
           <Property Name="dtLastUpdate" Type="datetime" Nullable="false" />
@@ -664,6 +780,174 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_VP_Pay_CashReceipt_Rate">
+          <End Role="Pay_Rate" Type="Self.Pay_Rate" Multiplicity="1" />
+          <End Role="Pay_CashReceipt" Type="Self.Pay_CashReceipt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pay_Rate">
+              <PropertyRef Name="idRate" />
+            </Principal>
+            <Dependent Role="Pay_CashReceipt">
+              <PropertyRef Name="idRate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Pay_CashReceipt_Transaction">
+          <End Role="Pay_Transaction" Type="Self.Pay_Transaction" Multiplicity="1" />
+          <End Role="Pay_CashReceipt" Type="Self.Pay_CashReceipt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pay_Transaction">
+              <PropertyRef Name="idTransaction" />
+            </Principal>
+            <Dependent Role="Pay_CashReceipt">
+              <PropertyRef Name="idTransaction" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Pay_CashReceipt_UserCreate">
+          <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+          <End Role="Pay_CashReceipt" Type="Self.Pay_CashReceipt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_User">
+              <PropertyRef Name="idUser" />
+            </Principal>
+            <Dependent Role="Pay_CashReceipt">
+              <PropertyRef Name="idUserCreate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Pay_CashReceipt_UserLastUpdate">
+          <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="0..1" />
+          <End Role="Pay_CashReceipt" Type="Self.Pay_CashReceipt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_User">
+              <PropertyRef Name="idUser" />
+            </Principal>
+            <Dependent Role="Pay_CashReceipt">
+              <PropertyRef Name="idUserLastUpdate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Pay_MerchantReceipt_Cash">
+          <End Role="Pay_CashReceipt" Type="Self.Pay_CashReceipt" Multiplicity="1" />
+          <End Role="Sys_MerchantReceipt" Type="Self.Sys_MerchantReceipt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pay_CashReceipt">
+              <PropertyRef Name="idCashReceipt" />
+            </Principal>
+            <Dependent Role="Sys_MerchantReceipt">
+              <PropertyRef Name="idCashReceipt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Pay_MerchantReceipt_Rate">
+          <End Role="Pay_Rate" Type="Self.Pay_Rate" Multiplicity="1" />
+          <End Role="Sys_MerchantReceipt" Type="Self.Sys_MerchantReceipt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pay_Rate">
+              <PropertyRef Name="idRate" />
+            </Principal>
+            <Dependent Role="Sys_MerchantReceipt">
+              <PropertyRef Name="idRate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Pay_MerchantReceipt_Transaction">
+          <End Role="Pay_Transaction" Type="Self.Pay_Transaction" Multiplicity="1" />
+          <End Role="Sys_MerchantReceipt" Type="Self.Sys_MerchantReceipt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pay_Transaction">
+              <PropertyRef Name="idTransaction" />
+            </Principal>
+            <Dependent Role="Sys_MerchantReceipt">
+              <PropertyRef Name="idTransaction" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Pay_MerchantReceipt_UserCreate">
+          <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+          <End Role="Sys_MerchantReceipt" Type="Self.Sys_MerchantReceipt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_User">
+              <PropertyRef Name="idUser" />
+            </Principal>
+            <Dependent Role="Sys_MerchantReceipt">
+              <PropertyRef Name="idUserCreate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Pay_MerchantReceipt_UserLastUpdate">
+          <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="0..1" />
+          <End Role="Sys_MerchantReceipt" Type="Self.Sys_MerchantReceipt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_User">
+              <PropertyRef Name="idUser" />
+            </Principal>
+            <Dependent Role="Sys_MerchantReceipt">
+              <PropertyRef Name="idUserLastUpdate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Pay_Rate_UserCreate">
+          <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+          <End Role="Pay_Rate" Type="Self.Pay_Rate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_User">
+              <PropertyRef Name="idUser" />
+            </Principal>
+            <Dependent Role="Pay_Rate">
+              <PropertyRef Name="idUserCreate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Pay_Rate_UserLastUpdate">
+          <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="0..1" />
+          <End Role="Pay_Rate" Type="Self.Pay_Rate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_User">
+              <PropertyRef Name="idUser" />
+            </Principal>
+            <Dependent Role="Pay_Rate">
+              <PropertyRef Name="idUserLastUpdate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Pay_RateItems_Rate">
+          <End Role="Pay_Rate" Type="Self.Pay_Rate" Multiplicity="1" />
+          <End Role="Pay_RateItems" Type="Self.Pay_RateItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pay_Rate">
+              <PropertyRef Name="idRate" />
+            </Principal>
+            <Dependent Role="Pay_RateItems">
+              <PropertyRef Name="idRate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Pay_RateItems_UserCreate">
+          <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+          <End Role="Pay_RateItems" Type="Self.Pay_RateItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_User">
+              <PropertyRef Name="idUser" />
+            </Principal>
+            <Dependent Role="Pay_RateItems">
+              <PropertyRef Name="idUserCreate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Pay_RateItems_UserLastUpdate">
+          <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="0..1" />
+          <End Role="Pay_RateItems" Type="Self.Pay_RateItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_User">
+              <PropertyRef Name="idUser" />
+            </Principal>
+            <Dependent Role="Pay_RateItems">
+              <PropertyRef Name="idUserLastUpdate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_VP_Pay_Transaction_Merchant">
           <End Role="Sys_Merchant" Type="Self.Sys_Merchant" Multiplicity="1" />
           <End Role="Pay_Transaction" Type="Self.Pay_Transaction" Multiplicity="*" />
@@ -673,6 +957,18 @@
             </Principal>
             <Dependent Role="Pay_Transaction">
               <PropertyRef Name="idMerchant" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Pay_Transaction_Parent">
+          <End Role="Pay_Transaction" Type="Self.Pay_Transaction" Multiplicity="0..1" />
+          <End Role="Pay_Transaction1" Type="Self.Pay_Transaction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pay_Transaction">
+              <PropertyRef Name="idTransaction" />
+            </Principal>
+            <Dependent Role="Pay_Transaction1">
+              <PropertyRef Name="idTransactionParent" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1288,6 +1584,42 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_VP_Sys_UserSession_System">
+          <End Role="Sys_System" Type="Self.Sys_System" Multiplicity="1" />
+          <End Role="Sys_UserSession" Type="Self.Sys_UserSession" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_System">
+              <PropertyRef Name="idSystem" />
+            </Principal>
+            <Dependent Role="Sys_UserSession">
+              <PropertyRef Name="idSystem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Sys_UserSession_User">
+          <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+          <End Role="Sys_UserSession" Type="Self.Sys_UserSession" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_User">
+              <PropertyRef Name="idUser" />
+            </Principal>
+            <Dependent Role="Sys_UserSession">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Sys_UserSession_UserLastUpdate">
+          <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+          <End Role="Sys_UserSession" Type="Self.Sys_UserSession" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_User">
+              <PropertyRef Name="idUser" />
+            </Principal>
+            <Dependent Role="Sys_UserSession">
+              <PropertyRef Name="idUserLastUpdate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_VP_Sys_UserSystem_Role">
           <End Role="Sys_Role" Type="Self.Sys_Role" Multiplicity="1" />
           <End Role="Sys_UserSystem" Type="Self.Sys_UserSystem" Multiplicity="*" />
@@ -1392,6 +1724,18 @@
           <Parameter Name="idMonth" Type="int" Mode="In" />
           <Parameter Name="idDay" Type="int" Mode="In" />
         </Function>
+        <Function Name="Pay_TransactionChartRefund" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="VirtualPlay">
+          <Parameter Name="idMerchant" Type="int" Mode="In" />
+          <Parameter Name="idYear" Type="int" Mode="In" />
+          <Parameter Name="idMonth" Type="int" Mode="In" />
+          <Parameter Name="idDay" Type="int" Mode="In" />
+        </Function>
+        <Function Name="Pay_TransactionChartSale" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="VirtualPlay">
+          <Parameter Name="idMerchant" Type="int" Mode="In" />
+          <Parameter Name="idYear" Type="int" Mode="In" />
+          <Parameter Name="idMonth" Type="int" Mode="In" />
+          <Parameter Name="idDay" Type="int" Mode="In" />
+        </Function>
         <Function Name="Sys_SmsLogInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="VirtualPlay">
           <Parameter Name="nbSmsTo" Type="varchar" Mode="In" />
           <Parameter Name="dsError" Type="varchar" Mode="In" />
@@ -1441,6 +1785,9 @@
           <EntitySet Name="Ent_DocumentType" EntityType="Self.Ent_DocumentType" Schema="VirtualPlay" store:Type="Tables" />
           <EntitySet Name="Ent_Enterprise" EntityType="Self.Ent_Enterprise" Schema="VirtualPlay" store:Type="Tables" />
           <EntitySet Name="Ent_Telephone" EntityType="Self.Ent_Telephone" Schema="VirtualPlay" store:Type="Tables" />
+          <EntitySet Name="Pay_CashReceipt" EntityType="Self.Pay_CashReceipt" Schema="VirtualPlay" store:Type="Tables" />
+          <EntitySet Name="Pay_Rate" EntityType="Self.Pay_Rate" Schema="VirtualPlay" store:Type="Tables" />
+          <EntitySet Name="Pay_RateItems" EntityType="Self.Pay_RateItems" Schema="VirtualPlay" store:Type="Tables" />
           <EntitySet Name="Pay_Transaction" EntityType="Self.Pay_Transaction" Schema="VirtualPlay" store:Type="Tables" />
           <EntitySet Name="Pay_TransactionSignature" EntityType="Self.Pay_TransactionSignature" Schema="VirtualPlay" store:Type="Tables" />
           <EntitySet Name="Per_Address" EntityType="Self.Per_Address" Schema="VirtualPlay" store:Type="Tables" />
@@ -1454,6 +1801,7 @@
           <EntitySet Name="Sys_ForgotPassword" EntityType="Self.Sys_ForgotPassword" Schema="VirtualPlay" store:Type="Tables" />
           <EntitySet Name="Sys_Merchant" EntityType="Self.Sys_Merchant" Schema="VirtualPlay" store:Type="Tables" />
           <EntitySet Name="Sys_MerchantPinPad" EntityType="Self.Sys_MerchantPinPad" Schema="VirtualPlay" store:Type="Tables" />
+          <EntitySet Name="Sys_MerchantReceipt" EntityType="Self.Sys_MerchantReceipt" Schema="VirtualPlay" store:Type="Tables" />
           <EntitySet Name="Sys_Module" EntityType="Self.Sys_Module" Schema="VirtualPlay" store:Type="Tables" />
           <EntitySet Name="Sys_Role" EntityType="Self.Sys_Role" Schema="VirtualPlay" store:Type="Tables" />
           <EntitySet Name="Sys_SmsLog" EntityType="Self.Sys_SmsLog" Schema="VirtualPlay" store:Type="Tables" />
@@ -1462,6 +1810,7 @@
           <EntitySet Name="Sys_User" EntityType="Self.Sys_User" Schema="VirtualPlay" store:Type="Tables" />
           <EntitySet Name="Sys_UserLoginHistory" EntityType="Self.Sys_UserLoginHistory" Schema="VirtualPlay" store:Type="Tables" />
           <EntitySet Name="Sys_UserPasswordHistory" EntityType="Self.Sys_UserPasswordHistory" Schema="VirtualPlay" store:Type="Tables" />
+          <EntitySet Name="Sys_UserSession" EntityType="Self.Sys_UserSession" Schema="VirtualPlay" store:Type="Tables" />
           <EntitySet Name="Sys_UserSystem" EntityType="Self.Sys_UserSystem" Schema="VirtualPlay" store:Type="Tables" />
           <EntitySet Name="Sys_WebmailConf" EntityType="Self.Sys_WebmailConf" Schema="VirtualPlay" store:Type="Tables" />
           <EntitySet Name="Sys_WebmailLog" EntityType="Self.Sys_WebmailLog" Schema="VirtualPlay" store:Type="Tables" />
@@ -1525,9 +1874,69 @@
             <End Role="Sys_User" EntitySet="Sys_User" />
             <End Role="Ent_Telephone" EntitySet="Ent_Telephone" />
           </AssociationSet>
+          <AssociationSet Name="FK_VP_Pay_CashReceipt_Rate" Association="Self.FK_VP_Pay_CashReceipt_Rate">
+            <End Role="Pay_Rate" EntitySet="Pay_Rate" />
+            <End Role="Pay_CashReceipt" EntitySet="Pay_CashReceipt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Pay_CashReceipt_Transaction" Association="Self.FK_VP_Pay_CashReceipt_Transaction">
+            <End Role="Pay_Transaction" EntitySet="Pay_Transaction" />
+            <End Role="Pay_CashReceipt" EntitySet="Pay_CashReceipt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Pay_CashReceipt_UserCreate" Association="Self.FK_VP_Pay_CashReceipt_UserCreate">
+            <End Role="Sys_User" EntitySet="Sys_User" />
+            <End Role="Pay_CashReceipt" EntitySet="Pay_CashReceipt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Pay_CashReceipt_UserLastUpdate" Association="Self.FK_VP_Pay_CashReceipt_UserLastUpdate">
+            <End Role="Sys_User" EntitySet="Sys_User" />
+            <End Role="Pay_CashReceipt" EntitySet="Pay_CashReceipt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Pay_MerchantReceipt_Cash" Association="Self.FK_VP_Pay_MerchantReceipt_Cash">
+            <End Role="Pay_CashReceipt" EntitySet="Pay_CashReceipt" />
+            <End Role="Sys_MerchantReceipt" EntitySet="Sys_MerchantReceipt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Pay_MerchantReceipt_Rate" Association="Self.FK_VP_Pay_MerchantReceipt_Rate">
+            <End Role="Pay_Rate" EntitySet="Pay_Rate" />
+            <End Role="Sys_MerchantReceipt" EntitySet="Sys_MerchantReceipt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Pay_MerchantReceipt_Transaction" Association="Self.FK_VP_Pay_MerchantReceipt_Transaction">
+            <End Role="Pay_Transaction" EntitySet="Pay_Transaction" />
+            <End Role="Sys_MerchantReceipt" EntitySet="Sys_MerchantReceipt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Pay_MerchantReceipt_UserCreate" Association="Self.FK_VP_Pay_MerchantReceipt_UserCreate">
+            <End Role="Sys_User" EntitySet="Sys_User" />
+            <End Role="Sys_MerchantReceipt" EntitySet="Sys_MerchantReceipt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Pay_MerchantReceipt_UserLastUpdate" Association="Self.FK_VP_Pay_MerchantReceipt_UserLastUpdate">
+            <End Role="Sys_User" EntitySet="Sys_User" />
+            <End Role="Sys_MerchantReceipt" EntitySet="Sys_MerchantReceipt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Pay_Rate_UserCreate" Association="Self.FK_VP_Pay_Rate_UserCreate">
+            <End Role="Sys_User" EntitySet="Sys_User" />
+            <End Role="Pay_Rate" EntitySet="Pay_Rate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Pay_Rate_UserLastUpdate" Association="Self.FK_VP_Pay_Rate_UserLastUpdate">
+            <End Role="Sys_User" EntitySet="Sys_User" />
+            <End Role="Pay_Rate" EntitySet="Pay_Rate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Pay_RateItems_Rate" Association="Self.FK_VP_Pay_RateItems_Rate">
+            <End Role="Pay_Rate" EntitySet="Pay_Rate" />
+            <End Role="Pay_RateItems" EntitySet="Pay_RateItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Pay_RateItems_UserCreate" Association="Self.FK_VP_Pay_RateItems_UserCreate">
+            <End Role="Sys_User" EntitySet="Sys_User" />
+            <End Role="Pay_RateItems" EntitySet="Pay_RateItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Pay_RateItems_UserLastUpdate" Association="Self.FK_VP_Pay_RateItems_UserLastUpdate">
+            <End Role="Sys_User" EntitySet="Sys_User" />
+            <End Role="Pay_RateItems" EntitySet="Pay_RateItems" />
+          </AssociationSet>
           <AssociationSet Name="FK_VP_Pay_Transaction_Merchant" Association="Self.FK_VP_Pay_Transaction_Merchant">
             <End Role="Sys_Merchant" EntitySet="Sys_Merchant" />
             <End Role="Pay_Transaction" EntitySet="Pay_Transaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Pay_Transaction_Parent" Association="Self.FK_VP_Pay_Transaction_Parent">
+            <End Role="Pay_Transaction" EntitySet="Pay_Transaction" />
+            <End Role="Pay_Transaction1" EntitySet="Pay_Transaction" />
           </AssociationSet>
           <AssociationSet Name="FK_VP_Pay_TransactionSignature_Transaction" Association="Self.FK_VP_Pay_TransactionSignature_Transaction">
             <End Role="Pay_Transaction" EntitySet="Pay_Transaction" />
@@ -1733,6 +2142,18 @@
             <End Role="Sys_User" EntitySet="Sys_User" />
             <End Role="Sys_UserPasswordHistory" EntitySet="Sys_UserPasswordHistory" />
           </AssociationSet>
+          <AssociationSet Name="FK_VP_Sys_UserSession_System" Association="Self.FK_VP_Sys_UserSession_System">
+            <End Role="Sys_System" EntitySet="Sys_System" />
+            <End Role="Sys_UserSession" EntitySet="Sys_UserSession" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Sys_UserSession_User" Association="Self.FK_VP_Sys_UserSession_User">
+            <End Role="Sys_User" EntitySet="Sys_User" />
+            <End Role="Sys_UserSession" EntitySet="Sys_UserSession" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Sys_UserSession_UserLastUpdate" Association="Self.FK_VP_Sys_UserSession_UserLastUpdate">
+            <End Role="Sys_User" EntitySet="Sys_User" />
+            <End Role="Sys_UserSession" EntitySet="Sys_UserSession" />
+          </AssociationSet>
           <AssociationSet Name="FK_VP_Sys_UserSystem_Role" Association="Self.FK_VP_Sys_UserSystem_Role">
             <End Role="Sys_Role" EntitySet="Sys_Role" />
             <End Role="Sys_UserSystem" EntitySet="Sys_UserSystem" />
@@ -1762,8 +2183,7 @@
             <End Role="Sys_WebmailLog" EntitySet="Sys_WebmailLog" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="VirtualPlayModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1871,7 +2291,7 @@
           <Key>
             <PropertyRef Name="idTransaction" />
           </Key>
-          <Property Name="idTransaction" Type="Guid" Nullable="false" />
+          <Property Name="idTransaction" Type="Guid" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="idMobile" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="idMerchant" Type="Int32" Nullable="false" />
           <Property Name="dtCreate" Type="DateTime" Precision="3" />
@@ -1922,6 +2342,12 @@
           <Property Name="idSignature" Type="Int64" />
           <NavigationProperty Name="Sys_Merchant" Relationship="Self.FK_VP_Pay_Transaction_Merchant" FromRole="Pay_Transaction" ToRole="Sys_Merchant" />
           <NavigationProperty Name="Pay_TransactionSignature" Relationship="Self.FK_VP_Pay_TransactionSignature_Transaction" FromRole="Pay_Transaction" ToRole="Pay_TransactionSignature" />
+          <Property Name="cardType" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="idTransactionParent" Type="Guid" />
+          <NavigationProperty Name="Pay_Transaction1" Relationship="VirtualPlayModel.FK_VP_Pay_Transaction_Parent" FromRole="Pay_Transaction" ToRole="Pay_Transaction1" />
+          <NavigationProperty Name="Pay_Transaction2" Relationship="VirtualPlayModel.FK_VP_Pay_Transaction_Parent" FromRole="Pay_Transaction1" ToRole="Pay_Transaction" />
+          <NavigationProperty Name="Pay_CashReceipt" Relationship="VirtualPlayModel.FK_VP_Pay_CashReceipt_Transaction" FromRole="Pay_Transaction" ToRole="Pay_CashReceipt" />
+          <NavigationProperty Name="Sys_MerchantReceipt" Relationship="VirtualPlayModel.FK_VP_Pay_MerchantReceipt_Transaction" FromRole="Pay_Transaction" ToRole="Sys_MerchantReceipt" />
         </EntityType>
         <EntityType Name="Pay_TransactionSignature">
           <Key>
@@ -2121,6 +2547,7 @@
           <NavigationProperty Name="Sys_User" Relationship="Self.FK_VP_Sys_Merchant_UserCreate" FromRole="Sys_Merchant" ToRole="Sys_User" />
           <NavigationProperty Name="Sys_User1" Relationship="Self.FK_VP_Sys_Merchant_UserLastUpdate" FromRole="Sys_Merchant" ToRole="Sys_User" />
           <NavigationProperty Name="Sys_MerchantPinPad" Relationship="Self.FK_VP_Sys_MerchantPinPad_Merchant" FromRole="Sys_Merchant" ToRole="Sys_MerchantPinPad" />
+          <Property Name="flAnticipated" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
         </EntityType>
         <EntityType Name="Sys_MerchantPinPad">
           <Key>
@@ -2208,6 +2635,7 @@
           <NavigationProperty Name="Sys_UserLoginHistory" Relationship="Self.FK_VP_Sys_UserLoginHistory_System" FromRole="Sys_System" ToRole="Sys_UserLoginHistory" />
           <NavigationProperty Name="Sys_UserSystem" Relationship="Self.FK_VP_Sys_UserSystem_System" FromRole="Sys_System" ToRole="Sys_UserSystem" />
           <NavigationProperty Name="Sys_WebmailLog" Relationship="Self.FK_VP_Sys_WebmailLog_System" FromRole="Sys_System" ToRole="Sys_WebmailLog" />
+          <NavigationProperty Name="Sys_UserSession" Relationship="VirtualPlayModel.FK_VP_Sys_UserSession_System" FromRole="Sys_System" ToRole="Sys_UserSession" />
         </EntityType>
         <EntityType Name="Sys_SystemType">
           <Key>
@@ -2298,6 +2726,16 @@
           <NavigationProperty Name="Sys_UserSystem" Relationship="Self.FK_VP_Sys_UserSystem_User" FromRole="Sys_User" ToRole="Sys_UserSystem" />
           <NavigationProperty Name="Sys_UserSystem1" Relationship="Self.FK_VP_Sys_UserSystem_UserLastUpdate" FromRole="Sys_User" ToRole="Sys_UserSystem" />
           <NavigationProperty Name="Sys_WebmailLog" Relationship="Self.FK_VP_Sys_WebmailLog_User" FromRole="Sys_User" ToRole="Sys_WebmailLog" />
+          <NavigationProperty Name="Sys_UserSession" Relationship="VirtualPlayModel.FK_VP_Sys_UserSession_User" FromRole="Sys_User" ToRole="Sys_UserSession" />
+          <NavigationProperty Name="Sys_UserSession1" Relationship="VirtualPlayModel.FK_VP_Sys_UserSession_UserLastUpdate" FromRole="Sys_User" ToRole="Sys_UserSession" />
+          <NavigationProperty Name="Pay_CashReceipt" Relationship="VirtualPlayModel.FK_VP_Pay_CashReceipt_UserCreate" FromRole="Sys_User" ToRole="Pay_CashReceipt" />
+          <NavigationProperty Name="Pay_CashReceipt1" Relationship="VirtualPlayModel.FK_VP_Pay_CashReceipt_UserLastUpdate" FromRole="Sys_User" ToRole="Pay_CashReceipt" />
+          <NavigationProperty Name="Pay_Rate" Relationship="VirtualPlayModel.FK_VP_Pay_Rate_UserCreate" FromRole="Sys_User" ToRole="Pay_Rate" />
+          <NavigationProperty Name="Pay_Rate1" Relationship="VirtualPlayModel.FK_VP_Pay_Rate_UserLastUpdate" FromRole="Sys_User" ToRole="Pay_Rate" />
+          <NavigationProperty Name="Pay_RateItems" Relationship="VirtualPlayModel.FK_VP_Pay_RateItems_UserCreate" FromRole="Sys_User" ToRole="Pay_RateItems" />
+          <NavigationProperty Name="Pay_RateItems1" Relationship="VirtualPlayModel.FK_VP_Pay_RateItems_UserLastUpdate" FromRole="Sys_User" ToRole="Pay_RateItems" />
+          <NavigationProperty Name="Sys_MerchantReceipt" Relationship="VirtualPlayModel.FK_VP_Pay_MerchantReceipt_UserCreate" FromRole="Sys_User" ToRole="Sys_MerchantReceipt" />
+          <NavigationProperty Name="Sys_MerchantReceipt1" Relationship="VirtualPlayModel.FK_VP_Pay_MerchantReceipt_UserLastUpdate" FromRole="Sys_User" ToRole="Sys_MerchantReceipt" />
         </EntityType>
         <EntityType Name="Sys_UserLoginHistory">
           <Key>
@@ -3671,6 +4109,95 @@
             <Parameter Name="flSent" Mode="In" Type="Boolean" />
             <Parameter Name="idUserCreate" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="Pay_TransactionChartSale" ReturnType="Collection(VirtualPlayModel.Pay_TransactionChartSale_Result)">
+            <Parameter Name="idMerchant" Mode="In" Type="Int32" />
+            <Parameter Name="idYear" Mode="In" Type="Int32" />
+            <Parameter Name="idMonth" Mode="In" Type="Int32" />
+            <Parameter Name="idDay" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="Pay_TransactionChartRefund" ReturnType="Collection(VirtualPlayModel.Pay_TransactionChartRefund_Result)">
+            <Parameter Name="idMerchant" Mode="In" Type="Int32" />
+            <Parameter Name="idYear" Mode="In" Type="Int32" />
+            <Parameter Name="idMonth" Mode="In" Type="Int32" />
+            <Parameter Name="idDay" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="Sys_UserSession" EntityType="VirtualPlayModel.Sys_UserSession" />
+          <AssociationSet Name="FK_VP_Pay_Transaction_Parent" Association="VirtualPlayModel.FK_VP_Pay_Transaction_Parent">
+            <End Role="Pay_Transaction" EntitySet="Pay_Transaction" />
+            <End Role="Pay_Transaction1" EntitySet="Pay_Transaction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Sys_UserSession_System" Association="VirtualPlayModel.FK_VP_Sys_UserSession_System">
+            <End Role="Sys_System" EntitySet="Sys_System" />
+            <End Role="Sys_UserSession" EntitySet="Sys_UserSession" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Sys_UserSession_User" Association="VirtualPlayModel.FK_VP_Sys_UserSession_User">
+            <End Role="Sys_User" EntitySet="Sys_User" />
+            <End Role="Sys_UserSession" EntitySet="Sys_UserSession" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Sys_UserSession_UserLastUpdate" Association="VirtualPlayModel.FK_VP_Sys_UserSession_UserLastUpdate">
+            <End Role="Sys_User" EntitySet="Sys_User" />
+            <End Role="Sys_UserSession" EntitySet="Sys_UserSession" />
+          </AssociationSet>
+          <EntitySet Name="Pay_CashReceipt" EntityType="VirtualPlayModel.Pay_CashReceipt" />
+          <EntitySet Name="Pay_Rate" EntityType="VirtualPlayModel.Pay_Rate" />
+          <EntitySet Name="Pay_RateItems" EntityType="VirtualPlayModel.Pay_RateItems" />
+          <EntitySet Name="Sys_MerchantReceipt" EntityType="VirtualPlayModel.Sys_MerchantReceipt" />
+          <AssociationSet Name="FK_VP_Pay_CashReceipt_Rate" Association="VirtualPlayModel.FK_VP_Pay_CashReceipt_Rate">
+            <End Role="Pay_Rate" EntitySet="Pay_Rate" />
+            <End Role="Pay_CashReceipt" EntitySet="Pay_CashReceipt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Pay_CashReceipt_Transaction" Association="VirtualPlayModel.FK_VP_Pay_CashReceipt_Transaction">
+            <End Role="Pay_Transaction" EntitySet="Pay_Transaction" />
+            <End Role="Pay_CashReceipt" EntitySet="Pay_CashReceipt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Pay_CashReceipt_UserCreate" Association="VirtualPlayModel.FK_VP_Pay_CashReceipt_UserCreate">
+            <End Role="Sys_User" EntitySet="Sys_User" />
+            <End Role="Pay_CashReceipt" EntitySet="Pay_CashReceipt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Pay_CashReceipt_UserLastUpdate" Association="VirtualPlayModel.FK_VP_Pay_CashReceipt_UserLastUpdate">
+            <End Role="Sys_User" EntitySet="Sys_User" />
+            <End Role="Pay_CashReceipt" EntitySet="Pay_CashReceipt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Pay_MerchantReceipt_Cash" Association="VirtualPlayModel.FK_VP_Pay_MerchantReceipt_Cash">
+            <End Role="Pay_CashReceipt" EntitySet="Pay_CashReceipt" />
+            <End Role="Sys_MerchantReceipt" EntitySet="Sys_MerchantReceipt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Pay_MerchantReceipt_Rate" Association="VirtualPlayModel.FK_VP_Pay_MerchantReceipt_Rate">
+            <End Role="Pay_Rate" EntitySet="Pay_Rate" />
+            <End Role="Sys_MerchantReceipt" EntitySet="Sys_MerchantReceipt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Pay_Rate_UserCreate" Association="VirtualPlayModel.FK_VP_Pay_Rate_UserCreate">
+            <End Role="Sys_User" EntitySet="Sys_User" />
+            <End Role="Pay_Rate" EntitySet="Pay_Rate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Pay_Rate_UserLastUpdate" Association="VirtualPlayModel.FK_VP_Pay_Rate_UserLastUpdate">
+            <End Role="Sys_User" EntitySet="Sys_User" />
+            <End Role="Pay_Rate" EntitySet="Pay_Rate" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Pay_RateItems_Rate" Association="VirtualPlayModel.FK_VP_Pay_RateItems_Rate">
+            <End Role="Pay_Rate" EntitySet="Pay_Rate" />
+            <End Role="Pay_RateItems" EntitySet="Pay_RateItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Pay_RateItems_UserCreate" Association="VirtualPlayModel.FK_VP_Pay_RateItems_UserCreate">
+            <End Role="Sys_User" EntitySet="Sys_User" />
+            <End Role="Pay_RateItems" EntitySet="Pay_RateItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Pay_RateItems_UserLastUpdate" Association="VirtualPlayModel.FK_VP_Pay_RateItems_UserLastUpdate">
+            <End Role="Sys_User" EntitySet="Sys_User" />
+            <End Role="Pay_RateItems" EntitySet="Pay_RateItems" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Pay_MerchantReceipt_Transaction" Association="VirtualPlayModel.FK_VP_Pay_MerchantReceipt_Transaction">
+            <End Role="Pay_Transaction" EntitySet="Pay_Transaction" />
+            <End Role="Sys_MerchantReceipt" EntitySet="Sys_MerchantReceipt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Pay_MerchantReceipt_UserCreate" Association="VirtualPlayModel.FK_VP_Pay_MerchantReceipt_UserCreate">
+            <End Role="Sys_User" EntitySet="Sys_User" />
+            <End Role="Sys_MerchantReceipt" EntitySet="Sys_MerchantReceipt" />
+          </AssociationSet>
+          <AssociationSet Name="FK_VP_Pay_MerchantReceipt_UserLastUpdate" Association="VirtualPlayModel.FK_VP_Pay_MerchantReceipt_UserLastUpdate">
+            <End Role="Sys_User" EntitySet="Sys_User" />
+            <End Role="Sys_MerchantReceipt" EntitySet="Sys_MerchantReceipt" />
+          </AssociationSet>
         </EntityContainer>
         <ComplexType Name="Pay_TransactionChartCardBrand_Result">
           <Property Type="String" Name="cardBrand" Nullable="true" MaxLength="255" />
@@ -3719,6 +4246,366 @@
           <Property Type="Boolean" Name="flStatus" Nullable="false" />
           <Property Type="Int32" Name="nbAmountSend" Nullable="false" />
         </ComplexType>
+        <ComplexType Name="Pay_TransactionChartSale_Result">
+          <Property Type="Int32" Name="operation" Nullable="true" />
+          <Property Type="Int32" Name="amount" Nullable="true" />
+          <Property Type="Decimal" Name="value" Nullable="true" Precision="38" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="Pay_TransactionChartRefund_Result">
+          <Property Type="String" Name="cardBrand" Nullable="true" MaxLength="255" />
+          <Property Type="Int32" Name="amount" Nullable="true" />
+          <Property Type="Decimal" Name="value" Nullable="true" Precision="38" Scale="2" />
+        </ComplexType>
+        <EntityType Name="Sys_UserSession">
+          <Key>
+            <PropertyRef Name="idUser" />
+            <PropertyRef Name="idSystem" />
+          </Key>
+          <Property Name="idUser" Type="Int32" Nullable="false" />
+          <Property Name="idSystem" Type="Int32" Nullable="false" />
+          <Property Name="dsSession" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="flStatus" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="dtCreate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="idUserLastUpdate" Type="Int32" Nullable="false" />
+          <Property Name="dtLastUpdate" Type="DateTime" Nullable="false" Precision="3" />
+          <NavigationProperty Name="Sys_System" Relationship="VirtualPlayModel.FK_VP_Sys_UserSession_System" FromRole="Sys_UserSession" ToRole="Sys_System" />
+          <NavigationProperty Name="Sys_User" Relationship="VirtualPlayModel.FK_VP_Sys_UserSession_User" FromRole="Sys_UserSession" ToRole="Sys_User" />
+          <NavigationProperty Name="Sys_User1" Relationship="VirtualPlayModel.FK_VP_Sys_UserSession_UserLastUpdate" FromRole="Sys_UserSession" ToRole="Sys_User" />
+        </EntityType>
+        <Association Name="FK_VP_Pay_Transaction_Parent">
+          <End Type="VirtualPlayModel.Pay_Transaction" Role="Pay_Transaction" Multiplicity="0..1" />
+          <End Type="VirtualPlayModel.Pay_Transaction" Role="Pay_Transaction1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pay_Transaction">
+              <PropertyRef Name="idTransaction" />
+            </Principal>
+            <Dependent Role="Pay_Transaction1">
+              <PropertyRef Name="idTransactionParent" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Sys_UserSession_System">
+          <End Type="VirtualPlayModel.Sys_System" Role="Sys_System" Multiplicity="1" />
+          <End Type="VirtualPlayModel.Sys_UserSession" Role="Sys_UserSession" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_System">
+              <PropertyRef Name="idSystem" />
+            </Principal>
+            <Dependent Role="Sys_UserSession">
+              <PropertyRef Name="idSystem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Sys_UserSession_User">
+          <End Type="VirtualPlayModel.Sys_User" Role="Sys_User" Multiplicity="1" />
+          <End Type="VirtualPlayModel.Sys_UserSession" Role="Sys_UserSession" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_User">
+              <PropertyRef Name="idUser" />
+            </Principal>
+            <Dependent Role="Sys_UserSession">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Sys_UserSession_UserLastUpdate">
+          <End Type="VirtualPlayModel.Sys_User" Role="Sys_User" Multiplicity="1" />
+          <End Type="VirtualPlayModel.Sys_UserSession" Role="Sys_UserSession" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_User">
+              <PropertyRef Name="idUser" />
+            </Principal>
+            <Dependent Role="Sys_UserSession">
+              <PropertyRef Name="idUserLastUpdate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Pay_CashReceipt">
+          <Key>
+            <PropertyRef Name="idCashReceipt" />
+          </Key>
+          <Property Name="idCashReceipt" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idTransaction" Type="Guid" Nullable="false" />
+          <Property Name="installmentNumber" Type="Int32" Nullable="false" />
+          <Property Name="installmentAmount" Type="Int32" Nullable="false" />
+          <Property Name="installmentValue" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="value" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="idRate" Type="Int32" Nullable="false" />
+          <Property Name="rateCash" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="rateCredit" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="rateInstallment" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="rateAnticipated" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="bankOrigin" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="agencyOrigin" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="accountOrigin" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="accountTypeOrigin" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="operationOrigin" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="bankDestination" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="agencyDestination" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="accountDestination" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="accountTypeDestination" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="operationDestination" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="dtPaymentMade" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dtPayment" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="flAnticipated" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="flStatus" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="idUserCreate" Type="Int32" Nullable="false" />
+          <Property Name="idUserLastUpdate" Type="Int32" />
+          <Property Name="dtCreate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dtLastUpdate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Pay_Rate" Relationship="VirtualPlayModel.FK_VP_Pay_CashReceipt_Rate" FromRole="Pay_CashReceipt" ToRole="Pay_Rate" />
+          <NavigationProperty Name="Pay_Transaction" Relationship="VirtualPlayModel.FK_VP_Pay_CashReceipt_Transaction" FromRole="Pay_CashReceipt" ToRole="Pay_Transaction" />
+          <NavigationProperty Name="Sys_User" Relationship="VirtualPlayModel.FK_VP_Pay_CashReceipt_UserCreate" FromRole="Pay_CashReceipt" ToRole="Sys_User" />
+          <NavigationProperty Name="Sys_User1" Relationship="VirtualPlayModel.FK_VP_Pay_CashReceipt_UserLastUpdate" FromRole="Pay_CashReceipt" ToRole="Sys_User" />
+          <NavigationProperty Name="Sys_MerchantReceipt" Relationship="VirtualPlayModel.FK_VP_Pay_MerchantReceipt_Cash" FromRole="Pay_CashReceipt" ToRole="Sys_MerchantReceipt" />
+        </EntityType>
+        <EntityType Name="Pay_Rate">
+          <Key>
+            <PropertyRef Name="idRate" />
+          </Key>
+          <Property Name="idRate" Type="Int32" Nullable="false" />
+          <Property Name="cdRate" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="nmRate" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="flMerchant" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="flAnticipated" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="flStatus" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="idUserCreate" Type="Int32" Nullable="false" />
+          <Property Name="idUserLastUpdate" Type="Int32" />
+          <Property Name="dtCreate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dtLastUpdate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Pay_CashReceipt" Relationship="VirtualPlayModel.FK_VP_Pay_CashReceipt_Rate" FromRole="Pay_Rate" ToRole="Pay_CashReceipt" />
+          <NavigationProperty Name="Sys_MerchantReceipt" Relationship="VirtualPlayModel.FK_VP_Pay_MerchantReceipt_Rate" FromRole="Pay_Rate" ToRole="Sys_MerchantReceipt" />
+          <NavigationProperty Name="Sys_User" Relationship="VirtualPlayModel.FK_VP_Pay_Rate_UserCreate" FromRole="Pay_Rate" ToRole="Sys_User" />
+          <NavigationProperty Name="Sys_User1" Relationship="VirtualPlayModel.FK_VP_Pay_Rate_UserLastUpdate" FromRole="Pay_Rate" ToRole="Sys_User" />
+          <NavigationProperty Name="Pay_RateItems" Relationship="VirtualPlayModel.FK_VP_Pay_RateItems_Rate" FromRole="Pay_Rate" ToRole="Pay_RateItems" />
+        </EntityType>
+        <EntityType Name="Pay_RateItems">
+          <Key>
+            <PropertyRef Name="idRate" />
+            <PropertyRef Name="idRateItem" />
+          </Key>
+          <Property Name="idRate" Type="Int32" Nullable="false" />
+          <Property Name="idRateItem" Type="Int32" Nullable="false" />
+          <Property Name="nmRateItem" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="value" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="nbDays" Type="Int32" Nullable="false" />
+          <Property Name="flStatus" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="idUserCreate" Type="Int32" Nullable="false" />
+          <Property Name="idUserLastUpdate" Type="Int32" />
+          <Property Name="dtCreate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dtLastUpdate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Pay_Rate" Relationship="VirtualPlayModel.FK_VP_Pay_RateItems_Rate" FromRole="Pay_RateItems" ToRole="Pay_Rate" />
+          <NavigationProperty Name="Sys_User" Relationship="VirtualPlayModel.FK_VP_Pay_RateItems_UserCreate" FromRole="Pay_RateItems" ToRole="Sys_User" />
+          <NavigationProperty Name="Sys_User1" Relationship="VirtualPlayModel.FK_VP_Pay_RateItems_UserLastUpdate" FromRole="Pay_RateItems" ToRole="Sys_User" />
+        </EntityType>
+        <EntityType Name="Sys_MerchantReceipt">
+          <Key>
+            <PropertyRef Name="idMerchantReceipt" />
+          </Key>
+          <Property Name="idMerchantReceipt" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idTransaction" Type="Guid" Nullable="false" />
+          <Property Name="idCashReceipt" Type="Int64" Nullable="false" />
+          <Property Name="installmentNumber" Type="Int32" Nullable="false" />
+          <Property Name="installmentAmount" Type="Int32" Nullable="false" />
+          <Property Name="installmentValue" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="value" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="idRate" Type="Int32" Nullable="false" />
+          <Property Name="rateCash" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="rateCredit" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="rateInstallment" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="rateAnticipated" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="bankOrigin" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="agencyOrigin" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="accountOrigin" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="accountTypeOrigin" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="operationOrigin" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="bankDestination" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="agencyDestination" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="accountDestination" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="accountTypeDestination" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="operationDestination" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="dtPaymentMade" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dtPayment" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="flAnticipated" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="flStatus" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="idUserCreate" Type="Int32" Nullable="false" />
+          <Property Name="idUserLastUpdate" Type="Int32" />
+          <Property Name="dtCreate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="dtLastUpdate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Pay_CashReceipt" Relationship="VirtualPlayModel.FK_VP_Pay_MerchantReceipt_Cash" FromRole="Sys_MerchantReceipt" ToRole="Pay_CashReceipt" />
+          <NavigationProperty Name="Pay_Rate" Relationship="VirtualPlayModel.FK_VP_Pay_MerchantReceipt_Rate" FromRole="Sys_MerchantReceipt" ToRole="Pay_Rate" />
+          <NavigationProperty Name="Pay_Transaction" Relationship="VirtualPlayModel.FK_VP_Pay_MerchantReceipt_Transaction" FromRole="Sys_MerchantReceipt" ToRole="Pay_Transaction" />
+          <NavigationProperty Name="Sys_User" Relationship="VirtualPlayModel.FK_VP_Pay_MerchantReceipt_UserCreate" FromRole="Sys_MerchantReceipt" ToRole="Sys_User" />
+          <NavigationProperty Name="Sys_User1" Relationship="VirtualPlayModel.FK_VP_Pay_MerchantReceipt_UserLastUpdate" FromRole="Sys_MerchantReceipt" ToRole="Sys_User" />
+        </EntityType>
+        <Association Name="FK_VP_Pay_CashReceipt_Rate">
+          <End Type="VirtualPlayModel.Pay_Rate" Role="Pay_Rate" Multiplicity="1" />
+          <End Type="VirtualPlayModel.Pay_CashReceipt" Role="Pay_CashReceipt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pay_Rate">
+              <PropertyRef Name="idRate" />
+            </Principal>
+            <Dependent Role="Pay_CashReceipt">
+              <PropertyRef Name="idRate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Pay_CashReceipt_Transaction">
+          <End Type="VirtualPlayModel.Pay_Transaction" Role="Pay_Transaction" Multiplicity="1" />
+          <End Type="VirtualPlayModel.Pay_CashReceipt" Role="Pay_CashReceipt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pay_Transaction">
+              <PropertyRef Name="idTransaction" />
+            </Principal>
+            <Dependent Role="Pay_CashReceipt">
+              <PropertyRef Name="idTransaction" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Pay_CashReceipt_UserCreate">
+          <End Type="VirtualPlayModel.Sys_User" Role="Sys_User" Multiplicity="1" />
+          <End Type="VirtualPlayModel.Pay_CashReceipt" Role="Pay_CashReceipt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_User">
+              <PropertyRef Name="idUser" />
+            </Principal>
+            <Dependent Role="Pay_CashReceipt">
+              <PropertyRef Name="idUserCreate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Pay_CashReceipt_UserLastUpdate">
+          <End Type="VirtualPlayModel.Sys_User" Role="Sys_User" Multiplicity="0..1" />
+          <End Type="VirtualPlayModel.Pay_CashReceipt" Role="Pay_CashReceipt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_User">
+              <PropertyRef Name="idUser" />
+            </Principal>
+            <Dependent Role="Pay_CashReceipt">
+              <PropertyRef Name="idUserLastUpdate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Pay_MerchantReceipt_Cash">
+          <End Type="VirtualPlayModel.Pay_CashReceipt" Role="Pay_CashReceipt" Multiplicity="1" />
+          <End Type="VirtualPlayModel.Sys_MerchantReceipt" Role="Sys_MerchantReceipt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pay_CashReceipt">
+              <PropertyRef Name="idCashReceipt" />
+            </Principal>
+            <Dependent Role="Sys_MerchantReceipt">
+              <PropertyRef Name="idCashReceipt" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Pay_MerchantReceipt_Rate">
+          <End Type="VirtualPlayModel.Pay_Rate" Role="Pay_Rate" Multiplicity="1" />
+          <End Type="VirtualPlayModel.Sys_MerchantReceipt" Role="Sys_MerchantReceipt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pay_Rate">
+              <PropertyRef Name="idRate" />
+            </Principal>
+            <Dependent Role="Sys_MerchantReceipt">
+              <PropertyRef Name="idRate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Pay_Rate_UserCreate">
+          <End Type="VirtualPlayModel.Sys_User" Role="Sys_User" Multiplicity="1" />
+          <End Type="VirtualPlayModel.Pay_Rate" Role="Pay_Rate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_User">
+              <PropertyRef Name="idUser" />
+            </Principal>
+            <Dependent Role="Pay_Rate">
+              <PropertyRef Name="idUserCreate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Pay_Rate_UserLastUpdate">
+          <End Type="VirtualPlayModel.Sys_User" Role="Sys_User" Multiplicity="0..1" />
+          <End Type="VirtualPlayModel.Pay_Rate" Role="Pay_Rate" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_User">
+              <PropertyRef Name="idUser" />
+            </Principal>
+            <Dependent Role="Pay_Rate">
+              <PropertyRef Name="idUserLastUpdate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Pay_RateItems_Rate">
+          <End Type="VirtualPlayModel.Pay_Rate" Role="Pay_Rate" Multiplicity="1" />
+          <End Type="VirtualPlayModel.Pay_RateItems" Role="Pay_RateItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pay_Rate">
+              <PropertyRef Name="idRate" />
+            </Principal>
+            <Dependent Role="Pay_RateItems">
+              <PropertyRef Name="idRate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Pay_RateItems_UserCreate">
+          <End Type="VirtualPlayModel.Sys_User" Role="Sys_User" Multiplicity="1" />
+          <End Type="VirtualPlayModel.Pay_RateItems" Role="Pay_RateItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_User">
+              <PropertyRef Name="idUser" />
+            </Principal>
+            <Dependent Role="Pay_RateItems">
+              <PropertyRef Name="idUserCreate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Pay_RateItems_UserLastUpdate">
+          <End Type="VirtualPlayModel.Sys_User" Role="Sys_User" Multiplicity="0..1" />
+          <End Type="VirtualPlayModel.Pay_RateItems" Role="Pay_RateItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_User">
+              <PropertyRef Name="idUser" />
+            </Principal>
+            <Dependent Role="Pay_RateItems">
+              <PropertyRef Name="idUserLastUpdate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Pay_MerchantReceipt_Transaction">
+          <End Type="VirtualPlayModel.Pay_Transaction" Role="Pay_Transaction" Multiplicity="1" />
+          <End Type="VirtualPlayModel.Sys_MerchantReceipt" Role="Sys_MerchantReceipt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Pay_Transaction">
+              <PropertyRef Name="idTransaction" />
+            </Principal>
+            <Dependent Role="Sys_MerchantReceipt">
+              <PropertyRef Name="idTransaction" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Pay_MerchantReceipt_UserCreate">
+          <End Type="VirtualPlayModel.Sys_User" Role="Sys_User" Multiplicity="1" />
+          <End Type="VirtualPlayModel.Sys_MerchantReceipt" Role="Sys_MerchantReceipt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_User">
+              <PropertyRef Name="idUser" />
+            </Principal>
+            <Dependent Role="Sys_MerchantReceipt">
+              <PropertyRef Name="idUserCreate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_VP_Pay_MerchantReceipt_UserLastUpdate">
+          <End Type="VirtualPlayModel.Sys_User" Role="Sys_User" Multiplicity="0..1" />
+          <End Type="VirtualPlayModel.Sys_MerchantReceipt" Role="Sys_MerchantReceipt" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sys_User">
+              <PropertyRef Name="idUser" />
+            </Principal>
+            <Dependent Role="Sys_MerchantReceipt">
+              <PropertyRef Name="idUserLastUpdate" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -3813,6 +4700,8 @@
           <EntitySetMapping Name="Pay_Transaction">
             <EntityTypeMapping TypeName="VirtualPlayModel.Pay_Transaction">
               <MappingFragment StoreEntitySet="Pay_Transaction">
+                <ScalarProperty Name="idTransactionParent" ColumnName="idTransactionParent" />
+                <ScalarProperty Name="cardType" ColumnName="cardType" />
                 <ScalarProperty Name="idTransaction" ColumnName="idTransaction" />
                 <ScalarProperty Name="idMobile" ColumnName="idMobile" />
                 <ScalarProperty Name="idMerchant" ColumnName="idMerchant" />
@@ -4022,6 +4911,7 @@
           <EntitySetMapping Name="Sys_Merchant">
             <EntityTypeMapping TypeName="VirtualPlayModel.Sys_Merchant">
               <MappingFragment StoreEntitySet="Sys_Merchant">
+                <ScalarProperty Name="flAnticipated" ColumnName="flAnticipated" />
                 <ScalarProperty Name="idMerchant" ColumnName="idMerchant" />
                 <ScalarProperty Name="dsEmail" ColumnName="dsEmail" />
                 <ScalarProperty Name="dsSoftDescriptor" ColumnName="dsSoftDescriptor" />
@@ -4299,6 +5189,140 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="Sys_WebmailConfUpdate" FunctionName="VirtualPlayModel.Store.Sys_WebmailConfUpdate" />
           <FunctionImportMapping FunctionImportName="Sys_WebmailLogInsert" FunctionName="VirtualPlayModel.Store.Sys_WebmailLogInsert" />
+          <FunctionImportMapping FunctionImportName="Pay_TransactionChartSale" FunctionName="VirtualPlayModel.Store.Pay_TransactionChartSale">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VirtualPlayModel.Pay_TransactionChartSale_Result">
+                <ScalarProperty Name="operation" ColumnName="operation" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="value" ColumnName="value" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="Pay_TransactionChartRefund" FunctionName="VirtualPlayModel.Store.Pay_TransactionChartRefund">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="VirtualPlayModel.Pay_TransactionChartRefund_Result">
+                <ScalarProperty Name="cardBrand" ColumnName="cardBrand" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="value" ColumnName="value" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="Sys_UserSession">
+            <EntityTypeMapping TypeName="VirtualPlayModel.Sys_UserSession">
+              <MappingFragment StoreEntitySet="Sys_UserSession">
+                <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+                <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+                <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+                <ScalarProperty Name="flStatus" ColumnName="flStatus" />
+                <ScalarProperty Name="dsSession" ColumnName="dsSession" />
+                <ScalarProperty Name="idSystem" ColumnName="idSystem" />
+                <ScalarProperty Name="idUser" ColumnName="idUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pay_CashReceipt">
+            <EntityTypeMapping TypeName="VirtualPlayModel.Pay_CashReceipt">
+              <MappingFragment StoreEntitySet="Pay_CashReceipt">
+                <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+                <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+                <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+                <ScalarProperty Name="idUserCreate" ColumnName="idUserCreate" />
+                <ScalarProperty Name="flStatus" ColumnName="flStatus" />
+                <ScalarProperty Name="flAnticipated" ColumnName="flAnticipated" />
+                <ScalarProperty Name="dtPayment" ColumnName="dtPayment" />
+                <ScalarProperty Name="dtPaymentMade" ColumnName="dtPaymentMade" />
+                <ScalarProperty Name="operationDestination" ColumnName="operationDestination" />
+                <ScalarProperty Name="accountTypeDestination" ColumnName="accountTypeDestination" />
+                <ScalarProperty Name="accountDestination" ColumnName="accountDestination" />
+                <ScalarProperty Name="agencyDestination" ColumnName="agencyDestination" />
+                <ScalarProperty Name="bankDestination" ColumnName="bankDestination" />
+                <ScalarProperty Name="operationOrigin" ColumnName="operationOrigin" />
+                <ScalarProperty Name="accountTypeOrigin" ColumnName="accountTypeOrigin" />
+                <ScalarProperty Name="accountOrigin" ColumnName="accountOrigin" />
+                <ScalarProperty Name="agencyOrigin" ColumnName="agencyOrigin" />
+                <ScalarProperty Name="bankOrigin" ColumnName="bankOrigin" />
+                <ScalarProperty Name="rateAnticipated" ColumnName="rateAnticipated" />
+                <ScalarProperty Name="rateInstallment" ColumnName="rateInstallment" />
+                <ScalarProperty Name="rateCredit" ColumnName="rateCredit" />
+                <ScalarProperty Name="rateCash" ColumnName="rateCash" />
+                <ScalarProperty Name="idRate" ColumnName="idRate" />
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="installmentValue" ColumnName="installmentValue" />
+                <ScalarProperty Name="installmentAmount" ColumnName="installmentAmount" />
+                <ScalarProperty Name="installmentNumber" ColumnName="installmentNumber" />
+                <ScalarProperty Name="idTransaction" ColumnName="idTransaction" />
+                <ScalarProperty Name="idCashReceipt" ColumnName="idCashReceipt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pay_Rate">
+            <EntityTypeMapping TypeName="VirtualPlayModel.Pay_Rate">
+              <MappingFragment StoreEntitySet="Pay_Rate">
+                <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+                <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+                <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+                <ScalarProperty Name="idUserCreate" ColumnName="idUserCreate" />
+                <ScalarProperty Name="flStatus" ColumnName="flStatus" />
+                <ScalarProperty Name="flAnticipated" ColumnName="flAnticipated" />
+                <ScalarProperty Name="flMerchant" ColumnName="flMerchant" />
+                <ScalarProperty Name="nmRate" ColumnName="nmRate" />
+                <ScalarProperty Name="cdRate" ColumnName="cdRate" />
+                <ScalarProperty Name="idRate" ColumnName="idRate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pay_RateItems">
+            <EntityTypeMapping TypeName="VirtualPlayModel.Pay_RateItems">
+              <MappingFragment StoreEntitySet="Pay_RateItems">
+                <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+                <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+                <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+                <ScalarProperty Name="idUserCreate" ColumnName="idUserCreate" />
+                <ScalarProperty Name="flStatus" ColumnName="flStatus" />
+                <ScalarProperty Name="nbDays" ColumnName="nbDays" />
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="nmRateItem" ColumnName="nmRateItem" />
+                <ScalarProperty Name="idRateItem" ColumnName="idRateItem" />
+                <ScalarProperty Name="idRate" ColumnName="idRate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_MerchantReceipt">
+            <EntityTypeMapping TypeName="VirtualPlayModel.Sys_MerchantReceipt">
+              <MappingFragment StoreEntitySet="Sys_MerchantReceipt">
+                <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+                <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+                <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+                <ScalarProperty Name="idUserCreate" ColumnName="idUserCreate" />
+                <ScalarProperty Name="flStatus" ColumnName="flStatus" />
+                <ScalarProperty Name="flAnticipated" ColumnName="flAnticipated" />
+                <ScalarProperty Name="dtPayment" ColumnName="dtPayment" />
+                <ScalarProperty Name="dtPaymentMade" ColumnName="dtPaymentMade" />
+                <ScalarProperty Name="operationDestination" ColumnName="operationDestination" />
+                <ScalarProperty Name="accountTypeDestination" ColumnName="accountTypeDestination" />
+                <ScalarProperty Name="accountDestination" ColumnName="accountDestination" />
+                <ScalarProperty Name="agencyDestination" ColumnName="agencyDestination" />
+                <ScalarProperty Name="bankDestination" ColumnName="bankDestination" />
+                <ScalarProperty Name="operationOrigin" ColumnName="operationOrigin" />
+                <ScalarProperty Name="accountTypeOrigin" ColumnName="accountTypeOrigin" />
+                <ScalarProperty Name="accountOrigin" ColumnName="accountOrigin" />
+                <ScalarProperty Name="agencyOrigin" ColumnName="agencyOrigin" />
+                <ScalarProperty Name="bankOrigin" ColumnName="bankOrigin" />
+                <ScalarProperty Name="rateAnticipated" ColumnName="rateAnticipated" />
+                <ScalarProperty Name="rateInstallment" ColumnName="rateInstallment" />
+                <ScalarProperty Name="rateCredit" ColumnName="rateCredit" />
+                <ScalarProperty Name="rateCash" ColumnName="rateCash" />
+                <ScalarProperty Name="idRate" ColumnName="idRate" />
+                <ScalarProperty Name="value" ColumnName="value" />
+                <ScalarProperty Name="installmentValue" ColumnName="installmentValue" />
+                <ScalarProperty Name="installmentAmount" ColumnName="installmentAmount" />
+                <ScalarProperty Name="installmentNumber" ColumnName="installmentNumber" />
+                <ScalarProperty Name="idCashReceipt" ColumnName="idCashReceipt" />
+                <ScalarProperty Name="idTransaction" ColumnName="idTransaction" />
+                <ScalarProperty Name="idMerchantReceipt" ColumnName="idMerchantReceipt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
