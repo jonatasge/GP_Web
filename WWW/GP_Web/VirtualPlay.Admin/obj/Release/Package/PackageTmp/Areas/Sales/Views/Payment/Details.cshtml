@@ -1,0 +1,619 @@
+﻿@using VirtualPlay.Business.Models;
+
+@model VirtualPlay.Business.Models.Pay_Transaction
+
+@{
+    ViewBag.Title = "Minhas Vendas";
+    string gMapsKey = "AIzaSyC_bIpUdb6EimVzQ5gi5K7QF3kOYwnrkyE";
+}
+
+<script
+  src="@Url.Content(string.Concat("https://maps.googleapis.com/maps/api/js?key=", gMapsKey, "&sensor=true   "))">
+</script>
+
+<!-- This css is to ensure that the google map contols (zoom bar etc) show and size correctly. -->
+<style>
+#map_canvas img{max-width:none}
+</style>
+
+<!-- This css is to give a nice big popup "info window" when a marker is clicked on the map -->
+<style>
+    .infoDiv {
+    height: 200px;    
+    width: 300px; 
+    -webkit-user-select: none; 
+    background-color: white; 
+    }
+</style>
+
+
+@{
+    string operation = "Indefinido";
+    string value = Model.value;
+    string state = "Pendente";
+
+    string gopagName = "Gopag Chip&Senha";
+    double gpLatitude = -16.685473;
+    double gpLongitude = -49.254769;
+
+    string merchantName = Model.merchantName;
+    double latitude = 0;
+    double longitude = 0;
+
+    switch (Model.type)
+    {
+        case 1:
+            operation = "Cheque";
+            break;
+        case 2:
+            operation = "Débito";
+            break;
+        case 3:
+            operation = "Crédito";
+            if (Model.installmentAmount.Equals("1") && (Model.state == 0 || Model.state == 1))
+            {
+                operation = "Crédito";
+            }
+            else if (Model.installmentAmount.Equals("1"))
+            {
+                operation = "Crédito à vista";
+            }
+            else
+            {
+                operation = string.Format("Crédito em {0} X", Model.installmentAmount);
+            }
+            break;
+        case 4:
+            operation = "Voucher";
+            break;
+        case 5:
+            operation = "Estorno";
+            break;
+        case 6:
+            operation = "Pré Autorização";
+            break;
+        case 7:
+            operation = "Recibo";
+            break;
+        case 8:
+            operation = "Teste de Conexão";
+            break;
+        case 9:
+            operation = "Carga de Tabelas";
+            break;
+        case 0:
+        case 10:
+        default:
+            operation = "Indefinido";
+            break;
+    };
+    
+    if (Model.latitude.HasValue){
+        latitude = Model.latitude.Value;
+    }
+
+    if (Model.longitude.HasValue)
+    {
+        longitude = Model.longitude.Value;
+    }
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Minhas Vendas</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.idMobile)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idMobile)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dtCreate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dtCreate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dtLastUpdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dtLastUpdate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.flStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.flStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.acquirer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.acquirer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.acquirerNSU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.acquirerNSU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.acquirerResponseCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.acquirerResponseCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.authorizationNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.authorizationNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cardBIN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cardBIN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cardBrand)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cardBrand)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cardBrandCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cardBrandCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cardType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cardType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.clisitefConfirmationData)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clisitefConfirmationData)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.clisitefRequestNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.clisitefRequestNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.customerEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.customerEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.customerPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.customerPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.customerReceipt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.customerReceipt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fiscalDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fiscalDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fiscalHour)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fiscalHour)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.installmentAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.installmentAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.isTest)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.isTest)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.issuerInstallmentAllowed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.issuerInstallmentAllowed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.maxIssuerInstallments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.maxIssuerInstallments)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.maxMerchantInstallments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.maxMerchantInstallments)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.merchantEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.merchantEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.merchantInstallmentAllowed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.merchantInstallmentAllowed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.merchantName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.merchantName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.merchantReceipt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.merchantReceipt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.operation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.operation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.paymentFunction)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.paymentFunction)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.paymentFunctionDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.paymentFunctionDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.paymentType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.paymentType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pinpadInfo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pinpadInfo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.pinpadSerialNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.pinpadSerialNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.refundDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.refundDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.refundDocumentNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.refundDocumentNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sitefNSU)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sitefNSU)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.sitefVersion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.sitefVersion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.state)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.state)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.statusCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.statusCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.timestamp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.timestamp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.token)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.token)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.value)
+        </dt>
+
+        <dd>
+            R$ @Html.DisplayFor(model => model.value)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.latitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.latitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.longitude)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.longitude)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sys_Merchant.dsEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sys_Merchant.dsEmail)
+        </dd>
+
+        <dt>
+
+        </dt>
+        <dd>
+            @{
+                string dataSignature = string.Empty;
+                string visibilitySignature = "hidden";
+                string heightSignature = "0px";
+                
+                VirtualPlay.Business.Models.Pay_TransactionSignature signature =
+                    Model.Pay_TransactionSignature.Where(s => s.idSignature == Model.idSignature && s.idTransaction == Model.idTransaction).FirstOrDefault();
+
+                if (signature != null){
+                    dataSignature = signature.imSignature;
+                    visibilitySignature = "visible";
+                    heightSignature = "320px";
+                }
+            }
+
+            <img src="@dataSignature" style="height: @heightSignature; visibility:@visibilitySignature;" />
+        </dd>
+
+        <dt>
+
+        </dt>
+        <dd>
+            @{
+                string visibilityLocation = "hidden";
+                string heightLocation = "0px";
+                
+                if(latitude != 0 && longitude != 0){
+                    visibilityLocation = "visible";
+                    heightLocation = "320px";
+                }
+            }
+            <!-- This is the div that will contain the Google Map -->
+            <div id="map_canvas" style="height: @heightLocation; visibility:@visibilityLocation;"></div>
+
+            <!-- Enclose the Javascript in a "section" so that it is rendered in the correct order after scripts have been loaded etc -->
+            @section scripts {
+                <section class="scripts">
+
+            <script type="text/javascript">
+
+                <!-- This code tells the browser to execute the "Initialize" method only when the complete document model has been loaded. -->
+                $(document).ready(function () {
+                    Initialize();
+                });
+
+                // Where all the fun happens 
+                function Initialize() {
+
+                    // Google has tweaked their interface somewhat - this tells the api to use that new UI
+                    google.maps.visualRefresh = true;
+                    var Gopag = new google.maps.LatLng('@latitude.ToString().Replace(',', '.')', '@longitude.ToString().Replace(',', '.')');
+
+                    // These are options that set initial zoom level, where the map is centered globally to start, and the type of map to show
+                    var mapOptions = {
+                        zoom: 14,
+                        center: Gopag,
+                        scrollwheel: false,
+                        mapTypeId: google.maps.MapTypeId.G_NORMAL_M
+                    };
+
+                    // This makes the div with id "map_canvas" a google map
+                    var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+
+                    // This shows adding a simple pin "marker" - this happens to be the Tate Gallery in Liverpool!
+                    var myLatlng = new google.maps.LatLng('@gpLatitude.ToString().Replace(',', '.')', '@gpLongitude.ToString().Replace(',', '.')');
+
+                    var marker = new google.maps.Marker({
+                        position: myLatlng,
+                        map: map,
+                        title: '@gopagName'
+                    });
+
+                    // You can make markers different colors...  google it up!
+                    marker.setIcon('@Url.Content("~/Content/Images/icon_maps.png")')
+
+                    // a sample list of JSON encoded data of places to visit in Liverpool, UK
+                    // you can either make up a JSON list server side, or call it from a controller using JSONResult
+                    var data = [
+                              { "Id": 1, "MerchantName": "@merchantName", "Operation": "@operation", "Value": "@value", "State": "@state", "GeoLong": "@latitude.ToString().Replace(',','.')", "GeoLat": "@longitude.ToString().Replace(',','.')" }
+                    ];
+
+                    // Using the JQuery "each" selector to iterate through the JSON list and drop marker pins
+                    $.each(data, function (i, item) {
+                        var marker = new google.maps.Marker({
+                            'position': new google.maps.LatLng(item.GeoLong, item.GeoLat),
+                            'map': map,
+                            'title': item.MerchantName
+                        });
+
+                        // Make the marker-pin blue!
+                        marker.setIcon('@Url.Content("~/Content/Images/icon_pinpad_maps.png")')
+
+                        // put in some information about each json object - in this case, the opening hours.
+                        var infowindow = new google.maps.InfoWindow({
+                            content: "<div class='infoDiv'><h2>" + item.MerchantName + "</h2>"
+                                   + "<div><h4>Operação: " + item.Operation + "</h4>"
+                                   @{
+                                       string divValue = "";
+                                       if(Model.type != 8 && Model.type != 9){
+                                           divValue = "Valor: R$ " + value;
+                                       }
+                                   }
+                                   + "<div><h4>" + '@divValue' + "</h4>"
+                                   + "<div><h4>Status: " + item.State + "</h4></div></div>"
+                        });
+
+                        // finally hook up an "OnClick" listener to the map so it pops up out info-window when the marker-pin is clicked!
+                        google.maps.event.addListener(marker, 'click', function () {
+                            infowindow.open(map, marker);
+                        });
+
+                    })
+                }
+
+
+            </script>
+            </section>
+            }
+        </dd>
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Voltar", "Sale")
+</p>

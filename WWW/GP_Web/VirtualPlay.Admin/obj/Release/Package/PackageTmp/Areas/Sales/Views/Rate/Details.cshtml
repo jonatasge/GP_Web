@@ -1,0 +1,132 @@
+﻿@model VirtualPlay.Business.Models.Pay_Rate
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+    <h4>Taxa</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Código
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cdRate)
+        </dd>
+
+        <dt>Nome/Descrição
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nmRate)
+        </dd>
+
+        <dt>Tipo
+        </dt>
+
+        <dd>
+            @{
+                string isMerchant = "";
+                if (Model.flMerchant.Equals("N"))
+                {
+                    isMerchant = "Adquirente";
+                }
+                else
+                {
+                    isMerchant = "Consumidor";
+                }
+            }
+            @isMerchant
+        </dd>
+
+        <dt>Antecipado?
+        </dt>
+
+        <dd>
+            @{
+                string isAnticipated = "";
+                if (Model.flAnticipated.Equals("N"))
+                {
+                    isAnticipated = "Não";
+                }
+                else
+                {
+                    isAnticipated = "Sim";
+                }
+            }
+            @isAnticipated
+        </dd>
+
+        <dt>Status
+        </dt>
+
+        <dd>
+            @{
+                string stStatus = "";
+                if (Model.flStatus.Equals("A"))
+                {
+                    stStatus = "Ativo";
+                }
+                else
+                {
+                    stStatus = "Inativo";
+                }
+            }
+            @stStatus
+        </dd>
+
+        <dt>Criado em
+        </dt>
+
+        <dd>
+            @Html.ValueFor(model => model.dtCreate, "{0:dd/MM/yy HH:mm}")
+        </dd>
+        <dt>Criado por
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sys_User.nmUser)
+        </dd>
+        <dt>Atualizado em
+        </dt>
+
+        <dd>
+            @Html.ValueFor(model => model.dtLastUpdate, "{0:dd/MM/yy HH:mm}")
+        </dd>
+
+        <dt>Atualizado por
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sys_User1.nmUser)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Alterar", "Edit", new { id = Model.idRate }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>
+@{
+    if (Request["items"] == "new")
+    {
+    @Html.Action("CreateItems", new { id = Model.idRate })
+    }
+    else if (Request["items"] == "edit")
+    {
+    @Html.Action("EditItems", new { id = Model.idRate })
+    }
+    else
+    {
+        <h2>Itens</h2>
+    <p>
+        @Html.ActionLink("Novo Item", "Details", new { items = "new", id = Model.idRate })
+        @*@Html.ActionLink("Novo Item", "Create", "RateItems", new { Area = "Sales" }, new { id = Model.idRate, area = "" })*@
+    </p>
+
+    @Html.Action("IndexItems", new { id = Model.idRate })
+    }
+}

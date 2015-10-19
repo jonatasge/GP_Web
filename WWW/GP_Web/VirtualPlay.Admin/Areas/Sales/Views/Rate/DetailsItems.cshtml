@@ -1,0 +1,90 @@
+﻿@model VirtualPlay.Business.Models.Pay_RateItems
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Pay_RateItems</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nmRateItem)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nmRateItem)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.value)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.value)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nbDays)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nbDays)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.flStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.flStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dtCreate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dtCreate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dtLastUpdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dtLastUpdate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pay_Rate.cdRate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pay_Rate.cdRate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sys_User.nmUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sys_User.nmUser)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sys_User1.nmUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sys_User1.nmUser)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

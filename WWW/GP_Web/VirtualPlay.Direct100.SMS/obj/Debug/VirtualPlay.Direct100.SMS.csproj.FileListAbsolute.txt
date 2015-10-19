@@ -1,0 +1,13 @@
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Direct100.SMS\bin\Debug\VirtualPlay.Direct100.SMS.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Direct100.SMS\bin\Debug\VirtualPlay.Direct100.SMS.pdb
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Direct100.SMS\bin\Debug\Newtonsoft.Json.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Direct100.SMS\bin\Debug\Newtonsoft.Json.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Direct100.SMS\obj\Debug\VirtualPlay.Direct100.SMS.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Direct100.SMS\obj\Debug\VirtualPlay.Direct100.SMS.pdb
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Direct100.SMS\bin\Debug\VirtualPlay.Direct100.SMS.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Direct100.SMS\bin\Debug\VirtualPlay.Direct100.SMS.pdb
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Direct100.SMS\bin\Debug\Newtonsoft.Json.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Direct100.SMS\bin\Debug\Newtonsoft.Json.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Direct100.SMS\obj\Debug\VirtualPlay.Direct100.SMS.csprojResolveAssemblyReference.cache
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Direct100.SMS\obj\Debug\VirtualPlay.Direct100.SMS.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Direct100.SMS\obj\Debug\VirtualPlay.Direct100.SMS.pdb

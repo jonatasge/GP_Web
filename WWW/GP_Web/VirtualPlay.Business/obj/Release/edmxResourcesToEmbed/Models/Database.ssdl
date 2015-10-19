@@ -1,0 +1,2181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="VirtualPlayModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Ent_Address">
+    <Key>
+      <PropertyRef Name="idAddress" />
+    </Key>
+    <Property Name="idAddress" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idEnterprise" Type="int" />
+    <Property Name="tpStreet" Type="varchar" MaxLength="20" />
+    <Property Name="dsAddress" Type="varchar" MaxLength="80" />
+    <Property Name="nbAddress" Type="varchar" MaxLength="15" />
+    <Property Name="dsComplement" Type="varchar" MaxLength="70" />
+    <Property Name="nmDistrict" Type="varchar" MaxLength="60" />
+    <Property Name="dsCity" Type="varchar" MaxLength="50" />
+    <Property Name="cdState" Type="varchar" MaxLength="2" />
+    <Property Name="nbPostalCode" Type="varchar" MaxLength="9" />
+    <Property Name="cdCountry" Type="varchar" MaxLength="2" />
+    <Property Name="tpAddress" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="idUserCreate" Type="int" Nullable="false" />
+    <Property Name="dtCreate" Type="datetime" Nullable="false" />
+    <Property Name="idUserLastUpdate" Type="int" Nullable="false" />
+    <Property Name="dtLastUpdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ent_Document">
+    <Key>
+      <PropertyRef Name="idDocument" />
+    </Key>
+    <Property Name="idDocument" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idEnterprise" Type="int" Nullable="false" />
+    <Property Name="cdDocument" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="cdDocumentHash" Type="varchar" MaxLength="255" />
+    <Property Name="tpDocument" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="idFile" Type="int" />
+    <Property Name="idUserCreate" Type="int" Nullable="false" />
+    <Property Name="dtCreate" Type="datetime" Nullable="false" />
+    <Property Name="idUserLastUpdate" Type="int" Nullable="false" />
+    <Property Name="dtLastUpdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ent_DocumentType">
+    <Key>
+      <PropertyRef Name="tpDocument" />
+    </Key>
+    <Property Name="tpDocument" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="dsDocumentType" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="flEncrypted" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="idUserCreate" Type="int" Nullable="false" />
+    <Property Name="dtCreate" Type="datetime" Nullable="false" />
+    <Property Name="idUserLastUpdate" Type="int" Nullable="false" />
+    <Property Name="dtLastUpdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ent_Enterprise">
+    <Key>
+      <PropertyRef Name="idEnterprise" />
+    </Key>
+    <Property Name="idEnterprise" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idEnterpriseSource" Type="varchar" MaxLength="10" />
+    <Property Name="nmEnterprise" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="nmNick" Type="varchar" MaxLength="255" />
+    <Property Name="dtBirth" Type="datetime" />
+    <Property Name="dsEmail" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="dsOccupation" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="flStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="idUserCreate" Type="int" Nullable="false" />
+    <Property Name="dtCreate" Type="datetime" Nullable="false" />
+    <Property Name="idUserLastUpdate" Type="int" Nullable="false" />
+    <Property Name="dtLastUpdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ent_Telephone">
+    <Key>
+      <PropertyRef Name="idTelephone" />
+    </Key>
+    <Property Name="idTelephone" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idEnterprise" Type="int" Nullable="false" />
+    <Property Name="tpTelephone" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="nbAreaCode" Type="varchar" MaxLength="4" />
+    <Property Name="nbTelephone" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="nbExtention" Type="varchar" MaxLength="10" />
+    <Property Name="idUserCreate" Type="int" Nullable="false" />
+    <Property Name="dtCreate" Type="datetime" Nullable="false" />
+    <Property Name="idUserLastUpdate" Type="int" Nullable="false" />
+    <Property Name="dtLastUpdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pay_CashReceipt">
+    <Key>
+      <PropertyRef Name="idCashReceipt" />
+    </Key>
+    <Property Name="idCashReceipt" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idTransaction" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="installmentNumber" Type="int" Nullable="false" />
+    <Property Name="installmentAmount" Type="int" Nullable="false" />
+    <Property Name="installmentValue" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="value" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="idRate" Type="int" Nullable="false" />
+    <Property Name="rateCash" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="rateCredit" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="rateInstallment" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="rateAnticipated" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="bankOrigin" Type="varchar" MaxLength="255" />
+    <Property Name="agencyOrigin" Type="varchar" MaxLength="255" />
+    <Property Name="accountOrigin" Type="varchar" MaxLength="255" />
+    <Property Name="accountTypeOrigin" Type="varchar" MaxLength="255" />
+    <Property Name="operationOrigin" Type="varchar" MaxLength="255" />
+    <Property Name="bankDestination" Type="varchar" MaxLength="255" />
+    <Property Name="agencyDestination" Type="varchar" MaxLength="255" />
+    <Property Name="accountDestination" Type="varchar" MaxLength="255" />
+    <Property Name="accountTypeDestination" Type="varchar" MaxLength="255" />
+    <Property Name="operationDestination" Type="varchar" MaxLength="255" />
+    <Property Name="dtPaymentMade" Type="datetime" Nullable="false" />
+    <Property Name="dtPayment" Type="datetime" Nullable="false" />
+    <Property Name="flAnticipated" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="flStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="idUserCreate" Type="int" Nullable="false" />
+    <Property Name="idUserLastUpdate" Type="int" />
+    <Property Name="dtCreate" Type="datetime" Nullable="false" />
+    <Property Name="dtLastUpdate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Pay_Rate">
+    <Key>
+      <PropertyRef Name="idRate" />
+    </Key>
+    <Property Name="idRate" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cdRate" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="nmRate" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="flMerchant" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="flAnticipated" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="flStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="idUserCreate" Type="int" Nullable="false" />
+    <Property Name="idUserLastUpdate" Type="int" />
+    <Property Name="dtCreate" Type="datetime" Nullable="false" />
+    <Property Name="dtLastUpdate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Pay_RateItems">
+    <Key>
+      <PropertyRef Name="idRate" />
+      <PropertyRef Name="idRateItem" />
+    </Key>
+    <Property Name="idRate" Type="int" Nullable="false" />
+    <Property Name="idRateItem" Type="int" Nullable="false" />
+    <Property Name="nmRateItem" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="value" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="nbDays" Type="int" Nullable="false" />
+    <Property Name="flStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="idUserCreate" Type="int" Nullable="false" />
+    <Property Name="idUserLastUpdate" Type="int" />
+    <Property Name="dtCreate" Type="datetime" Nullable="false" />
+    <Property Name="dtLastUpdate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Pay_Transaction">
+    <Key>
+      <PropertyRef Name="idTransaction" />
+    </Key>
+    <Property Name="idTransaction" Type="uniqueidentifier" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="idMobile" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idMerchant" Type="int" Nullable="false" />
+    <Property Name="dtCreate" Type="datetime" />
+    <Property Name="dtLastUpdate" Type="datetime" />
+    <Property Name="flStatus" Type="char" MaxLength="1" />
+    <Property Name="acquirer" Type="varchar" MaxLength="255" />
+    <Property Name="acquirerNSU" Type="varchar" MaxLength="255" />
+    <Property Name="acquirerResponseCode" Type="varchar" MaxLength="255" />
+    <Property Name="authorizationNumber" Type="varchar" MaxLength="255" />
+    <Property Name="cardBIN" Type="varchar" MaxLength="255" />
+    <Property Name="cardBrand" Type="varchar" MaxLength="255" />
+    <Property Name="cardBrandCode" Type="varchar" MaxLength="255" />
+    <Property Name="clisitefConfirmationData" Type="varchar" MaxLength="255" />
+    <Property Name="clisitefRequestNumber" Type="varchar" MaxLength="255" />
+    <Property Name="customerEmail" Type="varchar" MaxLength="255" />
+    <Property Name="customerPhone" Type="varchar" MaxLength="255" />
+    <Property Name="customerReceipt" Type="varchar" MaxLength="1000" />
+    <Property Name="date" Type="datetime" />
+    <Property Name="fiscalDate" Type="varchar" MaxLength="255" />
+    <Property Name="fiscalHour" Type="varchar" MaxLength="255" />
+    <Property Name="installmentAmount" Type="varchar" MaxLength="255" />
+    <Property Name="isTest" Type="int" />
+    <Property Name="issuerInstallmentAllowed" Type="varchar" MaxLength="255" />
+    <Property Name="maxIssuerInstallments" Type="varchar" MaxLength="255" />
+    <Property Name="maxMerchantInstallments" Type="varchar" MaxLength="255" />
+    <Property Name="merchantEmail" Type="varchar" MaxLength="255" />
+    <Property Name="merchantInstallmentAllowed" Type="varchar" MaxLength="255" />
+    <Property Name="merchantName" Type="varchar" MaxLength="255" />
+    <Property Name="merchantReceipt" Type="varchar" MaxLength="1000" />
+    <Property Name="operation" Type="int" />
+    <Property Name="paymentFunction" Type="varchar" MaxLength="255" />
+    <Property Name="paymentFunctionDescription" Type="varchar" MaxLength="255" />
+    <Property Name="paymentType" Type="varchar" MaxLength="255" />
+    <Property Name="pinpadInfo" Type="varchar" MaxLength="255" />
+    <Property Name="pinpadSerialNumber" Type="varchar" MaxLength="255" />
+    <Property Name="refundDate" Type="varchar" MaxLength="255" />
+    <Property Name="refundDocumentNumber" Type="varchar" MaxLength="255" />
+    <Property Name="sitefNSU" Type="varchar" MaxLength="255" />
+    <Property Name="sitefVersion" Type="varchar" MaxLength="255" />
+    <Property Name="state" Type="int" />
+    <Property Name="statusCode" Type="int" />
+    <Property Name="timestamp" Type="varchar" MaxLength="255" />
+    <Property Name="token" Type="varchar" MaxLength="255" />
+    <Property Name="type" Type="int" />
+    <Property Name="value" Type="varchar" MaxLength="255" />
+    <Property Name="latitude" Type="float" />
+    <Property Name="longitude" Type="float" />
+    <Property Name="idSignature" Type="bigint" />
+    <Property Name="cardType" Type="varchar" MaxLength="255" />
+    <Property Name="idTransactionParent" Type="uniqueidentifier" />
+  </EntityType>
+  <EntityType Name="Pay_TransactionSignature">
+    <Key>
+      <PropertyRef Name="idSignature" />
+    </Key>
+    <Property Name="idSignature" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idTransaction" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="imSignature" Type="ntext" />
+    <Property Name="dtCreate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Per_Address">
+    <Key>
+      <PropertyRef Name="idAddress" />
+    </Key>
+    <Property Name="idAddress" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idPerson" Type="int" />
+    <Property Name="tpStreet" Type="varchar" MaxLength="20" />
+    <Property Name="dsAddress" Type="varchar" MaxLength="80" />
+    <Property Name="nbAddress" Type="varchar" MaxLength="15" />
+    <Property Name="dsComplement" Type="varchar" MaxLength="70" />
+    <Property Name="nmDistrict" Type="varchar" MaxLength="60" />
+    <Property Name="dsCity" Type="varchar" MaxLength="50" />
+    <Property Name="cdState" Type="varchar" MaxLength="2" />
+    <Property Name="nbPostalCode" Type="varchar" MaxLength="9" />
+    <Property Name="cdCountry" Type="varchar" MaxLength="2" />
+    <Property Name="tpAddress" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="idUserCreate" Type="int" Nullable="false" />
+    <Property Name="dtCreate" Type="datetime" Nullable="false" />
+    <Property Name="idUserLastUpdate" Type="int" Nullable="false" />
+    <Property Name="dtLastUpdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Per_Document">
+    <Key>
+      <PropertyRef Name="idDocument" />
+    </Key>
+    <Property Name="idDocument" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idPerson" Type="int" Nullable="false" />
+    <Property Name="cdDocument" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="cdDocumentHash" Type="varchar" MaxLength="255" />
+    <Property Name="tpDocument" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="idFile" Type="int" />
+    <Property Name="idUserCreate" Type="int" Nullable="false" />
+    <Property Name="dtCreate" Type="datetime" Nullable="false" />
+    <Property Name="idUserLastUpdate" Type="int" Nullable="false" />
+    <Property Name="dtLastUpdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Per_DocumentType">
+    <Key>
+      <PropertyRef Name="tpDocument" />
+    </Key>
+    <Property Name="tpDocument" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="dsDocumentType" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="flEncrypted" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="idUserCreate" Type="int" Nullable="false" />
+    <Property Name="dtCreate" Type="datetime" Nullable="false" />
+    <Property Name="idUserLastUpdate" Type="int" Nullable="false" />
+    <Property Name="dtLastUpdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Per_Person">
+    <Key>
+      <PropertyRef Name="idPerson" />
+    </Key>
+    <Property Name="idPerson" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idPersonSource" Type="varchar" MaxLength="10" />
+    <Property Name="nmPerson" Type="varchar" MaxLength="110" Nullable="false" />
+    <Property Name="nmNick" Type="varchar" MaxLength="80" />
+    <Property Name="dtBirth" Type="datetime" />
+    <Property Name="tpGender" Type="char" MaxLength="1" />
+    <Property Name="dsEmail" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="dsOccupation" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="cdMaritalStatus" Type="char" MaxLength="1" />
+    <Property Name="flStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="idUserCreate" Type="int" />
+    <Property Name="dtCreate" Type="datetime" Nullable="false" />
+    <Property Name="idUserLastUpdate" Type="int" />
+    <Property Name="dtLastUpdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Per_Telephone">
+    <Key>
+      <PropertyRef Name="idTelephone" />
+    </Key>
+    <Property Name="idTelephone" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idPerson" Type="int" Nullable="false" />
+    <Property Name="tpTelephone" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="nbAreaCode" Type="varchar" MaxLength="4" />
+    <Property Name="nbTelephone" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="nbExtention" Type="varchar" MaxLength="10" />
+    <Property Name="idUserCreate" Type="int" Nullable="false" />
+    <Property Name="dtCreate" Type="datetime" Nullable="false" />
+    <Property Name="idUserLastUpdate" Type="int" Nullable="false" />
+    <Property Name="dtLastUpdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pos_PinPad">
+    <Key>
+      <PropertyRef Name="idPinPad" />
+    </Key>
+    <Property Name="idPinPad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dsSoftDescriptor" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="dsSitefNumber" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="dsPinpadInfo" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="dsServerAddress" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="dsServerPort" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="cdSerial" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="flProxyMode" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="flStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="idUserCreate" Type="int" />
+    <Property Name="dtCreate" Type="datetime" Nullable="false" />
+    <Property Name="idUserLastUpdate" Type="int" />
+    <Property Name="dtLastUpdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys_Access">
+    <Key>
+      <PropertyRef Name="idRole" />
+      <PropertyRef Name="idModule" />
+    </Key>
+    <Property Name="idRole" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idModule" Type="int" Nullable="false" />
+    <Property Name="tpAccess" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="idUserCreate" Type="int" Nullable="false" />
+    <Property Name="dtCreate" Type="datetime" />
+    <Property Name="idUserLastUpdate" Type="int" />
+    <Property Name="dtLastUpdate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Sys_File">
+    <Key>
+      <PropertyRef Name="idFile" />
+    </Key>
+    <Property Name="idFile" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nmFile" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="dsPath" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="idUserCreate" Type="int" Nullable="false" />
+    <Property Name="dtCreate" Type="datetime" Nullable="false" />
+    <Property Name="idUserLastUpdate" Type="int" Nullable="false" />
+    <Property Name="dtLastUpdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys_ForgotPassword">
+    <Key>
+      <PropertyRef Name="idForgot" />
+    </Key>
+    <Property Name="idForgot" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idSecretAnswers" Type="int" Nullable="false" />
+    <Property Name="idUser" Type="int" Nullable="false" />
+    <Property Name="Answer" Type="varchar" MaxLength="5000" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="PasswordHint" Type="varchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="Sys_Merchant">
+    <Key>
+      <PropertyRef Name="idMerchant" />
+    </Key>
+    <Property Name="idMerchant" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dsEmail" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="dsSoftDescriptor" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="dsSitefNumber" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="dsPinpadInfo" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="flAdmin" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="flDebug" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="flStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="idUserCreate" Type="int" />
+    <Property Name="dtCreate" Type="datetime" Nullable="false" />
+    <Property Name="idUserLastUpdate" Type="int" />
+    <Property Name="dtLastUpdate" Type="datetime" Nullable="false" />
+    <Property Name="flAnticipated" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Sys_MerchantPinPad">
+    <Key>
+      <PropertyRef Name="idMerchant" />
+      <PropertyRef Name="idPinpad" />
+    </Key>
+    <Property Name="idMerchant" Type="int" Nullable="false" />
+    <Property Name="idPinpad" Type="int" Nullable="false" />
+    <Property Name="flStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="dtCreate" Type="datetime" Nullable="false" />
+    <Property Name="idUserLastUpdate" Type="int" Nullable="false" />
+    <Property Name="dtLastUpdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys_MerchantReceipt">
+    <Key>
+      <PropertyRef Name="idMerchantReceipt" />
+    </Key>
+    <Property Name="idMerchantReceipt" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idTransaction" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="idCashReceipt" Type="bigint" Nullable="false" />
+    <Property Name="installmentNumber" Type="int" Nullable="false" />
+    <Property Name="installmentAmount" Type="int" Nullable="false" />
+    <Property Name="installmentValue" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="value" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="idRate" Type="int" Nullable="false" />
+    <Property Name="rateCash" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="rateCredit" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="rateInstallment" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="rateAnticipated" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="bankOrigin" Type="varchar" MaxLength="255" />
+    <Property Name="agencyOrigin" Type="varchar" MaxLength="255" />
+    <Property Name="accountOrigin" Type="varchar" MaxLength="255" />
+    <Property Name="accountTypeOrigin" Type="varchar" MaxLength="255" />
+    <Property Name="operationOrigin" Type="varchar" MaxLength="255" />
+    <Property Name="bankDestination" Type="varchar" MaxLength="255" />
+    <Property Name="agencyDestination" Type="varchar" MaxLength="255" />
+    <Property Name="accountDestination" Type="varchar" MaxLength="255" />
+    <Property Name="accountTypeDestination" Type="varchar" MaxLength="255" />
+    <Property Name="operationDestination" Type="varchar" MaxLength="255" />
+    <Property Name="dtPaymentMade" Type="datetime" Nullable="false" />
+    <Property Name="dtPayment" Type="datetime" Nullable="false" />
+    <Property Name="flAnticipated" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="flStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="idUserCreate" Type="int" Nullable="false" />
+    <Property Name="idUserLastUpdate" Type="int" />
+    <Property Name="dtCreate" Type="datetime" Nullable="false" />
+    <Property Name="dtLastUpdate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Sys_Module">
+    <Key>
+      <PropertyRef Name="idModule" />
+    </Key>
+    <Property Name="idModule" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nmModule" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="dsURLModule" Type="varchar" MaxLength="300" />
+    <Property Name="idRole" Type="int" Nullable="false" />
+    <Property Name="idUserCreate" Type="int" Nullable="false" />
+    <Property Name="dtCreate" Type="datetime" />
+    <Property Name="idUserLastUpdate" Type="int" />
+    <Property Name="dtLastUpdate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Sys_Role">
+    <Key>
+      <PropertyRef Name="idRole" />
+    </Key>
+    <Property Name="idRole" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nmRole" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="stRole" Type="char" MaxLength="1" />
+    <Property Name="idUserCreate" Type="int" Nullable="false" />
+    <Property Name="dtCreate" Type="datetime" Nullable="false" />
+    <Property Name="idUserLastUpdate" Type="int" Nullable="false" />
+    <Property Name="dtLastUpdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys_SmsLog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nbSmsTo" Type="varchar" MaxLength="20" />
+    <Property Name="dsError" Type="varchar" MaxLength="4500" />
+    <Property Name="dsMessage" Type="varchar" MaxLength="4500" />
+    <Property Name="dsExtra" Type="varchar" MaxLength="4500" />
+    <Property Name="flStatus" Type="bit" Nullable="false" />
+    <Property Name="flSent" Type="bit" Nullable="false" />
+    <Property Name="idSystem" Type="int" />
+    <Property Name="idUserCreate" Type="int" />
+    <Property Name="dtCreatedAt" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys_System">
+    <Key>
+      <PropertyRef Name="idSystem" />
+    </Key>
+    <Property Name="idSystem" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tpSystem" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="nmSystem" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="dsSystem" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="cdSystem" Type="varchar" MaxLength="255" />
+    <Property Name="dtExpire" Type="datetime" />
+    <Property Name="idUserCreate" Type="int" Nullable="false" />
+    <Property Name="dtCreate" Type="datetime" Nullable="false" />
+    <Property Name="idUserLastUpdate" Type="int" Nullable="false" />
+    <Property Name="dtLastUpdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys_SystemType">
+    <Key>
+      <PropertyRef Name="tpSystem" />
+    </Key>
+    <Property Name="tpSystem" Type="varchar" MaxLength="4" Nullable="false" />
+    <Property Name="dsSystemType" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="flEncrypted" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="idUserCreate" Type="int" Nullable="false" />
+    <Property Name="dtCreate" Type="datetime" Nullable="false" />
+    <Property Name="idUserLastUpdate" Type="int" Nullable="false" />
+    <Property Name="dtLastUpdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys_User">
+    <Key>
+      <PropertyRef Name="idUser" />
+    </Key>
+    <Property Name="idUser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idRole" Type="int" />
+    <Property Name="idPerson" Type="int" />
+    <Property Name="idEnterprise" Type="int" />
+    <Property Name="nmUser" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="dsEmail" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="dsPassword" Type="varchar" MaxLength="255" />
+    <Property Name="dsAcessToken" Type="varchar" MaxLength="255" />
+    <Property Name="dsSession" Type="varchar" MaxLength="255" />
+    <Property Name="dtExpire" Type="datetime" />
+    <Property Name="stUser" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="idUserCreate" Type="int" />
+    <Property Name="dtCreate" Type="datetime" Nullable="false" />
+    <Property Name="idUserLastUpdate" Type="int" />
+    <Property Name="dtLastUpdate" Type="datetime" Nullable="false" />
+    <Property Name="dtLastSession" Type="datetime" />
+    <Property Name="idMerchant" Type="int" />
+  </EntityType>
+  <EntityType Name="Sys_UserLoginHistory">
+    <Key>
+      <PropertyRef Name="idUserLoginHistory" />
+    </Key>
+    <Property Name="idUserLoginHistory" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="idUser" Type="int" Nullable="false" />
+    <Property Name="idSystem" Type="int" />
+    <Property Name="dsAccessToken" Type="varchar" MaxLength="255" />
+    <Property Name="dsSession" Type="varchar" MaxLength="255" />
+    <Property Name="stUserLogin" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="dsIpAddress" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="dsAgent" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="dtCreate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys_UserPasswordHistory">
+    <Key>
+      <PropertyRef Name="idUserPasswordHistory" />
+    </Key>
+    <Property Name="idUserPasswordHistory" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idUser" Type="int" Nullable="false" />
+    <Property Name="dsPassword" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="idUserCreate" Type="int" Nullable="false" />
+    <Property Name="dtCreate" Type="datetime" Nullable="false" />
+    <Property Name="idUserLastUpdate" Type="int" Nullable="false" />
+    <Property Name="dtLastUpdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys_UserSession">
+    <Key>
+      <PropertyRef Name="idUser" />
+      <PropertyRef Name="idSystem" />
+    </Key>
+    <Property Name="idUser" Type="int" Nullable="false" />
+    <Property Name="idSystem" Type="int" Nullable="false" />
+    <Property Name="dsSession" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="flStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="dtCreate" Type="datetime" Nullable="false" />
+    <Property Name="idUserLastUpdate" Type="int" Nullable="false" />
+    <Property Name="dtLastUpdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys_UserSystem">
+    <Key>
+      <PropertyRef Name="idUser" />
+      <PropertyRef Name="idSystem" />
+    </Key>
+    <Property Name="idUser" Type="int" Nullable="false" />
+    <Property Name="idSystem" Type="int" Nullable="false" />
+    <Property Name="idRole" Type="int" Nullable="false" />
+    <Property Name="flStatus" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="dtCreate" Type="datetime" Nullable="false" />
+    <Property Name="idUserLastUpdate" Type="int" Nullable="false" />
+    <Property Name="dtLastUpdate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys_WebmailConf">
+    <Key>
+      <PropertyRef Name="idWebmail" />
+      <PropertyRef Name="idSequence" />
+    </Key>
+    <Property Name="idWebmail" Type="int" Nullable="false" />
+    <Property Name="idSequence" Type="int" Nullable="false" />
+    <Property Name="dsFrom" Type="nvarchar" MaxLength="120" Nullable="false" />
+    <Property Name="dsFromName" Type="nvarchar" MaxLength="120" Nullable="false" />
+    <Property Name="dsHost" Type="nvarchar" MaxLength="120" Nullable="false" />
+    <Property Name="nbPort" Type="int" Nullable="false" />
+    <Property Name="cdUserName" Type="nvarchar" MaxLength="120" Nullable="false" />
+    <Property Name="cdPassword" Type="nvarchar" MaxLength="120" Nullable="false" />
+    <Property Name="flEnableSsl" Type="bit" />
+    <Property Name="flUseDefaultCredentials" Type="bit" />
+    <Property Name="dtCreatedAt" Type="datetime" Nullable="false" />
+    <Property Name="dtUpdatedAt" Type="datetime" />
+    <Property Name="flStatus" Type="bit" Nullable="false" />
+    <Property Name="nbAmountSend" Type="int" Nullable="false" />
+    <Property Name="nbAmountLimit" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys_WebmailLog">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="idWebmail" Type="int" Nullable="false" />
+    <Property Name="idSequence" Type="int" Nullable="false" />
+    <Property Name="idSystem" Type="int" />
+    <Property Name="dsMailTo" Type="varchar" MaxLength="500" />
+    <Property Name="dsError" Type="varchar" MaxLength="4500" />
+    <Property Name="dsSubject" Type="varchar" MaxLength="500" />
+    <Property Name="dsMessage" Type="varchar" MaxLength="4500" />
+    <Property Name="dsExtra" Type="varchar" MaxLength="4500" />
+    <Property Name="cdTemplate" Type="varchar" MaxLength="100" />
+    <Property Name="cdIdentification1" Type="varchar" MaxLength="100" />
+    <Property Name="cdIdentification2" Type="varchar" MaxLength="100" />
+    <Property Name="cdIdentification3" Type="varchar" MaxLength="100" />
+    <Property Name="flStatus" Type="bit" Nullable="false" />
+    <Property Name="flSent" Type="bit" Nullable="false" />
+    <Property Name="idUserCreate" Type="int" />
+    <Property Name="dtCreatedAt" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_VP_Ent_Address_Enterprise">
+    <End Role="Ent_Enterprise" Type="Self.Ent_Enterprise" Multiplicity="0..1" />
+    <End Role="Ent_Address" Type="Self.Ent_Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ent_Enterprise">
+        <PropertyRef Name="idEnterprise" />
+      </Principal>
+      <Dependent Role="Ent_Address">
+        <PropertyRef Name="idEnterprise" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Ent_Address_UserCreate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Ent_Address" Type="Self.Ent_Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Ent_Address">
+        <PropertyRef Name="idUserCreate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Ent_Address_UserLastUpdate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Ent_Address" Type="Self.Ent_Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Ent_Address">
+        <PropertyRef Name="idUserLastUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Ent_Document_Enterprise">
+    <End Role="Ent_Enterprise" Type="Self.Ent_Enterprise" Multiplicity="1" />
+    <End Role="Ent_Document" Type="Self.Ent_Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ent_Enterprise">
+        <PropertyRef Name="idEnterprise" />
+      </Principal>
+      <Dependent Role="Ent_Document">
+        <PropertyRef Name="idEnterprise" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Ent_Document_File">
+    <End Role="Sys_File" Type="Self.Sys_File" Multiplicity="0..1" />
+    <End Role="Ent_Document" Type="Self.Ent_Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_File">
+        <PropertyRef Name="idFile" />
+      </Principal>
+      <Dependent Role="Ent_Document">
+        <PropertyRef Name="idFile" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Ent_Document_Type">
+    <End Role="Ent_DocumentType" Type="Self.Ent_DocumentType" Multiplicity="1" />
+    <End Role="Ent_Document" Type="Self.Ent_Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ent_DocumentType">
+        <PropertyRef Name="tpDocument" />
+      </Principal>
+      <Dependent Role="Ent_Document">
+        <PropertyRef Name="tpDocument" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Ent_Document_UserCreate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Ent_Document" Type="Self.Ent_Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Ent_Document">
+        <PropertyRef Name="idUserCreate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Ent_Document_UserLastUpdate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Ent_Document" Type="Self.Ent_Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Ent_Document">
+        <PropertyRef Name="idUserLastUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Ent_DocumentType_UserCreate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Ent_DocumentType" Type="Self.Ent_DocumentType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Ent_DocumentType">
+        <PropertyRef Name="idUserCreate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Ent_DocumentType_UserLastUpdate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Ent_DocumentType" Type="Self.Ent_DocumentType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Ent_DocumentType">
+        <PropertyRef Name="idUserLastUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Ent_Enterprise_UserCreate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Ent_Enterprise" Type="Self.Ent_Enterprise" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Ent_Enterprise">
+        <PropertyRef Name="idUserCreate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Ent_Enterprise_UserLastUpdate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Ent_Enterprise" Type="Self.Ent_Enterprise" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Ent_Enterprise">
+        <PropertyRef Name="idUserLastUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Ent_Telephone_Enterprise">
+    <End Role="Ent_Enterprise" Type="Self.Ent_Enterprise" Multiplicity="1" />
+    <End Role="Ent_Telephone" Type="Self.Ent_Telephone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ent_Enterprise">
+        <PropertyRef Name="idEnterprise" />
+      </Principal>
+      <Dependent Role="Ent_Telephone">
+        <PropertyRef Name="idEnterprise" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Ent_Telephone_UserCreate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Ent_Telephone" Type="Self.Ent_Telephone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Ent_Telephone">
+        <PropertyRef Name="idUserCreate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Ent_Telephone_UserLastUpdate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Ent_Telephone" Type="Self.Ent_Telephone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Ent_Telephone">
+        <PropertyRef Name="idUserLastUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Pay_CashReceipt_Rate">
+    <End Role="Pay_Rate" Type="Self.Pay_Rate" Multiplicity="1" />
+    <End Role="Pay_CashReceipt" Type="Self.Pay_CashReceipt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pay_Rate">
+        <PropertyRef Name="idRate" />
+      </Principal>
+      <Dependent Role="Pay_CashReceipt">
+        <PropertyRef Name="idRate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Pay_CashReceipt_Transaction">
+    <End Role="Pay_Transaction" Type="Self.Pay_Transaction" Multiplicity="1" />
+    <End Role="Pay_CashReceipt" Type="Self.Pay_CashReceipt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pay_Transaction">
+        <PropertyRef Name="idTransaction" />
+      </Principal>
+      <Dependent Role="Pay_CashReceipt">
+        <PropertyRef Name="idTransaction" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Pay_CashReceipt_UserCreate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Pay_CashReceipt" Type="Self.Pay_CashReceipt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Pay_CashReceipt">
+        <PropertyRef Name="idUserCreate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Pay_CashReceipt_UserLastUpdate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="0..1" />
+    <End Role="Pay_CashReceipt" Type="Self.Pay_CashReceipt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Pay_CashReceipt">
+        <PropertyRef Name="idUserLastUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Pay_MerchantReceipt_Cash">
+    <End Role="Pay_CashReceipt" Type="Self.Pay_CashReceipt" Multiplicity="1" />
+    <End Role="Sys_MerchantReceipt" Type="Self.Sys_MerchantReceipt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pay_CashReceipt">
+        <PropertyRef Name="idCashReceipt" />
+      </Principal>
+      <Dependent Role="Sys_MerchantReceipt">
+        <PropertyRef Name="idCashReceipt" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Pay_MerchantReceipt_Rate">
+    <End Role="Pay_Rate" Type="Self.Pay_Rate" Multiplicity="1" />
+    <End Role="Sys_MerchantReceipt" Type="Self.Sys_MerchantReceipt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pay_Rate">
+        <PropertyRef Name="idRate" />
+      </Principal>
+      <Dependent Role="Sys_MerchantReceipt">
+        <PropertyRef Name="idRate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Pay_MerchantReceipt_Transaction">
+    <End Role="Pay_Transaction" Type="Self.Pay_Transaction" Multiplicity="1" />
+    <End Role="Sys_MerchantReceipt" Type="Self.Sys_MerchantReceipt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pay_Transaction">
+        <PropertyRef Name="idTransaction" />
+      </Principal>
+      <Dependent Role="Sys_MerchantReceipt">
+        <PropertyRef Name="idTransaction" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Pay_MerchantReceipt_UserCreate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Sys_MerchantReceipt" Type="Self.Sys_MerchantReceipt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Sys_MerchantReceipt">
+        <PropertyRef Name="idUserCreate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Pay_MerchantReceipt_UserLastUpdate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="0..1" />
+    <End Role="Sys_MerchantReceipt" Type="Self.Sys_MerchantReceipt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Sys_MerchantReceipt">
+        <PropertyRef Name="idUserLastUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Pay_Rate_UserCreate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Pay_Rate" Type="Self.Pay_Rate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Pay_Rate">
+        <PropertyRef Name="idUserCreate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Pay_Rate_UserLastUpdate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="0..1" />
+    <End Role="Pay_Rate" Type="Self.Pay_Rate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Pay_Rate">
+        <PropertyRef Name="idUserLastUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Pay_RateItems_Rate">
+    <End Role="Pay_Rate" Type="Self.Pay_Rate" Multiplicity="1" />
+    <End Role="Pay_RateItems" Type="Self.Pay_RateItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pay_Rate">
+        <PropertyRef Name="idRate" />
+      </Principal>
+      <Dependent Role="Pay_RateItems">
+        <PropertyRef Name="idRate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Pay_RateItems_UserCreate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Pay_RateItems" Type="Self.Pay_RateItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Pay_RateItems">
+        <PropertyRef Name="idUserCreate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Pay_RateItems_UserLastUpdate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="0..1" />
+    <End Role="Pay_RateItems" Type="Self.Pay_RateItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Pay_RateItems">
+        <PropertyRef Name="idUserLastUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Pay_Transaction_Merchant">
+    <End Role="Sys_Merchant" Type="Self.Sys_Merchant" Multiplicity="1" />
+    <End Role="Pay_Transaction" Type="Self.Pay_Transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_Merchant">
+        <PropertyRef Name="idMerchant" />
+      </Principal>
+      <Dependent Role="Pay_Transaction">
+        <PropertyRef Name="idMerchant" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Pay_Transaction_Parent">
+    <End Role="Pay_Transaction" Type="Self.Pay_Transaction" Multiplicity="0..1" />
+    <End Role="Pay_Transaction1" Type="Self.Pay_Transaction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pay_Transaction">
+        <PropertyRef Name="idTransaction" />
+      </Principal>
+      <Dependent Role="Pay_Transaction1">
+        <PropertyRef Name="idTransactionParent" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Pay_TransactionSignature_Transaction">
+    <End Role="Pay_Transaction" Type="Self.Pay_Transaction" Multiplicity="1" />
+    <End Role="Pay_TransactionSignature" Type="Self.Pay_TransactionSignature" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pay_Transaction">
+        <PropertyRef Name="idTransaction" />
+      </Principal>
+      <Dependent Role="Pay_TransactionSignature">
+        <PropertyRef Name="idTransaction" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Per_Address_Person">
+    <End Role="Per_Person" Type="Self.Per_Person" Multiplicity="0..1" />
+    <End Role="Per_Address" Type="Self.Per_Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Per_Person">
+        <PropertyRef Name="idPerson" />
+      </Principal>
+      <Dependent Role="Per_Address">
+        <PropertyRef Name="idPerson" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Per_Address_UserCreate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Per_Address" Type="Self.Per_Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Per_Address">
+        <PropertyRef Name="idUserCreate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Per_Address_UserLastUpdate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Per_Address" Type="Self.Per_Address" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Per_Address">
+        <PropertyRef Name="idUserLastUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Per_Document_File">
+    <End Role="Sys_File" Type="Self.Sys_File" Multiplicity="0..1" />
+    <End Role="Per_Document" Type="Self.Per_Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_File">
+        <PropertyRef Name="idFile" />
+      </Principal>
+      <Dependent Role="Per_Document">
+        <PropertyRef Name="idFile" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Per_Document_Person">
+    <End Role="Per_Person" Type="Self.Per_Person" Multiplicity="1" />
+    <End Role="Per_Document" Type="Self.Per_Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Per_Person">
+        <PropertyRef Name="idPerson" />
+      </Principal>
+      <Dependent Role="Per_Document">
+        <PropertyRef Name="idPerson" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Per_Document_TpDocument">
+    <End Role="Per_DocumentType" Type="Self.Per_DocumentType" Multiplicity="1" />
+    <End Role="Per_Document" Type="Self.Per_Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Per_DocumentType">
+        <PropertyRef Name="tpDocument" />
+      </Principal>
+      <Dependent Role="Per_Document">
+        <PropertyRef Name="tpDocument" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Per_Document_UserCreate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Per_Document" Type="Self.Per_Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Per_Document">
+        <PropertyRef Name="idUserCreate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Per_Document_UserLastUpdate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Per_Document" Type="Self.Per_Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Per_Document">
+        <PropertyRef Name="idUserLastUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Per_DocumentType_UserCreate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Per_DocumentType" Type="Self.Per_DocumentType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Per_DocumentType">
+        <PropertyRef Name="idUserCreate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Per_DocumentType_UserLastUpdate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Per_DocumentType" Type="Self.Per_DocumentType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Per_DocumentType">
+        <PropertyRef Name="idUserLastUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Per_Person_UserCreate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="0..1" />
+    <End Role="Per_Person" Type="Self.Per_Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Per_Person">
+        <PropertyRef Name="idUserCreate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Per_Person_UserLastUpdate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="0..1" />
+    <End Role="Per_Person" Type="Self.Per_Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Per_Person">
+        <PropertyRef Name="idUserLastUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Per_Telephone_Person">
+    <End Role="Per_Person" Type="Self.Per_Person" Multiplicity="1" />
+    <End Role="Per_Telephone" Type="Self.Per_Telephone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Per_Person">
+        <PropertyRef Name="idPerson" />
+      </Principal>
+      <Dependent Role="Per_Telephone">
+        <PropertyRef Name="idPerson" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Per_Telephone_UserCreate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Per_Telephone" Type="Self.Per_Telephone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Per_Telephone">
+        <PropertyRef Name="idUserCreate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Per_Telephone_UserLastUpdate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Per_Telephone" Type="Self.Per_Telephone" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Per_Telephone">
+        <PropertyRef Name="idUserLastUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Pos_PinPad_UserCreate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="0..1" />
+    <End Role="Pos_PinPad" Type="Self.Pos_PinPad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Pos_PinPad">
+        <PropertyRef Name="idUserCreate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Pos_PinPad_UserLastUpdate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="0..1" />
+    <End Role="Pos_PinPad" Type="Self.Pos_PinPad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Pos_PinPad">
+        <PropertyRef Name="idUserLastUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_Access_Module">
+    <End Role="Sys_Module" Type="Self.Sys_Module" Multiplicity="1" />
+    <End Role="Sys_Access" Type="Self.Sys_Access" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_Module">
+        <PropertyRef Name="idModule" />
+      </Principal>
+      <Dependent Role="Sys_Access">
+        <PropertyRef Name="idModule" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_Access_Role">
+    <End Role="Sys_Role" Type="Self.Sys_Role" Multiplicity="1" />
+    <End Role="Sys_Access" Type="Self.Sys_Access" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_Role">
+        <PropertyRef Name="idRole" />
+      </Principal>
+      <Dependent Role="Sys_Access">
+        <PropertyRef Name="idRole" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_Access_UserCreate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Sys_Access" Type="Self.Sys_Access" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Sys_Access">
+        <PropertyRef Name="idUserCreate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_Access_UserLastUpdate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="0..1" />
+    <End Role="Sys_Access" Type="Self.Sys_Access" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Sys_Access">
+        <PropertyRef Name="idUserLastUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_File_UserCreate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Sys_File" Type="Self.Sys_File" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Sys_File">
+        <PropertyRef Name="idUserCreate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_File_UserLastUpdate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Sys_File" Type="Self.Sys_File" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Sys_File">
+        <PropertyRef Name="idUserLastUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_ForgotPassword_User">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Sys_ForgotPassword" Type="Self.Sys_ForgotPassword" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Sys_ForgotPassword">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_Merchant_UserCreate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="0..1" />
+    <End Role="Sys_Merchant" Type="Self.Sys_Merchant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Sys_Merchant">
+        <PropertyRef Name="idUserCreate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_Merchant_UserLastUpdate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="0..1" />
+    <End Role="Sys_Merchant" Type="Self.Sys_Merchant" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Sys_Merchant">
+        <PropertyRef Name="idUserLastUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_MerchantPinPad_Merchant">
+    <End Role="Sys_Merchant" Type="Self.Sys_Merchant" Multiplicity="1" />
+    <End Role="Sys_MerchantPinPad" Type="Self.Sys_MerchantPinPad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_Merchant">
+        <PropertyRef Name="idMerchant" />
+      </Principal>
+      <Dependent Role="Sys_MerchantPinPad">
+        <PropertyRef Name="idMerchant" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_MerchantPinPad_PinPad">
+    <End Role="Pos_PinPad" Type="Self.Pos_PinPad" Multiplicity="1" />
+    <End Role="Sys_MerchantPinPad" Type="Self.Sys_MerchantPinPad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pos_PinPad">
+        <PropertyRef Name="idPinPad" />
+      </Principal>
+      <Dependent Role="Sys_MerchantPinPad">
+        <PropertyRef Name="idPinpad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_MerchantPinPad_UserLastUpdate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Sys_MerchantPinPad" Type="Self.Sys_MerchantPinPad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Sys_MerchantPinPad">
+        <PropertyRef Name="idUserLastUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_Module_UserCreate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Sys_Module" Type="Self.Sys_Module" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Sys_Module">
+        <PropertyRef Name="idUserCreate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_Module_UserLastUpdate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="0..1" />
+    <End Role="Sys_Module" Type="Self.Sys_Module" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Sys_Module">
+        <PropertyRef Name="idUserLastUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_Role_UserCreate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Sys_Role" Type="Self.Sys_Role" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Sys_Role">
+        <PropertyRef Name="idUserCreate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_Role_UserLastUpdate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Sys_Role" Type="Self.Sys_Role" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Sys_Role">
+        <PropertyRef Name="idUserLastUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_SmsLog_System">
+    <End Role="Sys_System" Type="Self.Sys_System" Multiplicity="0..1" />
+    <End Role="Sys_SmsLog" Type="Self.Sys_SmsLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_System">
+        <PropertyRef Name="idSystem" />
+      </Principal>
+      <Dependent Role="Sys_SmsLog">
+        <PropertyRef Name="idSystem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_SmsLog_User">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="0..1" />
+    <End Role="Sys_SmsLog" Type="Self.Sys_SmsLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Sys_SmsLog">
+        <PropertyRef Name="idUserCreate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_System_Type">
+    <End Role="Sys_SystemType" Type="Self.Sys_SystemType" Multiplicity="1" />
+    <End Role="Sys_System" Type="Self.Sys_System" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_SystemType">
+        <PropertyRef Name="tpSystem" />
+      </Principal>
+      <Dependent Role="Sys_System">
+        <PropertyRef Name="tpSystem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_System_UserCreate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Sys_System" Type="Self.Sys_System" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Sys_System">
+        <PropertyRef Name="idUserCreate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_System_UserLastUpdate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Sys_System" Type="Self.Sys_System" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Sys_System">
+        <PropertyRef Name="idUserLastUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_SystemType_UserCreate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Sys_SystemType" Type="Self.Sys_SystemType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Sys_SystemType">
+        <PropertyRef Name="idUserCreate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_SystemType_UserLastUpdate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Sys_SystemType" Type="Self.Sys_SystemType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Sys_SystemType">
+        <PropertyRef Name="idUserLastUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_User_Enterprise">
+    <End Role="Ent_Enterprise" Type="Self.Ent_Enterprise" Multiplicity="0..1" />
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ent_Enterprise">
+        <PropertyRef Name="idEnterprise" />
+      </Principal>
+      <Dependent Role="Sys_User">
+        <PropertyRef Name="idEnterprise" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_User_Person">
+    <End Role="Per_Person" Type="Self.Per_Person" Multiplicity="0..1" />
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Per_Person">
+        <PropertyRef Name="idPerson" />
+      </Principal>
+      <Dependent Role="Sys_User">
+        <PropertyRef Name="idPerson" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_User_Role">
+    <End Role="Sys_Role" Type="Self.Sys_Role" Multiplicity="0..1" />
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_Role">
+        <PropertyRef Name="idRole" />
+      </Principal>
+      <Dependent Role="Sys_User">
+        <PropertyRef Name="idRole" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_User_UserCreate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="0..1" />
+    <End Role="Sys_User1" Type="Self.Sys_User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Sys_User1">
+        <PropertyRef Name="idUserCreate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_User_UserLastUpdate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="0..1" />
+    <End Role="Sys_User1" Type="Self.Sys_User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Sys_User1">
+        <PropertyRef Name="idUserLastUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_UserLoginHistory_System">
+    <End Role="Sys_System" Type="Self.Sys_System" Multiplicity="0..1" />
+    <End Role="Sys_UserLoginHistory" Type="Self.Sys_UserLoginHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_System">
+        <PropertyRef Name="idSystem" />
+      </Principal>
+      <Dependent Role="Sys_UserLoginHistory">
+        <PropertyRef Name="idSystem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_UserLoginHistory_User">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Sys_UserLoginHistory" Type="Self.Sys_UserLoginHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Sys_UserLoginHistory">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_UserPasswordHistory_User">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Sys_UserPasswordHistory" Type="Self.Sys_UserPasswordHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Sys_UserPasswordHistory">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_UserPasswordHistory_UserCreate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Sys_UserPasswordHistory" Type="Self.Sys_UserPasswordHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Sys_UserPasswordHistory">
+        <PropertyRef Name="idUserCreate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_UserPasswordHistory_UserLastUpdate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Sys_UserPasswordHistory" Type="Self.Sys_UserPasswordHistory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Sys_UserPasswordHistory">
+        <PropertyRef Name="idUserLastUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_UserSession_System">
+    <End Role="Sys_System" Type="Self.Sys_System" Multiplicity="1" />
+    <End Role="Sys_UserSession" Type="Self.Sys_UserSession" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_System">
+        <PropertyRef Name="idSystem" />
+      </Principal>
+      <Dependent Role="Sys_UserSession">
+        <PropertyRef Name="idSystem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_UserSession_User">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Sys_UserSession" Type="Self.Sys_UserSession" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Sys_UserSession">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_UserSession_UserLastUpdate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Sys_UserSession" Type="Self.Sys_UserSession" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Sys_UserSession">
+        <PropertyRef Name="idUserLastUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_UserSystem_Role">
+    <End Role="Sys_Role" Type="Self.Sys_Role" Multiplicity="1" />
+    <End Role="Sys_UserSystem" Type="Self.Sys_UserSystem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_Role">
+        <PropertyRef Name="idRole" />
+      </Principal>
+      <Dependent Role="Sys_UserSystem">
+        <PropertyRef Name="idRole" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_UserSystem_System">
+    <End Role="Sys_System" Type="Self.Sys_System" Multiplicity="1" />
+    <End Role="Sys_UserSystem" Type="Self.Sys_UserSystem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_System">
+        <PropertyRef Name="idSystem" />
+      </Principal>
+      <Dependent Role="Sys_UserSystem">
+        <PropertyRef Name="idSystem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_UserSystem_User">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Sys_UserSystem" Type="Self.Sys_UserSystem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Sys_UserSystem">
+        <PropertyRef Name="idUser" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_UserSystem_UserLastUpdate">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="1" />
+    <End Role="Sys_UserSystem" Type="Self.Sys_UserSystem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Sys_UserSystem">
+        <PropertyRef Name="idUserLastUpdate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_WebmailLog_Conf">
+    <End Role="Sys_WebmailConf" Type="Self.Sys_WebmailConf" Multiplicity="1" />
+    <End Role="Sys_WebmailLog" Type="Self.Sys_WebmailLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_WebmailConf">
+        <PropertyRef Name="idWebmail" />
+        <PropertyRef Name="idSequence" />
+      </Principal>
+      <Dependent Role="Sys_WebmailLog">
+        <PropertyRef Name="idWebmail" />
+        <PropertyRef Name="idSequence" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_WebmailLog_System">
+    <End Role="Sys_System" Type="Self.Sys_System" Multiplicity="0..1" />
+    <End Role="Sys_WebmailLog" Type="Self.Sys_WebmailLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_System">
+        <PropertyRef Name="idSystem" />
+      </Principal>
+      <Dependent Role="Sys_WebmailLog">
+        <PropertyRef Name="idSystem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_VP_Sys_WebmailLog_User">
+    <End Role="Sys_User" Type="Self.Sys_User" Multiplicity="0..1" />
+    <End Role="Sys_WebmailLog" Type="Self.Sys_WebmailLog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sys_User">
+        <PropertyRef Name="idUser" />
+      </Principal>
+      <Dependent Role="Sys_WebmailLog">
+        <PropertyRef Name="idUserCreate" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="Pay_TransactionChartCardBrand" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="VirtualPlay">
+    <Parameter Name="idMerchant" Type="int" Mode="In" />
+    <Parameter Name="idYear" Type="int" Mode="In" />
+    <Parameter Name="idMonth" Type="int" Mode="In" />
+    <Parameter Name="idDay" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Pay_TransactionChartInstallment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="VirtualPlay">
+    <Parameter Name="idMerchant" Type="int" Mode="In" />
+    <Parameter Name="idYear" Type="int" Mode="In" />
+    <Parameter Name="idMonth" Type="int" Mode="In" />
+    <Parameter Name="idDay" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Pay_TransactionChartOperation" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="VirtualPlay">
+    <Parameter Name="idMerchant" Type="int" Mode="In" />
+    <Parameter Name="idYear" Type="int" Mode="In" />
+    <Parameter Name="idMonth" Type="int" Mode="In" />
+    <Parameter Name="idDay" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Pay_TransactionChartRefund" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="VirtualPlay">
+    <Parameter Name="idMerchant" Type="int" Mode="In" />
+    <Parameter Name="idYear" Type="int" Mode="In" />
+    <Parameter Name="idMonth" Type="int" Mode="In" />
+    <Parameter Name="idDay" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Pay_TransactionChartSale" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="VirtualPlay">
+    <Parameter Name="idMerchant" Type="int" Mode="In" />
+    <Parameter Name="idYear" Type="int" Mode="In" />
+    <Parameter Name="idMonth" Type="int" Mode="In" />
+    <Parameter Name="idDay" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Sys_SmsLogInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="VirtualPlay">
+    <Parameter Name="nbSmsTo" Type="varchar" Mode="In" />
+    <Parameter Name="dsError" Type="varchar" Mode="In" />
+    <Parameter Name="dsMessage" Type="varchar" Mode="In" />
+    <Parameter Name="dsExtra" Type="varchar" Mode="In" />
+    <Parameter Name="flSent" Type="bit" Mode="In" />
+    <Parameter Name="idSystem" Type="int" Mode="In" />
+    <Parameter Name="idUserCreate" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Sys_UserLogin" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="VirtualPlay">
+    <Parameter Name="dsEmail" Type="varchar" Mode="In" />
+    <Parameter Name="dsPassword" Type="varchar" Mode="In" />
+    <Parameter Name="idSystem" Type="int" Mode="In" />
+    <Parameter Name="dsIpAddress" Type="varchar" Mode="In" />
+    <Parameter Name="dsAgent" Type="varchar" Mode="In" />
+    <Parameter Name="dsAccessToken" Type="varchar" Mode="In" />
+    <Parameter Name="dsSession" Type="varchar" Mode="In" />
+  </Function>
+  <Function Name="Sys_WebmailConfSelect" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="VirtualPlay">
+    <Parameter Name="idWebMail" Type="int" Mode="In" />
+    <Parameter Name="idSequence" Type="int" Mode="In" />
+    <Parameter Name="flMenorSequence" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="Sys_WebmailConfUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="VirtualPlay">
+    <Parameter Name="idWebMail" Type="int" Mode="In" />
+    <Parameter Name="idSequence" Type="int" Mode="In" />
+  </Function>
+  <Function Name="Sys_WebmailLogInsert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="VirtualPlay">
+    <Parameter Name="idWebmail" Type="int" Mode="In" />
+    <Parameter Name="idSequence" Type="int" Mode="In" />
+    <Parameter Name="idSystem" Type="int" Mode="In" />
+    <Parameter Name="dsMailTo" Type="varchar" Mode="In" />
+    <Parameter Name="dsError" Type="varchar" Mode="In" />
+    <Parameter Name="dsSubject" Type="varchar" Mode="In" />
+    <Parameter Name="dsMessage" Type="varchar" Mode="In" />
+    <Parameter Name="dsExtra" Type="varchar" Mode="In" />
+    <Parameter Name="cdTemplate" Type="varchar" Mode="In" />
+    <Parameter Name="cdIdentification1" Type="varchar" Mode="In" />
+    <Parameter Name="cdIdentification2" Type="varchar" Mode="In" />
+    <Parameter Name="cdIdentification3" Type="varchar" Mode="In" />
+    <Parameter Name="flSent" Type="bit" Mode="In" />
+    <Parameter Name="idUserCreate" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="VirtualPlayModelStoreContainer">
+    <EntitySet Name="Ent_Address" EntityType="Self.Ent_Address" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Ent_Document" EntityType="Self.Ent_Document" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Ent_DocumentType" EntityType="Self.Ent_DocumentType" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Ent_Enterprise" EntityType="Self.Ent_Enterprise" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Ent_Telephone" EntityType="Self.Ent_Telephone" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Pay_CashReceipt" EntityType="Self.Pay_CashReceipt" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Pay_Rate" EntityType="Self.Pay_Rate" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Pay_RateItems" EntityType="Self.Pay_RateItems" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Pay_Transaction" EntityType="Self.Pay_Transaction" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Pay_TransactionSignature" EntityType="Self.Pay_TransactionSignature" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Per_Address" EntityType="Self.Per_Address" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Per_Document" EntityType="Self.Per_Document" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Per_DocumentType" EntityType="Self.Per_DocumentType" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Per_Person" EntityType="Self.Per_Person" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Per_Telephone" EntityType="Self.Per_Telephone" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Pos_PinPad" EntityType="Self.Pos_PinPad" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Sys_Access" EntityType="Self.Sys_Access" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Sys_File" EntityType="Self.Sys_File" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Sys_ForgotPassword" EntityType="Self.Sys_ForgotPassword" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Sys_Merchant" EntityType="Self.Sys_Merchant" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Sys_MerchantPinPad" EntityType="Self.Sys_MerchantPinPad" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Sys_MerchantReceipt" EntityType="Self.Sys_MerchantReceipt" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Sys_Module" EntityType="Self.Sys_Module" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Sys_Role" EntityType="Self.Sys_Role" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Sys_SmsLog" EntityType="Self.Sys_SmsLog" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Sys_System" EntityType="Self.Sys_System" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Sys_SystemType" EntityType="Self.Sys_SystemType" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Sys_User" EntityType="Self.Sys_User" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Sys_UserLoginHistory" EntityType="Self.Sys_UserLoginHistory" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Sys_UserPasswordHistory" EntityType="Self.Sys_UserPasswordHistory" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Sys_UserSession" EntityType="Self.Sys_UserSession" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Sys_UserSystem" EntityType="Self.Sys_UserSystem" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Sys_WebmailConf" EntityType="Self.Sys_WebmailConf" Schema="VirtualPlay" store:Type="Tables" />
+    <EntitySet Name="Sys_WebmailLog" EntityType="Self.Sys_WebmailLog" Schema="VirtualPlay" store:Type="Tables" />
+    <AssociationSet Name="FK_VP_Ent_Address_Enterprise" Association="Self.FK_VP_Ent_Address_Enterprise">
+      <End Role="Ent_Enterprise" EntitySet="Ent_Enterprise" />
+      <End Role="Ent_Address" EntitySet="Ent_Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Ent_Address_UserCreate" Association="Self.FK_VP_Ent_Address_UserCreate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Ent_Address" EntitySet="Ent_Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Ent_Address_UserLastUpdate" Association="Self.FK_VP_Ent_Address_UserLastUpdate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Ent_Address" EntitySet="Ent_Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Ent_Document_Enterprise" Association="Self.FK_VP_Ent_Document_Enterprise">
+      <End Role="Ent_Enterprise" EntitySet="Ent_Enterprise" />
+      <End Role="Ent_Document" EntitySet="Ent_Document" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Ent_Document_File" Association="Self.FK_VP_Ent_Document_File">
+      <End Role="Sys_File" EntitySet="Sys_File" />
+      <End Role="Ent_Document" EntitySet="Ent_Document" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Ent_Document_Type" Association="Self.FK_VP_Ent_Document_Type">
+      <End Role="Ent_DocumentType" EntitySet="Ent_DocumentType" />
+      <End Role="Ent_Document" EntitySet="Ent_Document" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Ent_Document_UserCreate" Association="Self.FK_VP_Ent_Document_UserCreate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Ent_Document" EntitySet="Ent_Document" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Ent_Document_UserLastUpdate" Association="Self.FK_VP_Ent_Document_UserLastUpdate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Ent_Document" EntitySet="Ent_Document" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Ent_DocumentType_UserCreate" Association="Self.FK_VP_Ent_DocumentType_UserCreate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Ent_DocumentType" EntitySet="Ent_DocumentType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Ent_DocumentType_UserLastUpdate" Association="Self.FK_VP_Ent_DocumentType_UserLastUpdate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Ent_DocumentType" EntitySet="Ent_DocumentType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Ent_Enterprise_UserCreate" Association="Self.FK_VP_Ent_Enterprise_UserCreate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Ent_Enterprise" EntitySet="Ent_Enterprise" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Ent_Enterprise_UserLastUpdate" Association="Self.FK_VP_Ent_Enterprise_UserLastUpdate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Ent_Enterprise" EntitySet="Ent_Enterprise" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Ent_Telephone_Enterprise" Association="Self.FK_VP_Ent_Telephone_Enterprise">
+      <End Role="Ent_Enterprise" EntitySet="Ent_Enterprise" />
+      <End Role="Ent_Telephone" EntitySet="Ent_Telephone" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Ent_Telephone_UserCreate" Association="Self.FK_VP_Ent_Telephone_UserCreate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Ent_Telephone" EntitySet="Ent_Telephone" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Ent_Telephone_UserLastUpdate" Association="Self.FK_VP_Ent_Telephone_UserLastUpdate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Ent_Telephone" EntitySet="Ent_Telephone" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Pay_CashReceipt_Rate" Association="Self.FK_VP_Pay_CashReceipt_Rate">
+      <End Role="Pay_Rate" EntitySet="Pay_Rate" />
+      <End Role="Pay_CashReceipt" EntitySet="Pay_CashReceipt" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Pay_CashReceipt_Transaction" Association="Self.FK_VP_Pay_CashReceipt_Transaction">
+      <End Role="Pay_Transaction" EntitySet="Pay_Transaction" />
+      <End Role="Pay_CashReceipt" EntitySet="Pay_CashReceipt" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Pay_CashReceipt_UserCreate" Association="Self.FK_VP_Pay_CashReceipt_UserCreate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Pay_CashReceipt" EntitySet="Pay_CashReceipt" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Pay_CashReceipt_UserLastUpdate" Association="Self.FK_VP_Pay_CashReceipt_UserLastUpdate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Pay_CashReceipt" EntitySet="Pay_CashReceipt" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Pay_MerchantReceipt_Cash" Association="Self.FK_VP_Pay_MerchantReceipt_Cash">
+      <End Role="Pay_CashReceipt" EntitySet="Pay_CashReceipt" />
+      <End Role="Sys_MerchantReceipt" EntitySet="Sys_MerchantReceipt" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Pay_MerchantReceipt_Rate" Association="Self.FK_VP_Pay_MerchantReceipt_Rate">
+      <End Role="Pay_Rate" EntitySet="Pay_Rate" />
+      <End Role="Sys_MerchantReceipt" EntitySet="Sys_MerchantReceipt" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Pay_MerchantReceipt_Transaction" Association="Self.FK_VP_Pay_MerchantReceipt_Transaction">
+      <End Role="Pay_Transaction" EntitySet="Pay_Transaction" />
+      <End Role="Sys_MerchantReceipt" EntitySet="Sys_MerchantReceipt" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Pay_MerchantReceipt_UserCreate" Association="Self.FK_VP_Pay_MerchantReceipt_UserCreate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Sys_MerchantReceipt" EntitySet="Sys_MerchantReceipt" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Pay_MerchantReceipt_UserLastUpdate" Association="Self.FK_VP_Pay_MerchantReceipt_UserLastUpdate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Sys_MerchantReceipt" EntitySet="Sys_MerchantReceipt" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Pay_Rate_UserCreate" Association="Self.FK_VP_Pay_Rate_UserCreate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Pay_Rate" EntitySet="Pay_Rate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Pay_Rate_UserLastUpdate" Association="Self.FK_VP_Pay_Rate_UserLastUpdate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Pay_Rate" EntitySet="Pay_Rate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Pay_RateItems_Rate" Association="Self.FK_VP_Pay_RateItems_Rate">
+      <End Role="Pay_Rate" EntitySet="Pay_Rate" />
+      <End Role="Pay_RateItems" EntitySet="Pay_RateItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Pay_RateItems_UserCreate" Association="Self.FK_VP_Pay_RateItems_UserCreate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Pay_RateItems" EntitySet="Pay_RateItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Pay_RateItems_UserLastUpdate" Association="Self.FK_VP_Pay_RateItems_UserLastUpdate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Pay_RateItems" EntitySet="Pay_RateItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Pay_Transaction_Merchant" Association="Self.FK_VP_Pay_Transaction_Merchant">
+      <End Role="Sys_Merchant" EntitySet="Sys_Merchant" />
+      <End Role="Pay_Transaction" EntitySet="Pay_Transaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Pay_Transaction_Parent" Association="Self.FK_VP_Pay_Transaction_Parent">
+      <End Role="Pay_Transaction" EntitySet="Pay_Transaction" />
+      <End Role="Pay_Transaction1" EntitySet="Pay_Transaction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Pay_TransactionSignature_Transaction" Association="Self.FK_VP_Pay_TransactionSignature_Transaction">
+      <End Role="Pay_Transaction" EntitySet="Pay_Transaction" />
+      <End Role="Pay_TransactionSignature" EntitySet="Pay_TransactionSignature" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Per_Address_Person" Association="Self.FK_VP_Per_Address_Person">
+      <End Role="Per_Person" EntitySet="Per_Person" />
+      <End Role="Per_Address" EntitySet="Per_Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Per_Address_UserCreate" Association="Self.FK_VP_Per_Address_UserCreate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Per_Address" EntitySet="Per_Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Per_Address_UserLastUpdate" Association="Self.FK_VP_Per_Address_UserLastUpdate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Per_Address" EntitySet="Per_Address" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Per_Document_File" Association="Self.FK_VP_Per_Document_File">
+      <End Role="Sys_File" EntitySet="Sys_File" />
+      <End Role="Per_Document" EntitySet="Per_Document" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Per_Document_Person" Association="Self.FK_VP_Per_Document_Person">
+      <End Role="Per_Person" EntitySet="Per_Person" />
+      <End Role="Per_Document" EntitySet="Per_Document" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Per_Document_TpDocument" Association="Self.FK_VP_Per_Document_TpDocument">
+      <End Role="Per_DocumentType" EntitySet="Per_DocumentType" />
+      <End Role="Per_Document" EntitySet="Per_Document" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Per_Document_UserCreate" Association="Self.FK_VP_Per_Document_UserCreate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Per_Document" EntitySet="Per_Document" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Per_Document_UserLastUpdate" Association="Self.FK_VP_Per_Document_UserLastUpdate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Per_Document" EntitySet="Per_Document" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Per_DocumentType_UserCreate" Association="Self.FK_VP_Per_DocumentType_UserCreate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Per_DocumentType" EntitySet="Per_DocumentType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Per_DocumentType_UserLastUpdate" Association="Self.FK_VP_Per_DocumentType_UserLastUpdate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Per_DocumentType" EntitySet="Per_DocumentType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Per_Person_UserCreate" Association="Self.FK_VP_Per_Person_UserCreate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Per_Person" EntitySet="Per_Person" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Per_Person_UserLastUpdate" Association="Self.FK_VP_Per_Person_UserLastUpdate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Per_Person" EntitySet="Per_Person" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Per_Telephone_Person" Association="Self.FK_VP_Per_Telephone_Person">
+      <End Role="Per_Person" EntitySet="Per_Person" />
+      <End Role="Per_Telephone" EntitySet="Per_Telephone" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Per_Telephone_UserCreate" Association="Self.FK_VP_Per_Telephone_UserCreate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Per_Telephone" EntitySet="Per_Telephone" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Per_Telephone_UserLastUpdate" Association="Self.FK_VP_Per_Telephone_UserLastUpdate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Per_Telephone" EntitySet="Per_Telephone" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Pos_PinPad_UserCreate" Association="Self.FK_VP_Pos_PinPad_UserCreate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Pos_PinPad" EntitySet="Pos_PinPad" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Pos_PinPad_UserLastUpdate" Association="Self.FK_VP_Pos_PinPad_UserLastUpdate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Pos_PinPad" EntitySet="Pos_PinPad" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_Access_Module" Association="Self.FK_VP_Sys_Access_Module">
+      <End Role="Sys_Module" EntitySet="Sys_Module" />
+      <End Role="Sys_Access" EntitySet="Sys_Access" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_Access_Role" Association="Self.FK_VP_Sys_Access_Role">
+      <End Role="Sys_Role" EntitySet="Sys_Role" />
+      <End Role="Sys_Access" EntitySet="Sys_Access" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_Access_UserCreate" Association="Self.FK_VP_Sys_Access_UserCreate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Sys_Access" EntitySet="Sys_Access" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_Access_UserLastUpdate" Association="Self.FK_VP_Sys_Access_UserLastUpdate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Sys_Access" EntitySet="Sys_Access" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_File_UserCreate" Association="Self.FK_VP_Sys_File_UserCreate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Sys_File" EntitySet="Sys_File" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_File_UserLastUpdate" Association="Self.FK_VP_Sys_File_UserLastUpdate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Sys_File" EntitySet="Sys_File" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_ForgotPassword_User" Association="Self.FK_VP_Sys_ForgotPassword_User">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Sys_ForgotPassword" EntitySet="Sys_ForgotPassword" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_Merchant_UserCreate" Association="Self.FK_VP_Sys_Merchant_UserCreate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Sys_Merchant" EntitySet="Sys_Merchant" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_Merchant_UserLastUpdate" Association="Self.FK_VP_Sys_Merchant_UserLastUpdate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Sys_Merchant" EntitySet="Sys_Merchant" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_MerchantPinPad_Merchant" Association="Self.FK_VP_Sys_MerchantPinPad_Merchant">
+      <End Role="Sys_Merchant" EntitySet="Sys_Merchant" />
+      <End Role="Sys_MerchantPinPad" EntitySet="Sys_MerchantPinPad" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_MerchantPinPad_PinPad" Association="Self.FK_VP_Sys_MerchantPinPad_PinPad">
+      <End Role="Pos_PinPad" EntitySet="Pos_PinPad" />
+      <End Role="Sys_MerchantPinPad" EntitySet="Sys_MerchantPinPad" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_MerchantPinPad_UserLastUpdate" Association="Self.FK_VP_Sys_MerchantPinPad_UserLastUpdate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Sys_MerchantPinPad" EntitySet="Sys_MerchantPinPad" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_Module_UserCreate" Association="Self.FK_VP_Sys_Module_UserCreate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Sys_Module" EntitySet="Sys_Module" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_Module_UserLastUpdate" Association="Self.FK_VP_Sys_Module_UserLastUpdate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Sys_Module" EntitySet="Sys_Module" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_Role_UserCreate" Association="Self.FK_VP_Sys_Role_UserCreate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Sys_Role" EntitySet="Sys_Role" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_Role_UserLastUpdate" Association="Self.FK_VP_Sys_Role_UserLastUpdate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Sys_Role" EntitySet="Sys_Role" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_SmsLog_System" Association="Self.FK_VP_Sys_SmsLog_System">
+      <End Role="Sys_System" EntitySet="Sys_System" />
+      <End Role="Sys_SmsLog" EntitySet="Sys_SmsLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_SmsLog_User" Association="Self.FK_VP_Sys_SmsLog_User">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Sys_SmsLog" EntitySet="Sys_SmsLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_System_Type" Association="Self.FK_VP_Sys_System_Type">
+      <End Role="Sys_SystemType" EntitySet="Sys_SystemType" />
+      <End Role="Sys_System" EntitySet="Sys_System" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_System_UserCreate" Association="Self.FK_VP_Sys_System_UserCreate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Sys_System" EntitySet="Sys_System" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_System_UserLastUpdate" Association="Self.FK_VP_Sys_System_UserLastUpdate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Sys_System" EntitySet="Sys_System" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_SystemType_UserCreate" Association="Self.FK_VP_Sys_SystemType_UserCreate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Sys_SystemType" EntitySet="Sys_SystemType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_SystemType_UserLastUpdate" Association="Self.FK_VP_Sys_SystemType_UserLastUpdate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Sys_SystemType" EntitySet="Sys_SystemType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_User_Enterprise" Association="Self.FK_VP_Sys_User_Enterprise">
+      <End Role="Ent_Enterprise" EntitySet="Ent_Enterprise" />
+      <End Role="Sys_User" EntitySet="Sys_User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_User_Person" Association="Self.FK_VP_Sys_User_Person">
+      <End Role="Per_Person" EntitySet="Per_Person" />
+      <End Role="Sys_User" EntitySet="Sys_User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_User_Role" Association="Self.FK_VP_Sys_User_Role">
+      <End Role="Sys_Role" EntitySet="Sys_Role" />
+      <End Role="Sys_User" EntitySet="Sys_User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_User_UserCreate" Association="Self.FK_VP_Sys_User_UserCreate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Sys_User1" EntitySet="Sys_User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_User_UserLastUpdate" Association="Self.FK_VP_Sys_User_UserLastUpdate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Sys_User1" EntitySet="Sys_User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_UserLoginHistory_System" Association="Self.FK_VP_Sys_UserLoginHistory_System">
+      <End Role="Sys_System" EntitySet="Sys_System" />
+      <End Role="Sys_UserLoginHistory" EntitySet="Sys_UserLoginHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_UserLoginHistory_User" Association="Self.FK_VP_Sys_UserLoginHistory_User">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Sys_UserLoginHistory" EntitySet="Sys_UserLoginHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_UserPasswordHistory_User" Association="Self.FK_VP_Sys_UserPasswordHistory_User">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Sys_UserPasswordHistory" EntitySet="Sys_UserPasswordHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_UserPasswordHistory_UserCreate" Association="Self.FK_VP_Sys_UserPasswordHistory_UserCreate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Sys_UserPasswordHistory" EntitySet="Sys_UserPasswordHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_UserPasswordHistory_UserLastUpdate" Association="Self.FK_VP_Sys_UserPasswordHistory_UserLastUpdate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Sys_UserPasswordHistory" EntitySet="Sys_UserPasswordHistory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_UserSession_System" Association="Self.FK_VP_Sys_UserSession_System">
+      <End Role="Sys_System" EntitySet="Sys_System" />
+      <End Role="Sys_UserSession" EntitySet="Sys_UserSession" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_UserSession_User" Association="Self.FK_VP_Sys_UserSession_User">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Sys_UserSession" EntitySet="Sys_UserSession" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_UserSession_UserLastUpdate" Association="Self.FK_VP_Sys_UserSession_UserLastUpdate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Sys_UserSession" EntitySet="Sys_UserSession" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_UserSystem_Role" Association="Self.FK_VP_Sys_UserSystem_Role">
+      <End Role="Sys_Role" EntitySet="Sys_Role" />
+      <End Role="Sys_UserSystem" EntitySet="Sys_UserSystem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_UserSystem_System" Association="Self.FK_VP_Sys_UserSystem_System">
+      <End Role="Sys_System" EntitySet="Sys_System" />
+      <End Role="Sys_UserSystem" EntitySet="Sys_UserSystem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_UserSystem_User" Association="Self.FK_VP_Sys_UserSystem_User">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Sys_UserSystem" EntitySet="Sys_UserSystem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_UserSystem_UserLastUpdate" Association="Self.FK_VP_Sys_UserSystem_UserLastUpdate">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Sys_UserSystem" EntitySet="Sys_UserSystem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_WebmailLog_Conf" Association="Self.FK_VP_Sys_WebmailLog_Conf">
+      <End Role="Sys_WebmailConf" EntitySet="Sys_WebmailConf" />
+      <End Role="Sys_WebmailLog" EntitySet="Sys_WebmailLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_WebmailLog_System" Association="Self.FK_VP_Sys_WebmailLog_System">
+      <End Role="Sys_System" EntitySet="Sys_System" />
+      <End Role="Sys_WebmailLog" EntitySet="Sys_WebmailLog" />
+    </AssociationSet>
+    <AssociationSet Name="FK_VP_Sys_WebmailLog_User" Association="Self.FK_VP_Sys_WebmailLog_User">
+      <End Role="Sys_User" EntitySet="Sys_User" />
+      <End Role="Sys_WebmailLog" EntitySet="Sys_WebmailLog" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,716 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="VirtualPlayModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Ent_Address">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Ent_Address">
+        <MappingFragment StoreEntitySet="Ent_Address">
+          <ScalarProperty Name="idAddress" ColumnName="idAddress" />
+          <ScalarProperty Name="idEnterprise" ColumnName="idEnterprise" />
+          <ScalarProperty Name="tpStreet" ColumnName="tpStreet" />
+          <ScalarProperty Name="dsAddress" ColumnName="dsAddress" />
+          <ScalarProperty Name="nbAddress" ColumnName="nbAddress" />
+          <ScalarProperty Name="dsComplement" ColumnName="dsComplement" />
+          <ScalarProperty Name="nmDistrict" ColumnName="nmDistrict" />
+          <ScalarProperty Name="dsCity" ColumnName="dsCity" />
+          <ScalarProperty Name="cdState" ColumnName="cdState" />
+          <ScalarProperty Name="nbPostalCode" ColumnName="nbPostalCode" />
+          <ScalarProperty Name="cdCountry" ColumnName="cdCountry" />
+          <ScalarProperty Name="tpAddress" ColumnName="tpAddress" />
+          <ScalarProperty Name="idUserCreate" ColumnName="idUserCreate" />
+          <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+          <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+          <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ent_Document">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Ent_Document">
+        <MappingFragment StoreEntitySet="Ent_Document">
+          <ScalarProperty Name="idDocument" ColumnName="idDocument" />
+          <ScalarProperty Name="idEnterprise" ColumnName="idEnterprise" />
+          <ScalarProperty Name="cdDocument" ColumnName="cdDocument" />
+          <ScalarProperty Name="cdDocumentHash" ColumnName="cdDocumentHash" />
+          <ScalarProperty Name="tpDocument" ColumnName="tpDocument" />
+          <ScalarProperty Name="idFile" ColumnName="idFile" />
+          <ScalarProperty Name="idUserCreate" ColumnName="idUserCreate" />
+          <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+          <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+          <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ent_DocumentType">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Ent_DocumentType">
+        <MappingFragment StoreEntitySet="Ent_DocumentType">
+          <ScalarProperty Name="tpDocument" ColumnName="tpDocument" />
+          <ScalarProperty Name="dsDocumentType" ColumnName="dsDocumentType" />
+          <ScalarProperty Name="flEncrypted" ColumnName="flEncrypted" />
+          <ScalarProperty Name="idUserCreate" ColumnName="idUserCreate" />
+          <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+          <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+          <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ent_Enterprise">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Ent_Enterprise">
+        <MappingFragment StoreEntitySet="Ent_Enterprise">
+          <ScalarProperty Name="idEnterprise" ColumnName="idEnterprise" />
+          <ScalarProperty Name="idEnterpriseSource" ColumnName="idEnterpriseSource" />
+          <ScalarProperty Name="nmEnterprise" ColumnName="nmEnterprise" />
+          <ScalarProperty Name="nmNick" ColumnName="nmNick" />
+          <ScalarProperty Name="dtBirth" ColumnName="dtBirth" />
+          <ScalarProperty Name="dsEmail" ColumnName="dsEmail" />
+          <ScalarProperty Name="dsOccupation" ColumnName="dsOccupation" />
+          <ScalarProperty Name="flStatus" ColumnName="flStatus" />
+          <ScalarProperty Name="idUserCreate" ColumnName="idUserCreate" />
+          <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+          <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+          <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ent_Telephone">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Ent_Telephone">
+        <MappingFragment StoreEntitySet="Ent_Telephone">
+          <ScalarProperty Name="idTelephone" ColumnName="idTelephone" />
+          <ScalarProperty Name="idEnterprise" ColumnName="idEnterprise" />
+          <ScalarProperty Name="tpTelephone" ColumnName="tpTelephone" />
+          <ScalarProperty Name="nbAreaCode" ColumnName="nbAreaCode" />
+          <ScalarProperty Name="nbTelephone" ColumnName="nbTelephone" />
+          <ScalarProperty Name="nbExtention" ColumnName="nbExtention" />
+          <ScalarProperty Name="idUserCreate" ColumnName="idUserCreate" />
+          <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+          <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+          <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pay_Transaction">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Pay_Transaction">
+        <MappingFragment StoreEntitySet="Pay_Transaction">
+          <ScalarProperty Name="idTransactionParent" ColumnName="idTransactionParent" />
+          <ScalarProperty Name="cardType" ColumnName="cardType" />
+          <ScalarProperty Name="idTransaction" ColumnName="idTransaction" />
+          <ScalarProperty Name="idMobile" ColumnName="idMobile" />
+          <ScalarProperty Name="idMerchant" ColumnName="idMerchant" />
+          <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+          <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+          <ScalarProperty Name="flStatus" ColumnName="flStatus" />
+          <ScalarProperty Name="acquirer" ColumnName="acquirer" />
+          <ScalarProperty Name="acquirerNSU" ColumnName="acquirerNSU" />
+          <ScalarProperty Name="acquirerResponseCode" ColumnName="acquirerResponseCode" />
+          <ScalarProperty Name="authorizationNumber" ColumnName="authorizationNumber" />
+          <ScalarProperty Name="cardBIN" ColumnName="cardBIN" />
+          <ScalarProperty Name="cardBrand" ColumnName="cardBrand" />
+          <ScalarProperty Name="cardBrandCode" ColumnName="cardBrandCode" />
+          <ScalarProperty Name="clisitefConfirmationData" ColumnName="clisitefConfirmationData" />
+          <ScalarProperty Name="clisitefRequestNumber" ColumnName="clisitefRequestNumber" />
+          <ScalarProperty Name="customerEmail" ColumnName="customerEmail" />
+          <ScalarProperty Name="customerPhone" ColumnName="customerPhone" />
+          <ScalarProperty Name="customerReceipt" ColumnName="customerReceipt" />
+          <ScalarProperty Name="date" ColumnName="date" />
+          <ScalarProperty Name="fiscalDate" ColumnName="fiscalDate" />
+          <ScalarProperty Name="fiscalHour" ColumnName="fiscalHour" />
+          <ScalarProperty Name="installmentAmount" ColumnName="installmentAmount" />
+          <ScalarProperty Name="isTest" ColumnName="isTest" />
+          <ScalarProperty Name="issuerInstallmentAllowed" ColumnName="issuerInstallmentAllowed" />
+          <ScalarProperty Name="maxIssuerInstallments" ColumnName="maxIssuerInstallments" />
+          <ScalarProperty Name="maxMerchantInstallments" ColumnName="maxMerchantInstallments" />
+          <ScalarProperty Name="merchantEmail" ColumnName="merchantEmail" />
+          <ScalarProperty Name="merchantInstallmentAllowed" ColumnName="merchantInstallmentAllowed" />
+          <ScalarProperty Name="merchantName" ColumnName="merchantName" />
+          <ScalarProperty Name="merchantReceipt" ColumnName="merchantReceipt" />
+          <ScalarProperty Name="operation" ColumnName="operation" />
+          <ScalarProperty Name="paymentFunction" ColumnName="paymentFunction" />
+          <ScalarProperty Name="paymentFunctionDescription" ColumnName="paymentFunctionDescription" />
+          <ScalarProperty Name="paymentType" ColumnName="paymentType" />
+          <ScalarProperty Name="pinpadInfo" ColumnName="pinpadInfo" />
+          <ScalarProperty Name="pinpadSerialNumber" ColumnName="pinpadSerialNumber" />
+          <ScalarProperty Name="refundDate" ColumnName="refundDate" />
+          <ScalarProperty Name="refundDocumentNumber" ColumnName="refundDocumentNumber" />
+          <ScalarProperty Name="sitefNSU" ColumnName="sitefNSU" />
+          <ScalarProperty Name="sitefVersion" ColumnName="sitefVersion" />
+          <ScalarProperty Name="state" ColumnName="state" />
+          <ScalarProperty Name="statusCode" ColumnName="statusCode" />
+          <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+          <ScalarProperty Name="token" ColumnName="token" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="latitude" ColumnName="latitude" />
+          <ScalarProperty Name="longitude" ColumnName="longitude" />
+          <ScalarProperty Name="idSignature" ColumnName="idSignature" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pay_TransactionSignature">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Pay_TransactionSignature">
+        <MappingFragment StoreEntitySet="Pay_TransactionSignature">
+          <ScalarProperty Name="idSignature" ColumnName="idSignature" />
+          <ScalarProperty Name="idTransaction" ColumnName="idTransaction" />
+          <ScalarProperty Name="imSignature" ColumnName="imSignature" />
+          <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Per_Address">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Per_Address">
+        <MappingFragment StoreEntitySet="Per_Address">
+          <ScalarProperty Name="idAddress" ColumnName="idAddress" />
+          <ScalarProperty Name="idPerson" ColumnName="idPerson" />
+          <ScalarProperty Name="tpStreet" ColumnName="tpStreet" />
+          <ScalarProperty Name="dsAddress" ColumnName="dsAddress" />
+          <ScalarProperty Name="nbAddress" ColumnName="nbAddress" />
+          <ScalarProperty Name="dsComplement" ColumnName="dsComplement" />
+          <ScalarProperty Name="nmDistrict" ColumnName="nmDistrict" />
+          <ScalarProperty Name="dsCity" ColumnName="dsCity" />
+          <ScalarProperty Name="cdState" ColumnName="cdState" />
+          <ScalarProperty Name="nbPostalCode" ColumnName="nbPostalCode" />
+          <ScalarProperty Name="cdCountry" ColumnName="cdCountry" />
+          <ScalarProperty Name="tpAddress" ColumnName="tpAddress" />
+          <ScalarProperty Name="idUserCreate" ColumnName="idUserCreate" />
+          <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+          <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+          <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Per_Document">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Per_Document">
+        <MappingFragment StoreEntitySet="Per_Document">
+          <ScalarProperty Name="idDocument" ColumnName="idDocument" />
+          <ScalarProperty Name="idPerson" ColumnName="idPerson" />
+          <ScalarProperty Name="cdDocument" ColumnName="cdDocument" />
+          <ScalarProperty Name="cdDocumentHash" ColumnName="cdDocumentHash" />
+          <ScalarProperty Name="tpDocument" ColumnName="tpDocument" />
+          <ScalarProperty Name="idFile" ColumnName="idFile" />
+          <ScalarProperty Name="idUserCreate" ColumnName="idUserCreate" />
+          <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+          <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+          <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Per_DocumentType">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Per_DocumentType">
+        <MappingFragment StoreEntitySet="Per_DocumentType">
+          <ScalarProperty Name="tpDocument" ColumnName="tpDocument" />
+          <ScalarProperty Name="dsDocumentType" ColumnName="dsDocumentType" />
+          <ScalarProperty Name="flEncrypted" ColumnName="flEncrypted" />
+          <ScalarProperty Name="idUserCreate" ColumnName="idUserCreate" />
+          <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+          <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+          <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Per_Person">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Per_Person">
+        <MappingFragment StoreEntitySet="Per_Person">
+          <ScalarProperty Name="idPerson" ColumnName="idPerson" />
+          <ScalarProperty Name="idPersonSource" ColumnName="idPersonSource" />
+          <ScalarProperty Name="nmPerson" ColumnName="nmPerson" />
+          <ScalarProperty Name="nmNick" ColumnName="nmNick" />
+          <ScalarProperty Name="dtBirth" ColumnName="dtBirth" />
+          <ScalarProperty Name="tpGender" ColumnName="tpGender" />
+          <ScalarProperty Name="dsEmail" ColumnName="dsEmail" />
+          <ScalarProperty Name="dsOccupation" ColumnName="dsOccupation" />
+          <ScalarProperty Name="cdMaritalStatus" ColumnName="cdMaritalStatus" />
+          <ScalarProperty Name="flStatus" ColumnName="flStatus" />
+          <ScalarProperty Name="idUserCreate" ColumnName="idUserCreate" />
+          <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+          <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+          <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Per_Telephone">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Per_Telephone">
+        <MappingFragment StoreEntitySet="Per_Telephone">
+          <ScalarProperty Name="idTelephone" ColumnName="idTelephone" />
+          <ScalarProperty Name="idPerson" ColumnName="idPerson" />
+          <ScalarProperty Name="tpTelephone" ColumnName="tpTelephone" />
+          <ScalarProperty Name="nbAreaCode" ColumnName="nbAreaCode" />
+          <ScalarProperty Name="nbTelephone" ColumnName="nbTelephone" />
+          <ScalarProperty Name="nbExtention" ColumnName="nbExtention" />
+          <ScalarProperty Name="idUserCreate" ColumnName="idUserCreate" />
+          <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+          <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+          <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pos_PinPad">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Pos_PinPad">
+        <MappingFragment StoreEntitySet="Pos_PinPad">
+          <ScalarProperty Name="idPinPad" ColumnName="idPinPad" />
+          <ScalarProperty Name="dsSoftDescriptor" ColumnName="dsSoftDescriptor" />
+          <ScalarProperty Name="dsSitefNumber" ColumnName="dsSitefNumber" />
+          <ScalarProperty Name="dsPinpadInfo" ColumnName="dsPinpadInfo" />
+          <ScalarProperty Name="dsServerAddress" ColumnName="dsServerAddress" />
+          <ScalarProperty Name="dsServerPort" ColumnName="dsServerPort" />
+          <ScalarProperty Name="cdSerial" ColumnName="cdSerial" />
+          <ScalarProperty Name="flProxyMode" ColumnName="flProxyMode" />
+          <ScalarProperty Name="flStatus" ColumnName="flStatus" />
+          <ScalarProperty Name="idUserCreate" ColumnName="idUserCreate" />
+          <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+          <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+          <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_Access">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Sys_Access">
+        <MappingFragment StoreEntitySet="Sys_Access">
+          <ScalarProperty Name="idRole" ColumnName="idRole" />
+          <ScalarProperty Name="idModule" ColumnName="idModule" />
+          <ScalarProperty Name="tpAccess" ColumnName="tpAccess" />
+          <ScalarProperty Name="idUserCreate" ColumnName="idUserCreate" />
+          <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+          <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+          <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_File">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Sys_File">
+        <MappingFragment StoreEntitySet="Sys_File">
+          <ScalarProperty Name="idFile" ColumnName="idFile" />
+          <ScalarProperty Name="nmFile" ColumnName="nmFile" />
+          <ScalarProperty Name="dsPath" ColumnName="dsPath" />
+          <ScalarProperty Name="idUserCreate" ColumnName="idUserCreate" />
+          <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+          <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+          <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_ForgotPassword">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Sys_ForgotPassword">
+        <MappingFragment StoreEntitySet="Sys_ForgotPassword">
+          <ScalarProperty Name="idForgot" ColumnName="idForgot" />
+          <ScalarProperty Name="idSecretAnswers" ColumnName="idSecretAnswers" />
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="Answer" ColumnName="Answer" />
+          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+          <ScalarProperty Name="PasswordHint" ColumnName="PasswordHint" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_Merchant">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Sys_Merchant">
+        <MappingFragment StoreEntitySet="Sys_Merchant">
+          <ScalarProperty Name="flAnticipated" ColumnName="flAnticipated" />
+          <ScalarProperty Name="idMerchant" ColumnName="idMerchant" />
+          <ScalarProperty Name="dsEmail" ColumnName="dsEmail" />
+          <ScalarProperty Name="dsSoftDescriptor" ColumnName="dsSoftDescriptor" />
+          <ScalarProperty Name="dsSitefNumber" ColumnName="dsSitefNumber" />
+          <ScalarProperty Name="dsPinpadInfo" ColumnName="dsPinpadInfo" />
+          <ScalarProperty Name="flAdmin" ColumnName="flAdmin" />
+          <ScalarProperty Name="flDebug" ColumnName="flDebug" />
+          <ScalarProperty Name="flStatus" ColumnName="flStatus" />
+          <ScalarProperty Name="idUserCreate" ColumnName="idUserCreate" />
+          <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+          <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+          <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_MerchantPinPad">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Sys_MerchantPinPad">
+        <MappingFragment StoreEntitySet="Sys_MerchantPinPad">
+          <ScalarProperty Name="idMerchant" ColumnName="idMerchant" />
+          <ScalarProperty Name="idPinpad" ColumnName="idPinpad" />
+          <ScalarProperty Name="flStatus" ColumnName="flStatus" />
+          <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+          <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+          <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_Module">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Sys_Module">
+        <MappingFragment StoreEntitySet="Sys_Module">
+          <ScalarProperty Name="idModule" ColumnName="idModule" />
+          <ScalarProperty Name="nmModule" ColumnName="nmModule" />
+          <ScalarProperty Name="dsURLModule" ColumnName="dsURLModule" />
+          <ScalarProperty Name="idRole" ColumnName="idRole" />
+          <ScalarProperty Name="idUserCreate" ColumnName="idUserCreate" />
+          <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+          <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+          <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_Role">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Sys_Role">
+        <MappingFragment StoreEntitySet="Sys_Role">
+          <ScalarProperty Name="idRole" ColumnName="idRole" />
+          <ScalarProperty Name="nmRole" ColumnName="nmRole" />
+          <ScalarProperty Name="stRole" ColumnName="stRole" />
+          <ScalarProperty Name="idUserCreate" ColumnName="idUserCreate" />
+          <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+          <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+          <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_SmsLog">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Sys_SmsLog">
+        <MappingFragment StoreEntitySet="Sys_SmsLog">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nbSmsTo" ColumnName="nbSmsTo" />
+          <ScalarProperty Name="dsError" ColumnName="dsError" />
+          <ScalarProperty Name="dsMessage" ColumnName="dsMessage" />
+          <ScalarProperty Name="dsExtra" ColumnName="dsExtra" />
+          <ScalarProperty Name="flStatus" ColumnName="flStatus" />
+          <ScalarProperty Name="flSent" ColumnName="flSent" />
+          <ScalarProperty Name="idSystem" ColumnName="idSystem" />
+          <ScalarProperty Name="idUserCreate" ColumnName="idUserCreate" />
+          <ScalarProperty Name="dtCreatedAt" ColumnName="dtCreatedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_System">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Sys_System">
+        <MappingFragment StoreEntitySet="Sys_System">
+          <ScalarProperty Name="idSystem" ColumnName="idSystem" />
+          <ScalarProperty Name="tpSystem" ColumnName="tpSystem" />
+          <ScalarProperty Name="nmSystem" ColumnName="nmSystem" />
+          <ScalarProperty Name="dsSystem" ColumnName="dsSystem" />
+          <ScalarProperty Name="cdSystem" ColumnName="cdSystem" />
+          <ScalarProperty Name="dtExpire" ColumnName="dtExpire" />
+          <ScalarProperty Name="idUserCreate" ColumnName="idUserCreate" />
+          <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+          <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+          <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_SystemType">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Sys_SystemType">
+        <MappingFragment StoreEntitySet="Sys_SystemType">
+          <ScalarProperty Name="tpSystem" ColumnName="tpSystem" />
+          <ScalarProperty Name="dsSystemType" ColumnName="dsSystemType" />
+          <ScalarProperty Name="flEncrypted" ColumnName="flEncrypted" />
+          <ScalarProperty Name="idUserCreate" ColumnName="idUserCreate" />
+          <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+          <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+          <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_User">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Sys_User">
+        <MappingFragment StoreEntitySet="Sys_User">
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="idRole" ColumnName="idRole" />
+          <ScalarProperty Name="idPerson" ColumnName="idPerson" />
+          <ScalarProperty Name="idEnterprise" ColumnName="idEnterprise" />
+          <ScalarProperty Name="nmUser" ColumnName="nmUser" />
+          <ScalarProperty Name="dsEmail" ColumnName="dsEmail" />
+          <ScalarProperty Name="dsPassword" ColumnName="dsPassword" />
+          <ScalarProperty Name="dsAcessToken" ColumnName="dsAcessToken" />
+          <ScalarProperty Name="dsSession" ColumnName="dsSession" />
+          <ScalarProperty Name="dtExpire" ColumnName="dtExpire" />
+          <ScalarProperty Name="stUser" ColumnName="stUser" />
+          <ScalarProperty Name="idUserCreate" ColumnName="idUserCreate" />
+          <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+          <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+          <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+          <ScalarProperty Name="dtLastSession" ColumnName="dtLastSession" />
+          <ScalarProperty Name="idMerchant" ColumnName="idMerchant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_UserLoginHistory">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Sys_UserLoginHistory">
+        <MappingFragment StoreEntitySet="Sys_UserLoginHistory">
+          <ScalarProperty Name="idUserLoginHistory" ColumnName="idUserLoginHistory" />
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="idSystem" ColumnName="idSystem" />
+          <ScalarProperty Name="dsAccessToken" ColumnName="dsAccessToken" />
+          <ScalarProperty Name="dsSession" ColumnName="dsSession" />
+          <ScalarProperty Name="stUserLogin" ColumnName="stUserLogin" />
+          <ScalarProperty Name="dsIpAddress" ColumnName="dsIpAddress" />
+          <ScalarProperty Name="dsAgent" ColumnName="dsAgent" />
+          <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_UserPasswordHistory">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Sys_UserPasswordHistory">
+        <MappingFragment StoreEntitySet="Sys_UserPasswordHistory">
+          <ScalarProperty Name="idUserPasswordHistory" ColumnName="idUserPasswordHistory" />
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="dsPassword" ColumnName="dsPassword" />
+          <ScalarProperty Name="idUserCreate" ColumnName="idUserCreate" />
+          <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+          <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+          <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_UserSystem">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Sys_UserSystem">
+        <MappingFragment StoreEntitySet="Sys_UserSystem">
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="idSystem" ColumnName="idSystem" />
+          <ScalarProperty Name="idRole" ColumnName="idRole" />
+          <ScalarProperty Name="flStatus" ColumnName="flStatus" />
+          <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+          <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+          <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_WebmailConf">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Sys_WebmailConf">
+        <MappingFragment StoreEntitySet="Sys_WebmailConf">
+          <ScalarProperty Name="idWebmail" ColumnName="idWebmail" />
+          <ScalarProperty Name="idSequence" ColumnName="idSequence" />
+          <ScalarProperty Name="dsFrom" ColumnName="dsFrom" />
+          <ScalarProperty Name="dsFromName" ColumnName="dsFromName" />
+          <ScalarProperty Name="dsHost" ColumnName="dsHost" />
+          <ScalarProperty Name="nbPort" ColumnName="nbPort" />
+          <ScalarProperty Name="cdUserName" ColumnName="cdUserName" />
+          <ScalarProperty Name="cdPassword" ColumnName="cdPassword" />
+          <ScalarProperty Name="flEnableSsl" ColumnName="flEnableSsl" />
+          <ScalarProperty Name="flUseDefaultCredentials" ColumnName="flUseDefaultCredentials" />
+          <ScalarProperty Name="dtCreatedAt" ColumnName="dtCreatedAt" />
+          <ScalarProperty Name="dtUpdatedAt" ColumnName="dtUpdatedAt" />
+          <ScalarProperty Name="flStatus" ColumnName="flStatus" />
+          <ScalarProperty Name="nbAmountSend" ColumnName="nbAmountSend" />
+          <ScalarProperty Name="nbAmountLimit" ColumnName="nbAmountLimit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_WebmailLog">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Sys_WebmailLog">
+        <MappingFragment StoreEntitySet="Sys_WebmailLog">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idWebmail" ColumnName="idWebmail" />
+          <ScalarProperty Name="idSequence" ColumnName="idSequence" />
+          <ScalarProperty Name="idSystem" ColumnName="idSystem" />
+          <ScalarProperty Name="dsMailTo" ColumnName="dsMailTo" />
+          <ScalarProperty Name="dsError" ColumnName="dsError" />
+          <ScalarProperty Name="dsSubject" ColumnName="dsSubject" />
+          <ScalarProperty Name="dsMessage" ColumnName="dsMessage" />
+          <ScalarProperty Name="dsExtra" ColumnName="dsExtra" />
+          <ScalarProperty Name="cdTemplate" ColumnName="cdTemplate" />
+          <ScalarProperty Name="cdIdentification1" ColumnName="cdIdentification1" />
+          <ScalarProperty Name="cdIdentification2" ColumnName="cdIdentification2" />
+          <ScalarProperty Name="cdIdentification3" ColumnName="cdIdentification3" />
+          <ScalarProperty Name="flStatus" ColumnName="flStatus" />
+          <ScalarProperty Name="flSent" ColumnName="flSent" />
+          <ScalarProperty Name="idUserCreate" ColumnName="idUserCreate" />
+          <ScalarProperty Name="dtCreatedAt" ColumnName="dtCreatedAt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="Pay_TransactionChartCardBrand" FunctionName="VirtualPlayModel.Store.Pay_TransactionChartCardBrand">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualPlayModel.Pay_TransactionChartCardBrand_Result">
+          <ScalarProperty Name="cardBrand" ColumnName="cardBrand" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Pay_TransactionChartInstallment" FunctionName="VirtualPlayModel.Store.Pay_TransactionChartInstallment">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualPlayModel.Pay_TransactionChartInstallment_Result">
+          <ScalarProperty Name="operation" ColumnName="operation" />
+          <ScalarProperty Name="installment" ColumnName="installment" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Pay_TransactionChartOperation" FunctionName="VirtualPlayModel.Store.Pay_TransactionChartOperation">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualPlayModel.Pay_TransactionChartOperation_Result">
+          <ScalarProperty Name="operation" ColumnName="operation" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sys_SmsLogInsert" FunctionName="VirtualPlayModel.Store.Sys_SmsLogInsert" />
+    <FunctionImportMapping FunctionImportName="Sys_UserLogin" FunctionName="VirtualPlayModel.Store.Sys_UserLogin">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualPlayModel.Sys_UserLogin_Result">
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+          <ScalarProperty Name="idRole" ColumnName="idRole" />
+          <ScalarProperty Name="idPerson" ColumnName="idPerson" />
+          <ScalarProperty Name="idEnterprise" ColumnName="idEnterprise" />
+          <ScalarProperty Name="idMerchant" ColumnName="idMerchant" />
+          <ScalarProperty Name="nmUser" ColumnName="nmUser" />
+          <ScalarProperty Name="dsEmail" ColumnName="dsEmail" />
+          <ScalarProperty Name="dtExpire" ColumnName="dtExpire" />
+          <ScalarProperty Name="stUser" ColumnName="stUser" />
+          <ScalarProperty Name="idUserCreate" ColumnName="idUserCreate" />
+          <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+          <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+          <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sys_WebmailConfSelect" FunctionName="VirtualPlayModel.Store.Sys_WebmailConfSelect">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualPlayModel.Sys_WebmailConfSelect_Result">
+          <ScalarProperty Name="idWebmail" ColumnName="idWebmail" />
+          <ScalarProperty Name="idSequence" ColumnName="idSequence" />
+          <ScalarProperty Name="dsFrom" ColumnName="dsFrom" />
+          <ScalarProperty Name="dsFromName" ColumnName="dsFromName" />
+          <ScalarProperty Name="dsHost" ColumnName="dsHost" />
+          <ScalarProperty Name="nbPort" ColumnName="nbPort" />
+          <ScalarProperty Name="cdUserName" ColumnName="cdUserName" />
+          <ScalarProperty Name="cdPassword" ColumnName="cdPassword" />
+          <ScalarProperty Name="flEnableSsl" ColumnName="flEnableSsl" />
+          <ScalarProperty Name="flUseDefaultCredentials" ColumnName="flUseDefaultCredentials" />
+          <ScalarProperty Name="dtCreatedAt" ColumnName="dtCreatedAt" />
+          <ScalarProperty Name="dtUpdatedAt" ColumnName="dtUpdatedAt" />
+          <ScalarProperty Name="flStatus" ColumnName="flStatus" />
+          <ScalarProperty Name="nbAmountSend" ColumnName="nbAmountSend" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Sys_WebmailConfUpdate" FunctionName="VirtualPlayModel.Store.Sys_WebmailConfUpdate" />
+    <FunctionImportMapping FunctionImportName="Sys_WebmailLogInsert" FunctionName="VirtualPlayModel.Store.Sys_WebmailLogInsert" />
+    <FunctionImportMapping FunctionImportName="Pay_TransactionChartSale" FunctionName="VirtualPlayModel.Store.Pay_TransactionChartSale">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualPlayModel.Pay_TransactionChartSale_Result">
+          <ScalarProperty Name="operation" ColumnName="operation" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="Pay_TransactionChartRefund" FunctionName="VirtualPlayModel.Store.Pay_TransactionChartRefund">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="VirtualPlayModel.Pay_TransactionChartRefund_Result">
+          <ScalarProperty Name="cardBrand" ColumnName="cardBrand" />
+          <ScalarProperty Name="amount" ColumnName="amount" />
+          <ScalarProperty Name="value" ColumnName="value" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="Sys_UserSession">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Sys_UserSession">
+        <MappingFragment StoreEntitySet="Sys_UserSession">
+          <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+          <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+          <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+          <ScalarProperty Name="flStatus" ColumnName="flStatus" />
+          <ScalarProperty Name="dsSession" ColumnName="dsSession" />
+          <ScalarProperty Name="idSystem" ColumnName="idSystem" />
+          <ScalarProperty Name="idUser" ColumnName="idUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pay_CashReceipt">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Pay_CashReceipt">
+        <MappingFragment StoreEntitySet="Pay_CashReceipt">
+          <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+          <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+          <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+          <ScalarProperty Name="idUserCreate" ColumnName="idUserCreate" />
+          <ScalarProperty Name="flStatus" ColumnName="flStatus" />
+          <ScalarProperty Name="flAnticipated" ColumnName="flAnticipated" />
+          <ScalarProperty Name="dtPayment" ColumnName="dtPayment" />
+          <ScalarProperty Name="dtPaymentMade" ColumnName="dtPaymentMade" />
+          <ScalarProperty Name="operationDestination" ColumnName="operationDestination" />
+          <ScalarProperty Name="accountTypeDestination" ColumnName="accountTypeDestination" />
+          <ScalarProperty Name="accountDestination" ColumnName="accountDestination" />
+          <ScalarProperty Name="agencyDestination" ColumnName="agencyDestination" />
+          <ScalarProperty Name="bankDestination" ColumnName="bankDestination" />
+          <ScalarProperty Name="operationOrigin" ColumnName="operationOrigin" />
+          <ScalarProperty Name="accountTypeOrigin" ColumnName="accountTypeOrigin" />
+          <ScalarProperty Name="accountOrigin" ColumnName="accountOrigin" />
+          <ScalarProperty Name="agencyOrigin" ColumnName="agencyOrigin" />
+          <ScalarProperty Name="bankOrigin" ColumnName="bankOrigin" />
+          <ScalarProperty Name="rateAnticipated" ColumnName="rateAnticipated" />
+          <ScalarProperty Name="rateInstallment" ColumnName="rateInstallment" />
+          <ScalarProperty Name="rateCredit" ColumnName="rateCredit" />
+          <ScalarProperty Name="rateCash" ColumnName="rateCash" />
+          <ScalarProperty Name="idRate" ColumnName="idRate" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="installmentValue" ColumnName="installmentValue" />
+          <ScalarProperty Name="installmentAmount" ColumnName="installmentAmount" />
+          <ScalarProperty Name="installmentNumber" ColumnName="installmentNumber" />
+          <ScalarProperty Name="idTransaction" ColumnName="idTransaction" />
+          <ScalarProperty Name="idCashReceipt" ColumnName="idCashReceipt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pay_Rate">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Pay_Rate">
+        <MappingFragment StoreEntitySet="Pay_Rate">
+          <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+          <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+          <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+          <ScalarProperty Name="idUserCreate" ColumnName="idUserCreate" />
+          <ScalarProperty Name="flStatus" ColumnName="flStatus" />
+          <ScalarProperty Name="flAnticipated" ColumnName="flAnticipated" />
+          <ScalarProperty Name="flMerchant" ColumnName="flMerchant" />
+          <ScalarProperty Name="nmRate" ColumnName="nmRate" />
+          <ScalarProperty Name="cdRate" ColumnName="cdRate" />
+          <ScalarProperty Name="idRate" ColumnName="idRate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pay_RateItems">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Pay_RateItems">
+        <MappingFragment StoreEntitySet="Pay_RateItems">
+          <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+          <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+          <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+          <ScalarProperty Name="idUserCreate" ColumnName="idUserCreate" />
+          <ScalarProperty Name="flStatus" ColumnName="flStatus" />
+          <ScalarProperty Name="nbDays" ColumnName="nbDays" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="nmRateItem" ColumnName="nmRateItem" />
+          <ScalarProperty Name="idRateItem" ColumnName="idRateItem" />
+          <ScalarProperty Name="idRate" ColumnName="idRate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_MerchantReceipt">
+      <EntityTypeMapping TypeName="VirtualPlayModel.Sys_MerchantReceipt">
+        <MappingFragment StoreEntitySet="Sys_MerchantReceipt">
+          <ScalarProperty Name="dtLastUpdate" ColumnName="dtLastUpdate" />
+          <ScalarProperty Name="dtCreate" ColumnName="dtCreate" />
+          <ScalarProperty Name="idUserLastUpdate" ColumnName="idUserLastUpdate" />
+          <ScalarProperty Name="idUserCreate" ColumnName="idUserCreate" />
+          <ScalarProperty Name="flStatus" ColumnName="flStatus" />
+          <ScalarProperty Name="flAnticipated" ColumnName="flAnticipated" />
+          <ScalarProperty Name="dtPayment" ColumnName="dtPayment" />
+          <ScalarProperty Name="dtPaymentMade" ColumnName="dtPaymentMade" />
+          <ScalarProperty Name="operationDestination" ColumnName="operationDestination" />
+          <ScalarProperty Name="accountTypeDestination" ColumnName="accountTypeDestination" />
+          <ScalarProperty Name="accountDestination" ColumnName="accountDestination" />
+          <ScalarProperty Name="agencyDestination" ColumnName="agencyDestination" />
+          <ScalarProperty Name="bankDestination" ColumnName="bankDestination" />
+          <ScalarProperty Name="operationOrigin" ColumnName="operationOrigin" />
+          <ScalarProperty Name="accountTypeOrigin" ColumnName="accountTypeOrigin" />
+          <ScalarProperty Name="accountOrigin" ColumnName="accountOrigin" />
+          <ScalarProperty Name="agencyOrigin" ColumnName="agencyOrigin" />
+          <ScalarProperty Name="bankOrigin" ColumnName="bankOrigin" />
+          <ScalarProperty Name="rateAnticipated" ColumnName="rateAnticipated" />
+          <ScalarProperty Name="rateInstallment" ColumnName="rateInstallment" />
+          <ScalarProperty Name="rateCredit" ColumnName="rateCredit" />
+          <ScalarProperty Name="rateCash" ColumnName="rateCash" />
+          <ScalarProperty Name="idRate" ColumnName="idRate" />
+          <ScalarProperty Name="value" ColumnName="value" />
+          <ScalarProperty Name="installmentValue" ColumnName="installmentValue" />
+          <ScalarProperty Name="installmentAmount" ColumnName="installmentAmount" />
+          <ScalarProperty Name="installmentNumber" ColumnName="installmentNumber" />
+          <ScalarProperty Name="idCashReceipt" ColumnName="idCashReceipt" />
+          <ScalarProperty Name="idTransaction" ColumnName="idTransaction" />
+          <ScalarProperty Name="idMerchantReceipt" ColumnName="idMerchantReceipt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

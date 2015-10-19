@@ -1,0 +1,104 @@
+﻿@model VirtualPlay.Business.Models.Pay_Rate
+
+@{
+    ViewBag.Title = "Alterar";
+}
+
+<h2>Alterar</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Taxa</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.idRate)
+
+        <div class="form-group">
+            <div class="control-label col-md-2">
+                Código
+            </div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.cdRate, new { disabled = "disabled", @readonly = "readonly" })
+                @Html.ValidationMessageFor(model => model.cdRate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="control-label col-md-2">
+                Nome/Descrição
+            </div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.nmRate)
+                @Html.ValidationMessageFor(model => model.nmRate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="control-label col-md-2">
+                Tipo
+            </div>
+            <div class="col-md-10">
+                @Html.DropDownList("rateType", new SelectList(ViewBag.RateTypeList, "Value", "Text"))
+                @Html.ValidationMessageFor(model => model.flMerchant)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="control-label col-md-2">
+                Antecipado?
+            </div>
+            <div class="col-md-10">
+                @Html.DropDownList("rateAnticipated", new SelectList(ViewBag.RateAnticipatedList, "Value", "Text"))
+                @Html.ValidationMessageFor(model => model.flAnticipated)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="control-label col-md-2">
+                Status
+            </div>
+            <div class="col-md-10">
+                @Html.DropDownList("rateStatus", new SelectList(ViewBag.RateStatusList, "Value", "Text"))
+                @Html.ValidationMessageFor(model => model.flStatus)
+            </div>
+        </div>
+
+        <div class="form-group" style="visibility: hidden; height: 0px;">
+            @Html.LabelFor(model => model.idUserCreate, "idUserCreate", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("idUserCreate", String.Empty)
+                @Html.ValidationMessageFor(model => model.idUserCreate)
+            </div>
+        </div>
+
+        <div class="form-group" style="visibility: hidden; height: 0px;">
+            @Html.LabelFor(model => model.dtCreate, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.dtCreate)
+                @Html.ValidationMessageFor(model => model.dtCreate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Salvar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <section class="scripts">
+        <script type="text/javascript">
+            $('#cdRate').prop('readOnly', true);
+        </script>
+    </section>
+}

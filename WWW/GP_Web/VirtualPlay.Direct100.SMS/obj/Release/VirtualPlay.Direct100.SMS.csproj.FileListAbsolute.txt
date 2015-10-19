@@ -1,0 +1,7 @@
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Direct100.SMS\bin\Release\VirtualPlay.Direct100.SMS.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Direct100.SMS\bin\Release\VirtualPlay.Direct100.SMS.pdb
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Direct100.SMS\bin\Release\Newtonsoft.Json.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Direct100.SMS\bin\Release\Newtonsoft.Json.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Direct100.SMS\obj\Release\VirtualPlay.Direct100.SMS.csprojResolveAssemblyReference.cache
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Direct100.SMS\obj\Release\VirtualPlay.Direct100.SMS.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Direct100.SMS\obj\Release\VirtualPlay.Direct100.SMS.pdb

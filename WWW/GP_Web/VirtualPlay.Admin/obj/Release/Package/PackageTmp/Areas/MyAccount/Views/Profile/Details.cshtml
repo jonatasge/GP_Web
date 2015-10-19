@@ -1,0 +1,47 @@
+﻿@model VirtualPlay.Business.Models.Sys_User
+
+@{
+    ViewBag.Title = "Minha Conta";
+}
+
+<h2>Minha Conta</h2>
+
+<div>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nome
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nmUser)
+        </dd>
+
+        <dt>
+            E-mail
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dsEmail)
+        </dd>
+
+        <dt>
+            Data de Cadastro
+        </dt>
+
+        <dd>
+            @Html.ValueFor(model => model.dtCreate, "{0:dd/MM/yyyy}")
+        </dd>
+
+        <dt>
+           Perfil
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sys_Role2.nmRole)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Alterar Dados", "Edit")
+</p>

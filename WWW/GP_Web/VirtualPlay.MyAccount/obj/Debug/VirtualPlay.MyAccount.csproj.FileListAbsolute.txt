@@ -1,0 +1,194 @@
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\VirtualPlay.MyAccount.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\VirtualPlay.MyAccount.pdb
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\Antlr3.Runtime.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\EntityFramework.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\EntityFramework.SqlServer.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\FSharp.Core.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\IntelliFactory.Xml.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\Microsoft.Owin.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\Microsoft.Owin.Security.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\Microsoft.Web.Infrastructure.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\Newtonsoft.Json.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\Newtonsoft.JsonResult.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\Owin.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\PagedList.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\PagedList.Mvc.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\Sprockets.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\Sprockets.Web.Optimization.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.Helpers.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.Mvc.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.Optimization.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.Razor.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.WebPages.Deployment.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.WebPages.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.WebPages.Razor.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\VirtualPlay.Api.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\VirtualPlay.Business.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebGrease.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Collections.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Control.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Core.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Core.JavaScript.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Google.Visualization.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Html.Client.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Html.Server.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.InterfaceGenerator.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.JavaScript.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.JQuery.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Main.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Sitelets.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Testing.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Web.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.Http.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\VirtualPlay.SMTP.Email.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\VirtualPlay.Direct100.SMS.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.Http.WebHost.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Net.Http.Formatting.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\VirtualPlay.Api.pdb
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\VirtualPlay.Business.pdb
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\Antlr3.Runtime.pdb
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\EntityFramework.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\EntityFramework.SqlServer.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\FSharp.Core.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\IntelliFactory.Xml.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\Microsoft.Owin.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\Microsoft.Owin.Security.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\Newtonsoft.Json.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\PagedList.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\PagedList.Mvc.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.Helpers.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.Mvc.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.Optimization.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.Razor.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.WebPages.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.WebPages.Deployment.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.WebPages.Razor.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Collections.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Control.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Core.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Core.JavaScript.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Google.Visualization.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Html.Client.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Html.Server.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.InterfaceGenerator.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.JavaScript.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.JQuery.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Main.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Sitelets.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Testing.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Web.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.Http.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\VirtualPlay.SMTP.Email.pdb
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\VirtualPlay.Direct100.SMS.pdb
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.Http.WebHost.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Net.Http.Formatting.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\obj\Debug\VirtualPlay.MyAccount.csprojResolveAssemblyReference.cache
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\obj\Debug\VirtualPlay.MyAccount.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.MyAccount\obj\Debug\VirtualPlay.MyAccount.pdb
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\VirtualPlay.MyAccount.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\VirtualPlay.MyAccount.pdb
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\Antlr3.Runtime.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\EntityFramework.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\EntityFramework.SqlServer.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\FSharp.Core.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\IntelliFactory.Xml.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\Microsoft.AspNet.Identity.Core.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\Microsoft.Owin.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\Microsoft.Owin.Security.Cookies.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\Microsoft.Owin.Security.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\Microsoft.Owin.Security.OAuth.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\Microsoft.Web.Infrastructure.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\Newtonsoft.Json.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\Newtonsoft.JsonResult.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\Owin.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\PagedList.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\PagedList.Mvc.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\Sprockets.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\Sprockets.Web.Optimization.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.Helpers.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.Mvc.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.Optimization.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.Razor.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.WebPages.Deployment.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.WebPages.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.WebPages.Razor.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\VirtualPlay.Api.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\VirtualPlay.Business.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebGrease.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Collections.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Control.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Core.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Core.JavaScript.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Google.Visualization.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Html.Client.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Html.Server.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.InterfaceGenerator.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.JavaScript.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.JQuery.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Main.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Sitelets.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Testing.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Web.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.Http.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\VirtualPlay.SMTP.Email.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\VirtualPlay.Direct100.SMS.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.Http.WebHost.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Net.Http.Formatting.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\VirtualPlay.Api.pdb
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\VirtualPlay.Business.pdb
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\Antlr3.Runtime.pdb
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\EntityFramework.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\EntityFramework.SqlServer.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\FSharp.Core.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\IntelliFactory.Xml.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\Microsoft.AspNet.Identity.Core.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\Microsoft.Owin.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\Microsoft.Owin.Security.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\Microsoft.Owin.Security.Cookies.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\Microsoft.Owin.Security.OAuth.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\Newtonsoft.Json.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\PagedList.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\PagedList.Mvc.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.Helpers.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.Mvc.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.Optimization.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.Razor.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.WebPages.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.WebPages.Deployment.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.WebPages.Razor.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Collections.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Control.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Core.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Core.JavaScript.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Google.Visualization.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Html.Client.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Html.Server.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.InterfaceGenerator.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.JavaScript.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.JQuery.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Main.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Sitelets.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Testing.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\WebSharper.Web.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.Http.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\VirtualPlay.SMTP.Email.pdb
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\VirtualPlay.Direct100.SMS.pdb
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Web.Http.WebHost.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\bin\System.Net.Http.Formatting.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\obj\Debug\VirtualPlay.MyAccount.csprojResolveAssemblyReference.cache
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\obj\Debug\VirtualPlay.MyAccount.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.MyAccount\obj\Debug\VirtualPlay.MyAccount.pdb
