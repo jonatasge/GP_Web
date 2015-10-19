@@ -13,7 +13,7 @@ namespace VirtualPlay.MyAccount.Controllers
         {
             if (UserManager.User != null && UserManager.User.id > 0)
             {
-                return RedirectToAction("", "Sales");
+                return RedirectToAction("", "Dashboard");
             }
             else
             {

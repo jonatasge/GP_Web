@@ -4,9 +4,12 @@
 
 @{
     ViewBag.Title = "Minhas Vendas";
+    string gMapsKey = "AIzaSyC_bIpUdb6EimVzQ5gi5K7QF3kOYwnrkyE";
 }
 
-<script src="@Url.Content("~/Scripts/google/maps/api/js.js?sensor=true")" type="text/javascript"></script>
+<script
+  src="@Url.Content(string.Concat("https://maps.googleapis.com/maps/api/js?key=", gMapsKey, "&sensor=true   "))">
+</script>
 
 <!-- This css is to ensure that the google map contols (zoom bar etc) show and size correctly. -->
 <style>
@@ -187,6 +190,14 @@
 
         <dd>
             @Html.DisplayFor(model => model.cardBrandCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cardType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cardType)
         </dd>
 
         <dt>
@@ -531,12 +542,13 @@
 
                     // Google has tweaked their interface somewhat - this tells the api to use that new UI
                     google.maps.visualRefresh = true;
-                    var Liverpool = new google.maps.LatLng('@latitude.ToString().Replace(',', '.')', '@gpLongitude.ToString().Replace(',', '.')');
+                    var Gopag = new google.maps.LatLng('@latitude.ToString().Replace(',', '.')', '@longitude.ToString().Replace(',', '.')');
 
                     // These are options that set initial zoom level, where the map is centered globally to start, and the type of map to show
                     var mapOptions = {
                         zoom: 14,
-                        center: Liverpool,
+                        center: Gopag,
+                        scrollwheel: false,
                         mapTypeId: google.maps.MapTypeId.G_NORMAL_M
                     };
 

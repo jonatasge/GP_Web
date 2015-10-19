@@ -1,14 +1,14 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="~/Content/Images/favicon_4.ico" type="image/x-icon" />
-    <title>@ViewBag.Title - Gopag</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-</head>
-<body style="background-color:#E4F0F5!Important;">
+<!DOCTYPE html lang="pt-br">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="~/Content/Images/favicon_4.ico" type="image/x-icon" />
+        <link id="css" rel="stylesheet" href="" >
+        <title>@ViewBag.Title - Gopag</title>
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+    </head>
+    <body style="background-color:#E4F0F5!Important;">
     <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#2F373F!Important;">
         <div class="container">
             <div class="navbar-header">
@@ -21,37 +21,49 @@
                     <img alt="Gopag" src="@Url.Content("~/Content/Images/logo_white.png")">
                 </a>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                @if (Request.IsAuthenticated)
-                {
+            <div id="dNavBar" class="navbar-collapse collapse">
+                <ul id="mNavBar" class="nav navbar-nav">
+                @if (Request.IsAuthenticated) {
+                    <div id="mPsIdMob">@Html.Partial("_LoginPartial")</div>
+                    <li></li>
                     <li>
+                        <img class="mIconsMob" src="~/Content/Images/icon_x.png" class="imgpinpad" style="display:none" />
                         @Html.ActionLink("Dashboard", "Index", "Dashboard", new { area = string.Empty }, htmlAttributes: new { id = "dashboardLink" })
                     </li>
-                    <li>
+                    <li id="bMenuDskSales">
+                        <img class="mIconsMob" src="~/Content/Images/icon_x.png" class="imgpinpad" style="display:none" />
                         @Html.ActionLink("Vendas", "", "Sales", new { area = string.Empty }, htmlAttributes: new { id = "salesLink" })
                     </li>
                     <li>
+                        <img class="mIconsMob" src="~/Content/Images/icon_x.png" class="imgpinpad" style="display:none" />
                         @Html.ActionLink("Recebimentos", "", "CashReceipts", new { area = string.Empty }, htmlAttributes: new { id = "cashReceiptsLink" })
                     </li>
-                    <li>
+                    <li id="bMenuDskBill">
+                        <img class="mIconsMob" src="~/Content/Images/icon_x.png" class="imgpinpad" style="display:none" />
                         @Html.ActionLink("Cobrança", "", "Billing", new { area = string.Empty }, htmlAttributes: new { id = "billingLink" })
                     </li>
                     <li>
+                        <img class="mIconsMob" src="~/Content/Images/icon_x.png" class="imgpinpad" style="display:none" />
                         @Html.ActionLink("Atendimento", "", "CallCenter", new { area = string.Empty }, htmlAttributes: new { id = "callCenterLink" })
                     </li>
                     <li>
+                        <img class="mIconsMob" src="~/Content/Images/icon_x.png" class="imgpinpad" style="display:none" />
                         @Html.ActionLink("Minha Conta", "Profile", "MyAccount", new { area = string.Empty }, htmlAttributes: new { id = "profileLink" })
+                    </li>
+                    <li id="bLogoutMob" style="display:none">
+                        <img class="mIconsMob" src="~/Content/Images/icon_x.png" class="imgpinpad" style="display:none" />
+                        @Html.ActionLink("Sair", "LogOff", "Account", new { area = string.Empty }, htmlAttributes: new { id = "logoutLink" })
                     </li>
                 }
                 else
                 {
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Quem Somos", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
+                    <li></li>
+                    <li><img class="mIconsMob" src="~/Content/Images/icon_home.png" class="imgpinpad" style="display:none" />@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li><img class="mIconsMob" src="~/Content/Images/icon_about.png" class="imgpinpad" style="display:none" />@Html.ActionLink("Quem Somos", "About", "Home")</li>
+                    <li><img class="mIconsMob" src="~/Content/Images/icon_contact.png" class="imgpinpad" style="display:none" />@Html.ActionLink("Contato", "Contact", "Home")</li>
                 }
                 </ul>
-                @Html.Partial("_LoginPartial")
+                <div id="mPsIdDsk">@Html.Partial("_LoginPartial")</div>
             </div>
         </div>
     </div>
@@ -59,7 +71,13 @@
         @RenderBody()
         <footer>
             <p>&copy; 2014-2015 GOPAG - Soluções em Pagamentos. Todos os direitos reservados!</p>
+            <div id="social_icons">
+                <div id="facebook"><a href="https://www.facebook.com/GOPAG-171809476300748/"><img alt="facebook" title="Siga a Gopag no facebook!" src="@Url.Content("~/Content/Images/facebook.png")"></a></div>
+            </div>
         </footer>
+
+    <script type="text/javascript" src="~/Content/Site.js"></script>
+
     </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using VirtualPlay.MyAccount.Managers;
 
 namespace VirtualPlay.MyAccount.Areas.Sales.Controllers
 {
@@ -12,6 +13,7 @@ namespace VirtualPlay.MyAccount.Areas.Sales.Controllers
         // GET: /Sales/CashReceipts/
         public ActionResult Index()
         {
+            UserManager.IsAuthenticated();
             return View();
         }
 	}

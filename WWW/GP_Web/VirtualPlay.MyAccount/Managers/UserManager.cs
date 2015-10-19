@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 
@@ -37,6 +38,21 @@ namespace VirtualPlay.MyAccount.Managers
                     return null;
                 }
             }
+        }
+
+        public static bool IsAuthenticated()
+        {
+            bool isAuthenticated = false;
+
+            if (HttpContext.Current != null)
+            {
+                isAuthenticated = HttpContext.Current.User.Identity.IsAuthenticated;
+            }
+
+            if (!isAuthenticated)
+                HttpContext.Current.Response.Redirect(ConfigurationManager.AppSettings["UrlHost"], true);
+
+            return isAuthenticated;
         }
     }
 }

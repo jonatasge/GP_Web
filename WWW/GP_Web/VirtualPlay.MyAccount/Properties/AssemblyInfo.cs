@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("GOPAG - Minha Conta")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("GOPAG - Soluções em Pagamentos")]
-[assembly: AssemblyProduct("VirtualPlay.NewAccount")]
+[assembly: AssemblyProduct("VirtualPlay.MyAccount")]
 [assembly: AssemblyCopyright("Copyright ©  2014-2015 GOPAG - Soluções em Pagamentos. Todos os direitos reservados!")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

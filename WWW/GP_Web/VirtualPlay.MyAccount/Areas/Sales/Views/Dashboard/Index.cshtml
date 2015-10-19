@@ -1,40 +1,260 @@
-﻿@model IEnumerable<VirtualPlay.Business.Models.Pay_Transaction>
-
-@{
+﻿@{
     ViewBag.Title = "Dashboard";
 }
 
-<h2>Dashboard</h2>
-
-<div>
-    <h4>Minhas Vendas</h4>
-	<hr />
+<h2>Meu Dashboard</h2>
+@using (Html.BeginForm("", "", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-3">
+            Ano
+        @Html.DropDownList("year", new SelectList(ViewBag.Years, "Value", "Text"))
+        </div>
+        <div class="col-md-3">
+            Mês
+        @Html.DropDownList("month", new SelectList(ViewBag.Months, "Value", "Text"))
+        </div>
+        <div class="col-md-3">
+            Dia
+        @Html.DropDownList("day", new SelectList(ViewBag.Days, "Value", "Text"))
+        </div>
+        <div class="col-md-3">
+            <input class="btn btn-default" type="submit" value="Consultar" />
+        </div>
+    </div>
+}
+<div class="row">
+    <div class="col-md-5" style="text-align: center;">
+        <h4>Vendas</h4>
+        <p id="chartSale">
+        </p>
+    </div>
+    <div class="col-md-5" style="text-align: center;">
+        <h4>Parcelamento</h4>
+        <p id="chartInstallment">
+        </p>
+    </div>
 </div>
-<div id="visualization">
-
+<div class="row">
+    <div class="col-md-5" style="text-align: center;">
+        <h4>Bandeiras</h4>
+        <p id="chartCardBrand">
+        </p>
+    </div>
+    <div class="col-md-5" style="text-align: center;">
+        <h4>Estorno</h4>
+        <p id="chartRefund">
+        </p>
+    </div>
 </div>
 
-<script type="text/javascript" src="https://www.google.com/jsapi" />
-
-@section Scripts{
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+@section scripts{
     <script>
-        $(document).ready(function () {
+        var chartDataYear;
+        var chartDataMonth;
+        var chartDataDays;
+        var GlobalYear;
+        var CurrentReport;
+        google.load("visualization", "1", { packages: ["corechart"] });
 
+        //Load Year Wise Report On Load
+        $(document).ready(function () {
+            $.ajax({
+                url: '@Request.Url.AbsolutePath/SalesData?year=@Request["year"]&month=@Request["month"]&day=@Request["day"]',
+                type: 'get',
+                dataType: 'json',
+                data: {},
+                success: function (d) {
+                    chartDataYear = d;
+                },
+                error: function () {
+                }
+            }).done(function () {
+                CurrentReport = 'Sale';
+                generateChart(chartDataYear, "Sale", 'chartSale', selectYear);
+            });
         });
 
-        function drawChart(d) {
-            var chartData = d;
-            var data = null;
+        //Load Year Wise Report On Load
+        $(document).ready(function () {
+            $.ajax({
+                url: '@Request.Url.AbsolutePath/SalesDataRefund?year=@Request["year"]&month=@Request["month"]&day=@Request["day"]',
+                type: 'get',
+                dataType: 'json',
+                data: {},
+                success: function (d) {
+                    chartDataYear = d;
+                },
+                error: function () {
+                }
+            }).done(function () {
+                CurrentReport = 'Refund';
+                generateChart(chartDataYear, "Refund", 'chartRefund', selectYear);
+            });
+        });
 
-            data = google.visualization.arrayToDataTable(chartData);
+        //Load Year Wise Report On Load
+        $(document).ready(function () {
+            $.ajax({
+                url: '@Request.Url.AbsolutePath/SalesDataCardBrand?year=@Request["year"]&month=@Request["month"]&day=@Request["day"]',
+                type: 'get',
+                dataType: 'json',
+                data: {},
+                success: function (d) {
+                    chartDataYear = d;
+                },
+                error: function () {
+                }
+            }).done(function () {
+                CurrentReport = 'CardBrand';
+                generateChart(chartDataYear, "CardBrand", 'chartCardBrand', selectYear);
+            });
+        });
 
-            var view = new google.visualization.DataView(data);
-            view.setColumns([0, {
-                type: 'number',
-                label: data.getColumnLabel(0),
-                calc :  function() { return 0; }
-            }]);
+        //Load Year Wise Report On Load
+        $(document).ready(function () {
+            $.ajax({
+                url: '@Request.Url.AbsolutePath/SalesDataInstallment?year=@Request["year"]&month=@Request["month"]&day=@Request["day"]',
+                type: 'get',
+                dataType: 'json',
+                data: {},
+                success: function (d) {
+                    chartDataYear = d;
+                },
+                error: function () {
+                }
+            }).done(function () {
+                CurrentReport = 'Installment';
+                generateChart(chartDataYear, "Installment", 'chartInstallment', selectYear);
+            });
+        });
 
-        google.load('visualization', '1', { packages: ['corechart'] });
+        function generateChart(chartData, title, divChart, selectEvent) {
+            var data = google.visualization.arrayToDataTable(chartData);
+
+            var options = {
+                pointSize: 5,
+                focusTarget: "category",
+                hAxis: { showTextEvery: 1 },
+                backgroundColor: { fill: "transparent" },
+                tooltip: { isHtml: true },
+                is3D: true,
+                //legend: 'right',
+                //pieStartAngle: 0,
+                //slices: {
+                //    0: { offset: 0.2 },
+                //    1: { offset: 0.3 },
+                //},
+                //pieSliceTextStyle: {
+                //    color: 'white',
+                //},
+                //pieHole: 0.0,
+                //pieSliceText: 'value',//label
+            }
+
+            var lineChart = new google.visualization.PieChart(document.getElementById(divChart));
+            if (selectEvent != null) {
+                //google.visualization.events.addListener(lineChart, 'select', function () {
+                //    selectEvent(lineChart, data);
+                //});
+            }
+            GenerateBack(CurrentReport);
+            lineChart.draw(data, options);
+        }
+
+        function createCustomHTMLContent(flagURL, totalGold, totalSilver, totalBronze) {
+            return '<div style="padding:5px 5px 5px 5px;">' +
+                '<img src="' + flagURL + '" style="width:75px;height:50px"><br/>' +
+                '<table class="medals_layout">' + '<tr>' +
+                '<td><img src="https://upload.wikimedia.org/wikipedia/commons/1/15/Gold_medal.svg" style="width:25px;height:25px"/></td>' +
+                '<td><b>' + totalGold + '</b></td>' + '</tr>' + '<tr>' +
+                '<td><img src="https://upload.wikimedia.org/wikipedia/commons/0/03/Silver_medal.svg" style="width:25px;height:25px"/></td>' +
+                '<td><b>' + totalSilver + '</b></td>' + '</tr>' + '<tr>' +
+                '<td><img src="https://upload.wikimedia.org/wikipedia/commons/5/52/Bronze_medal.svg" style="width:25px;height:25px"/></td>' +
+                '<td><b>' + totalBronze + '</b></td>' + '</tr>' + '</table>' + '</div>';
+        }
+
+        function GenerateBack(currentReport) {
+            $('.backButtonContainer').remove();
+            //Create new Back Button
+            if (currentReport != 'year') { //back button except year
+                var $back = $('<button/>')
+                            .text('Back')
+                            .addClass('reportBack')
+                            .click(function () {
+                                switch (currentReport) {
+                                    case 'month':
+                                        CurrentReport = 'year';
+                                        generateChart(chartDataYear, "Sales Report Data", selectYear);
+                                        break;
+                                    case 'days':
+                                        CurrentReport = 'month';
+                                        generateChart(chartDataMonth, "Sales Report Data of year " + GlobalYear, selectMonth);
+                                        break;
+                                    default:
+
+                                }
+                                $(this).parent().remove();
+                            });
+                var $div = $('<div/>')
+                        .addClass('backButtonContainer')
+                        .css({ 'width': '70%', 'text-align': 'right', 'padding': '5px' })
+                        .append($back);
+                $('#chart').before($div);
+
+            }
+        }
+
+        function selectYear(chart, data) {
+            //Year Event (after select year data from chart)
+            var selectedItem = chart.getSelection()[0];
+            if (selectedItem) {
+                var rowLevel = parseInt(data.getValue(selectedItem.row, 0));
+                var chartData = null;
+                $.ajax({
+                    url: '/Dashboard/SalesDataOperation',
+                    type: 'get',
+                    dataType: 'json',
+                    data: { 'year': rowLevel },
+                    success: function (d) {
+                        chartDataMonth = d;
+                    },
+                    error: function () {
+                        alert("Error!");
+                    }
+                }).done(function () {
+                    CurrentReport = 'month';
+                    GlobalYear = rowLevel;
+                    generateChart(chartDataMonth, "Sales Report Data of year " + rowLevel, selectMonth);
+                });
+
+            }
+
+        }
+
+        function selectMonth(chart, data) {
+            //Month Event (after select month data from chart)
+            //Load Chart Day wise
+            var selectedItem = chart.getSelection()[0];
+            if (selectedItem) {
+                var rowLevel = data.getValue(selectedItem.row, 0);
+                $.ajax({
+                    url: '/Dashboard/SalesDataOperation',
+                    type: 'get',
+                    dataType: 'json',
+                    data: { 'year': GlobalYear, 'month': rowLevel },
+                    success: function (d) {
+                        chartDataDays = d;
+                    },
+                    error: function () {
+                        alert('Error!');
+                    }
+                }).done(function () {
+                    CurrentReport = 'days';
+                    generateChart(chartDataDays, "Sales report data of " + rowLevel + " '" + GlobalYear, null);
+                });
+            }
+        }
     </script>
 }
