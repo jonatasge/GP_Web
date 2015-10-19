@@ -1,0 +1,42 @@
+﻿@charset "utf-8";
+
+/*Desktop Logon*/
+
+@media (min-width: 768px) {
+    .navbar, .container, #dNavBar{height: 80px !important;}
+
+    #mNavBar {width: 50%;}
+    
+    #mNavBar li {width: 15%;}
+
+    .bNameDsk {width: 30%;}
+
+    #logoutForm {margin-right: -80px;}
+}
+
+@media (min-width: 992px) {
+    .navbar, .container, #dNavBar{height: 80px !important;}
+
+    #mNavBar {width: 60%;}
+
+    #mNavBar li{width: 17%;}
+
+    .bNameDsk {width: 65%;}
+    
+    #mIdDsk {
+        width: 200px;
+        margin-right: 30px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .navbar, .container, #dNavBar{height: 80px !important;}
+
+    .bNameDsk {width: 70%;}
+
+    #logoutForm {width: 310px !important;}
+
+    #mIdDsk {width: 300px;}
+
+    #mNavBar li{width: auto;}
+}
