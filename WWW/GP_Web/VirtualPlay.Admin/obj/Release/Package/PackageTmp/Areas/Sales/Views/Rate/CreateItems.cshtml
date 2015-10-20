@@ -1,0 +1,116 @@
+﻿@model VirtualPlay.Business.Models.Pay_RateItems
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Novo Item</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group" style="visibility: hidden; height: 0px;">
+            @Html.LabelFor(model => model.idRate, "idRate", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("idRate")
+                @Html.ValidationMessageFor(model => model.idRate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="idRateItem">
+                Número
+            </label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.idRateItem)
+                @Html.ValidationMessageFor(model => model.idRateItem)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="nmRateItem">
+                Nome
+            </label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.nmRateItem)
+                @Html.ValidationMessageFor(model => model.nmRateItem)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="value">
+                Valor
+            </label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.value)
+                @Html.ValidationMessageFor(model => model.value)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="nbDays">
+                Dias(D+)
+            </label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.nbDays)
+                @Html.ValidationMessageFor(model => model.nbDays)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="flStatus">
+                Status
+            </label>
+            <div class="col-md-10">
+                @Html.DropDownList("flStatus", new SelectList(ViewBag.RateItemStatus, "Value", "Text"))
+                @Html.ValidationMessageFor(model => model.flStatus)
+            </div>
+        </div>
+
+        <div class="form-group" style="visibility: hidden; height: 0px;">
+            @Html.LabelFor(model => model.idUserCreate, "idUserCreate", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("idUserCreate", String.Empty)
+                @Html.ValidationMessageFor(model => model.idUserCreate)
+            </div>
+        </div>
+
+        <div class="form-group" style="visibility: hidden; height: 0px;">
+            @Html.LabelFor(model => model.idUserLastUpdate, "idUserLastUpdate", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("idUserLastUpdate", String.Empty)
+                @Html.ValidationMessageFor(model => model.idUserLastUpdate)
+            </div>
+        </div>
+
+        @Html.Hidden("dtCreate", DateTime.Now.ToString("yyyy-MM-dd HH:mm"))
+
+        <div class="form-group" style="visibility: hidden; height: 0px;">
+            @Html.LabelFor(model => model.dtLastUpdate, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.dtLastUpdate)
+                @Html.ValidationMessageFor(model => model.dtLastUpdate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Salvar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

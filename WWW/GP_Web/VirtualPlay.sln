@@ -16,6 +16,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualPlay.MyAccount", "Vi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualPlay.Business", "VirtualPlay.Business\VirtualPlay.Business.csproj", "{0F068582-456C-4312-ADE2-FBA0BECCCE5F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VirtualPlay.Admin", "VirtualPlay.Admin\VirtualPlay.Admin.csproj", "{1AF95E50-2DA4-4068-8150-D0BCA27EC879}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{28B2B35C-FA6B-427A-80C5-B49BF2DEA6B8}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\packages.config = .nuget\packages.config
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +54,10 @@ Global
 		{0F068582-456C-4312-ADE2-FBA0BECCCE5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F068582-456C-4312-ADE2-FBA0BECCCE5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F068582-456C-4312-ADE2-FBA0BECCCE5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AF95E50-2DA4-4068-8150-D0BCA27EC879}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AF95E50-2DA4-4068-8150-D0BCA27EC879}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AF95E50-2DA4-4068-8150-D0BCA27EC879}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AF95E50-2DA4-4068-8150-D0BCA27EC879}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

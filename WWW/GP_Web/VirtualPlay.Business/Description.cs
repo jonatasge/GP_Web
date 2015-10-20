@@ -30,7 +30,7 @@ namespace VirtualPlay.Business
                     operationDescription = "Voucher";
                     break;
                 case Enums.Operation.REFUND:
-                    operationDescription = "Cancelamento de venda";
+                    operationDescription = "Estorno de venda";
                     break;
                 case Enums.Operation.PREAUTH:
                     operationDescription = "Pré-autorização";
@@ -144,6 +144,53 @@ namespace VirtualPlay.Business
                     break;
                 case Enums.Status.FAILED:
                     statusDescription = "Falhou";
+                    break;
+            }
+
+            return statusDescription;
+        }
+
+        public static string getMonth(int month)
+        {
+            string statusDescription = string.Empty;
+
+            switch (month)
+            {
+                case 1:
+                    statusDescription = "Janeiro";
+                    break;
+                case 2:
+                    statusDescription = "Fevereiro";
+                    break;
+                case 3:
+                    statusDescription = "Março";
+                    break;
+                case 4:
+                    statusDescription = "Abril";
+                    break;
+                case 5:
+                    statusDescription = "Maio";
+                    break;
+                case 6:
+                    statusDescription = "Junho";
+                    break;
+                case 7:
+                    statusDescription = "Julho";
+                    break;
+                case 8:
+                    statusDescription = "Agosto";
+                    break;
+                case 9:
+                    statusDescription = "Setembro";
+                    break;
+                case 10:
+                    statusDescription = "Outubro";
+                    break;
+                case 11:
+                    statusDescription = "Novembro";
+                    break;
+                case 12:
+                    statusDescription = "Dezembro";
                     break;
             }
 

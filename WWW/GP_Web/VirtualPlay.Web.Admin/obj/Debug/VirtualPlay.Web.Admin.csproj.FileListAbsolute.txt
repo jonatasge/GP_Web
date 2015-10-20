@@ -1,0 +1,16 @@
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Web.Admin\bin\VirtualPlay.Web.Admin.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Web.Admin\bin\VirtualPlay.Web.Admin.pdb
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Web.Admin\bin\Microsoft.Web.Infrastructure.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Web.Admin\bin\System.Web.Helpers.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Web.Admin\bin\System.Web.Razor.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Web.Admin\bin\System.Web.Webpages.Deployment.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Web.Admin\bin\System.Web.Webpages.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Web.Admin\bin\System.Web.Webpages.Razor.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Web.Admin\bin\System.Web.Razor.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Web.Admin\bin\System.Web.Webpages.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Web.Admin\bin\System.Web.Webpages.Deployment.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Web.Admin\bin\System.Web.Webpages.Razor.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Web.Admin\bin\System.Web.Helpers.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Web.Admin\obj\Debug\VirtualPlay.Web.Admin.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Web.Admin\obj\Debug\VirtualPlay.Web.Admin.pdb
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Web.Admin\obj\Debug\VirtualPlay.Web.Admin.csprojResolveAssemblyReference.cache

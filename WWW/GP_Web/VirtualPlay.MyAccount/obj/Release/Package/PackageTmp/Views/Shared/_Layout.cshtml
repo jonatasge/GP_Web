@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="~/Content/Images/favicon_4.ico" type="image/x-icon" />
+    <title>@ViewBag.Title - Gopag</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body style="background-color:#E4F0F5!Important;">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#2F373F!Important;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="@Url.Action("Index", "Home", new { area = ""})" title="Gopag" class="navbar-brand">
+                    <img alt="Gopag" src="@Url.Content("~/Content/Images/logo_white.png")">
+                </a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                @if (Request.IsAuthenticated)
+                {
+                    <li>
+                        @Html.ActionLink("Dashboard", "Index", "Dashboard", new { area = string.Empty }, htmlAttributes: new { id = "dashboardLink" })
+                    </li>
+                    <li>
+                        @Html.ActionLink("Vendas", "", "Sales", new { area = string.Empty }, htmlAttributes: new { id = "salesLink" })
+                    </li>
+                    <li>
+                        @Html.ActionLink("Recebimentos", "", "CashReceipts", new { area = string.Empty }, htmlAttributes: new { id = "cashReceiptsLink" })
+                    </li>
+                    <li>
+                        @Html.ActionLink("Cobrança", "", "Billing", new { area = string.Empty }, htmlAttributes: new { id = "billingLink" })
+                    </li>
+                    <li>
+                        @Html.ActionLink("Atendimento", "", "CallCenter", new { area = string.Empty }, htmlAttributes: new { id = "callCenterLink" })
+                    </li>
+                    <li>
+                        @Html.ActionLink("Minha Conta", "Profile", "MyAccount", new { area = string.Empty }, htmlAttributes: new { id = "profileLink" })
+                    </li>
+                }
+                else
+                {
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Quem Somos", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
+                }
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <footer>
+            <p>&copy; 2014-2015 GOPAG - Soluções em Pagamentos. Todos os direitos reservados!</p>
+        </footer>
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

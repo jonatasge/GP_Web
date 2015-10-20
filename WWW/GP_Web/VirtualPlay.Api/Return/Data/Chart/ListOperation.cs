@@ -6,25 +6,21 @@ using VirtualPlay.Business.Models;
 
 namespace VirtualPlay.Api.Return
 {
-    public class ListOperation : Response
+    public class ListOperation
     {
-        public ListOperation(string session, List<Pay_TransactionChartOperation_Result> listOperation)
+        public ListOperation(List<Pay_TransactionChartOperation_Result> listOperation)
         {
-            this.@return = true;
-            this.session = session;
-
             if (listOperation != null)
             {
-                this.items = new List<Operation>();
+                this.Data = new List<Operation>();
 
                 foreach (Pay_TransactionChartOperation_Result item in listOperation)
                 {
-                    items.Add(new Operation(item));
+                    Data.Add(new Operation(item));
                 }
             }
         }
 
-        public string session { get; set; }
-        public List<Operation> items { get; set; }
+        public List<Operation> Data { get; set; }
     }
 }

@@ -1,0 +1,97 @@
+﻿@model IEnumerable<VirtualPlay.Business.Models.Pay_Rate>
+
+@{
+    ViewBag.Title = "Taxas";
+}
+
+<h2>Taxas</h2>
+
+<p>
+    @Html.ActionLink("Criar nova Taxa", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>Código
+        </th>
+        <th>Nome/Descrição
+        </th>
+        <th>Tipo
+        </th>
+        <th>Antecipado?
+        </th>
+        <th>Status
+        </th>
+        <th>Criado em
+        </th>
+        <th>Atualizado em
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.cdRate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nmRate)
+            </td>
+            <td>
+                @{
+        string isMerchant = "";
+        if (item.flMerchant.Equals("M"))
+        {
+            isMerchant = "Consumidor";
+        }
+        else
+        {
+            isMerchant = "Adquirente";
+        }
+                }
+                @isMerchant
+            </td>
+            <td>
+                @{
+        string isAnticipated = "";
+        if (item.flAnticipated.Equals("N"))
+        {
+            isAnticipated = "Não";
+        }
+        else
+        {
+            isAnticipated = "Sim";
+        }
+                }
+                @isAnticipated
+            </td>
+            <td>
+                @{
+        string stStatus = "";
+        if (item.flStatus.Equals("A"))
+        {
+            stStatus = "Ativo";
+        }
+        else
+        {
+            stStatus = "Inativo";
+        }
+                }
+                @stStatus
+            </td>
+            <td>
+                @Html.ValueFor(modelItem => item.dtCreate, "{0:dd/MM/yy HH:mm}")
+            </td>
+            <td>
+                @Html.ValueFor(modelItem => item.dtLastUpdate, "{0:dd/MM/yy HH:mm}")
+            </td>
+            <td>
+                @Html.ActionLink("Alterar", "Edit", new { id = item.idRate }) |
+            @Html.ActionLink("Detalhes", "Details", new { id = item.idRate })
+                @*@Html.ActionLink("Delete", "Delete", new { id=item.idRate })*@
+            </td>
+        </tr>
+    }
+
+</table>
+

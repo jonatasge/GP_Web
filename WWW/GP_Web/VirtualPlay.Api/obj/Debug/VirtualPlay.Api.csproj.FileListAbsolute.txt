@@ -1,0 +1,100 @@
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\VirtualPlay.Api.dll.config
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\VirtualPlay.Api.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\VirtualPlay.Api.pdb
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\Antlr3.Runtime.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\EntityFramework.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\EntityFramework.SqlServer.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\Microsoft.Web.Infrastructure.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\Newtonsoft.Json.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\System.Net.Http.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\System.Net.Http.Extensions.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\System.Net.Http.Formatting.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\System.Net.Http.Primitives.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.Helpers.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.Http.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.Http.WebHost.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.Mvc.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.Optimization.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.Providers.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.Razor.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.WebPages.Deployment.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.WebPages.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.WebPages.Razor.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\VirtualPlay.Business.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\VirtualPlay.Direct100.SMS.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\VirtualPlay.SMTP.Email.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\WebGrease.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\VirtualPlay.Business.pdb
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\VirtualPlay.Direct100.SMS.pdb
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\VirtualPlay.SMTP.Email.pdb
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\Antlr3.Runtime.pdb
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\EntityFramework.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\EntityFramework.SqlServer.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\Newtonsoft.Json.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\System.Net.Http.Extensions.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\System.Net.Http.Formatting.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\System.Net.Http.Primitives.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.Helpers.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.Http.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.Http.WebHost.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.Mvc.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.Optimization.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.Providers.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.Razor.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.WebPages.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.WebPages.Deployment.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.WebPages.Razor.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\obj\Debug\VirtualPlay.Api.csproj.App.config
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\obj\Debug\VirtualPlay.Api.csprojResolveAssemblyReference.cache
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\obj\Debug\VirtualPlay.Api.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Api\obj\Debug\VirtualPlay.Api.pdb
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\VirtualPlay.Api.dll.config
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\VirtualPlay.Api.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\VirtualPlay.Api.pdb
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\Antlr3.Runtime.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\EntityFramework.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\EntityFramework.SqlServer.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\Microsoft.Web.Infrastructure.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\Newtonsoft.Json.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\System.Net.Http.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\System.Net.Http.Extensions.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\System.Net.Http.Formatting.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\System.Net.Http.Primitives.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.Helpers.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.Http.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.Http.WebHost.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.Mvc.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.Optimization.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.Providers.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.Razor.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.WebPages.Deployment.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.WebPages.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.WebPages.Razor.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\VirtualPlay.Business.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\VirtualPlay.Direct100.SMS.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\VirtualPlay.SMTP.Email.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\WebGrease.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\VirtualPlay.Business.pdb
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\VirtualPlay.Direct100.SMS.pdb
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\VirtualPlay.SMTP.Email.pdb
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\Antlr3.Runtime.pdb
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\EntityFramework.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\EntityFramework.SqlServer.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\Newtonsoft.Json.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\System.Net.Http.Extensions.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\System.Net.Http.Formatting.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\System.Net.Http.Primitives.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.Helpers.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.Http.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.Http.WebHost.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.Mvc.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.Optimization.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.Providers.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.Razor.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.WebPages.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.WebPages.Deployment.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\bin\System.Web.WebPages.Razor.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\obj\Debug\VirtualPlay.Api.csproj.App.config
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\obj\Debug\VirtualPlay.Api.csprojResolveAssemblyReference.cache
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\obj\Debug\VirtualPlay.Api.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Api\obj\Debug\VirtualPlay.Api.pdb

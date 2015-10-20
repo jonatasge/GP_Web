@@ -1,0 +1,124 @@
+﻿@model VirtualPlay.Business.Models.Pay_Rate
+
+@{
+    ViewBag.Title = "Nova Taxa";
+}
+
+<h2>Nova Taxa</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true)
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.idRate, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.idRate)
+                @Html.ValidationMessageFor(model => model.idRate)
+            </div>
+        </div>*@
+
+        <div class="form-group">
+            <label class="control-label col-md-2">
+                Código
+            </label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.cdRate)
+                @Html.ValidationMessageFor(model => model.cdRate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">
+                Nome/Descrição
+            </label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.nmRate)
+                @Html.ValidationMessageFor(model => model.nmRate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">
+                Tipo
+            </label>
+            <div class="col-md-10">
+                @Html.DropDownList("rateType", new SelectList(ViewBag.RateType, "Value", "Text"))
+                @Html.ValidationMessageFor(model => model.flMerchant)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">
+                Antecipado?
+            </label>
+            <div class="col-md-10">
+                @Html.DropDownList("rateAnticipated", new SelectList(ViewBag.RateAnticipated, "Value", "Text"))
+                @Html.ValidationMessageFor(model => model.flAnticipated)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2">
+                Status
+            </label>
+            <div class="col-md-10">
+                @Html.DropDownList("rateStatus", new SelectList(ViewBag.RateStatus, "Value", "Text"))
+                @Html.ValidationMessageFor(model => model.flStatus)
+            </div>
+        </div>
+
+        @*<div class="form-group">
+            <div class="control-label col-md-2">
+                Criado por?
+            </div>
+            <div class="col-md-10">
+                @Html.DropDownList("idUserCreate", String.Empty)
+                @Html.ValidationMessageFor(model => model.idUserCreate)
+            </div>
+        </div>*@
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.idUserLastUpdate, "idUserLastUpdate", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("idUserLastUpdate", String.Empty)
+                @Html.ValidationMessageFor(model => model.idUserLastUpdate)
+            </div>
+        </div>*@
+
+        @*<div class="form-group">
+            @Html.LabelFor(model => model.dtCreate, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.dtCreate)
+                @Html.ValidationMessageFor(model => model.dtCreate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.dtLastUpdate, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.dtLastUpdate)
+                @Html.ValidationMessageFor(model => model.dtLastUpdate)
+            </div>
+        </div>*@
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Salvar" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Rates")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

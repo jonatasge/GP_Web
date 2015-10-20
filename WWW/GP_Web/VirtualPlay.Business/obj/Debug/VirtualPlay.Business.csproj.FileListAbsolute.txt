@@ -1,0 +1,56 @@
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Business\bin\Debug\VirtualPlay.Business.dll.config
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Business\bin\Debug\VirtualPlay.Business.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Business\bin\Debug\VirtualPlay.Business.pdb
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Business\bin\Debug\EntityFramework.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Business\bin\Debug\EntityFramework.SqlServer.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Business\bin\Debug\System.Net.Http.Extensions.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Business\bin\Debug\System.Net.Http.Primitives.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Business\bin\Debug\EntityFramework.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Business\bin\Debug\EntityFramework.SqlServer.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Business\bin\Debug\System.Net.Http.Extensions.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Business\bin\Debug\System.Net.Http.Primitives.xml
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Business\obj\Debug\VirtualPlay.Business.csproj.App.config
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Business\obj\Debug\VirtualPlay.Business.dll
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Business\obj\Debug\VirtualPlay.Business.pdb
+D:\Virtual Play\Gopag\WWW\GP_Web\VirtualPlay.Business\obj\Debug\VirtualPlay.Business.csprojResolveAssemblyReference.cache
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\VirtualPlay.Business.dll.config
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\VirtualPlay.Business.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\VirtualPlay.Business.pdb
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\EntityFramework.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\EntityFramework.SqlServer.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\System.Net.Http.Extensions.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\System.Net.Http.Primitives.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\EntityFramework.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\EntityFramework.SqlServer.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\System.Net.Http.Extensions.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\System.Net.Http.Primitives.xml
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\obj\Debug\VirtualPlay.Business.csproj.App.config
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\obj\Debug\VirtualPlay.Business.csprojResolveAssemblyReference.cache
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\obj\Debug\VirtualPlay.Business.dll
+D:\GOPAG\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\obj\Debug\VirtualPlay.Business.pdb
+D:\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\VirtualPlay.Business.dll.config
+D:\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\VirtualPlay.Business.dll
+D:\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\VirtualPlay.Business.pdb
+D:\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\EntityFramework.dll
+D:\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\System.Net.Http.Extensions.dll
+D:\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\System.Net.Http.Primitives.dll
+D:\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\System.Web.WebPages.dll
+D:\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\System.Web.Razor.dll
+D:\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\EntityFramework.xml
+D:\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\System.Net.Http.Extensions.xml
+D:\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\System.Net.Http.Primitives.xml
+D:\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\System.Web.WebPages.xml
+D:\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\Microsoft.Web.Infrastructure.xml
+D:\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\System.Web.Razor.xml
+D:\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\pt-br\System.Web.WebPages.resources.dll
+D:\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\pt-br\System.Web.Razor.resources.dll
+D:\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\bin\Debug\pt-br\System.Web.WebPages.Deployment.resources.dll
+D:\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\obj\Debug\VirtualPlay.Business.csproj.App.config
+D:\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\obj\Debug\VirtualPlay.Business.csprojResolveAssemblyReference.cache
+D:\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\obj\Debug\VirtualPlay.Business.dll
+D:\Projetos\GP_Web\WWW\GP_Web\VirtualPlay.Business\obj\Debug\VirtualPlay.Business.pdb

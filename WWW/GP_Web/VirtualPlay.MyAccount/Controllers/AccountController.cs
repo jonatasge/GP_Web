@@ -170,7 +170,7 @@ namespace VirtualPlay.MyAccount.Controllers
             }
             else
             {
-                return RedirectToAction("", "Sales");
+                return RedirectToAction("", "Dashboard");
             }
         }
 
