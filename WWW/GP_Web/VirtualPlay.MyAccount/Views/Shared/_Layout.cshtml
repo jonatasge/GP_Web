@@ -1,4 +1,5 @@
-<!DOCTYPE html lang="pt-br">
+﻿<!DOCTYPE html>
+<html lang="pt-br">
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,46 +25,45 @@
             <div id="dNavBar" class="navbar-collapse collapse">
                 <ul id="mNavBar" class="nav navbar-nav">
                 @if (Request.IsAuthenticated) {
-                    <div id="mPsIdMob">@Html.Partial("_LoginPartial")</div>
                     <li></li>
                     <li>
-                        <img class="mIconsMob" src="~/Content/Images/icon_x.png" class="imgpinpad" style="display:none" />
+                        <img class="mIconsMob imgpinpad" src="~/Content/Images/icon_x.png" style="display:none" />
                         @Html.ActionLink("Dashboard", "Index", "Dashboard", new { area = string.Empty }, htmlAttributes: new { id = "dashboardLink" })
                     </li>
                     <li id="bMenuDskSales">
-                        <img class="mIconsMob" src="~/Content/Images/icon_x.png" class="imgpinpad" style="display:none" />
+                        <img class="mIconsMob imgpinpad" src="~/Content/Images/icon_x.png" style="display:none" />
                         @Html.ActionLink("Vendas", "", "Sales", new { area = string.Empty }, htmlAttributes: new { id = "salesLink" })
                     </li>
                     <li>
-                        <img class="mIconsMob" src="~/Content/Images/icon_x.png" class="imgpinpad" style="display:none" />
+                        <img class="mIconsMob imgpinpad" src="~/Content/Images/icon_x.png" style="display:none" />
                         @Html.ActionLink("Recebimentos", "", "CashReceipts", new { area = string.Empty }, htmlAttributes: new { id = "cashReceiptsLink" })
                     </li>
                     <li id="bMenuDskBill">
-                        <img class="mIconsMob" src="~/Content/Images/icon_x.png" class="imgpinpad" style="display:none" />
+                        <img class="mIconsMob imgpinpad" src="~/Content/Images/icon_x.png" style="display:none" />
                         @Html.ActionLink("Cobrança", "", "Billing", new { area = string.Empty }, htmlAttributes: new { id = "billingLink" })
                     </li>
                     <li>
-                        <img class="mIconsMob" src="~/Content/Images/icon_x.png" class="imgpinpad" style="display:none" />
+                        <img class="mIconsMob imgpinpad" src="~/Content/Images/icon_x.png" style="display:none" />
                         @Html.ActionLink("Atendimento", "", "CallCenter", new { area = string.Empty }, htmlAttributes: new { id = "callCenterLink" })
                     </li>
                     <li>
-                        <img class="mIconsMob" src="~/Content/Images/icon_x.png" class="imgpinpad" style="display:none" />
+                        <img class="mIconsMob imgpinpad" src="~/Content/Images/icon_x.png" style="display:none" />
                         @Html.ActionLink("Minha Conta", "Profile", "MyAccount", new { area = string.Empty }, htmlAttributes: new { id = "profileLink" })
                     </li>
                     <li id="bLogoutMob" style="display:none">
-                        <img class="mIconsMob" src="~/Content/Images/icon_x.png" class="imgpinpad" style="display:none" />
+                        <img class="mIconsMob imgpinpad" src="~/Content/Images/icon_x.png" style="display:none" />
                         @Html.ActionLink("Sair", "LogOff", "Account", new { area = string.Empty }, htmlAttributes: new { id = "logoutLink" })
                     </li>
                 }
                 else
                 {
                     <li></li>
-                    <li><img class="mIconsMob" src="~/Content/Images/icon_home.png" class="imgpinpad" style="display:none" />@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li><img class="mIconsMob" src="~/Content/Images/icon_about.png" class="imgpinpad" style="display:none" />@Html.ActionLink("Quem Somos", "About", "Home")</li>
-                    <li><img class="mIconsMob" src="~/Content/Images/icon_contact.png" class="imgpinpad" style="display:none" />@Html.ActionLink("Contato", "Contact", "Home")</li>
+                    <li><img class="mIconsMob imgpinpad" src="~/Content/Images/icon_home.png" style="display:none" />@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li><img class="mIconsMob imgpinpad" src="~/Content/Images/icon_about.png" style="display:none" />@Html.ActionLink("Quem Somos", "About", "Home")</li>
+                    <li><img class="mIconsMob imgpinpad" src="~/Content/Images/icon_contact.png" style="display:none" />@Html.ActionLink("Contato", "Contact", "Home")</li>
                 }
                 </ul>
-                <div id="mPsIdDsk">@Html.Partial("_LoginPartial")</div>
+                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>

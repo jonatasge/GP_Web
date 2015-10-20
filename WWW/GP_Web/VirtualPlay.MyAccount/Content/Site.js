@@ -12,10 +12,6 @@ var dNavBar = document.getElementById("dNavBar");//Menu
 var mIdMob = document.getElementById("mIdMob");//Menu nome mobile
 var mIdDsk = document.getElementById("mIdDsk");//Menu direito desktop
 
-//Botão Nome/ID
-var mPsIdDsk = document.getElementById("mPsIdDsk");//Botão N
-var mPsIdMob = document.getElementById("mPsIdMob");//Botão Nome/ID Mob
-
 if (document.getElementById("check") == undefined) {
     var mHeight = height - 150;//Altura do menu mobile logado
 }
@@ -37,14 +33,13 @@ if (width < 768) {
     //Menu ID Mobile
     if (mIdMob != null) {
         if (check != undefined) {
-            mIdMob.style.display = "none";//Nome topo mobile some
+            mIdDsk.style.display = "block";//Nome topo mobile some
             mIdDsk.style.marginTop = "-8px";//Margem topo
-            mPsIdMob.style.display = "none";//Botão Nome/Id mobile some
         }
         else {
-            mIdDsk.style.display = "none";//Menu nome desktop some
+            mIdMob.style.display = "block";//Menu nome desktop some
             document.getElementById("bLogoutMob").style.display = "block";//Botão sair
-            mPsIdDsk.style.display = "none";//Botão Nome/Id desktop some
+            document.getElementById("logoutForm").style.height = "0";
         }
     }
 
@@ -64,7 +59,7 @@ if (width < 768) {
     if (check == undefined) var cont = 10;
     else var cont = 5;
     for (var i = 0; i <= cont; i++) {
-        if (mImgsMob != null && mImgsMob[i].className == "mIconsMob") {
+        if (mImgsMob != null && mImgsMob[i].className == "mIconsMob imgpinpad") {
             mImgsMob[i].style.display = "block";
         }
     }
@@ -72,19 +67,23 @@ if (width < 768) {
 
 //DESKTOP
 else {
-    if (check == undefined) {
-        dNavBar.className += " dNavBarDsk";//Classe mobile botões do menu
-        document.getElementById("css").setAttribute('href', "/VirtualPlay.MyAccount/Content/DskLogon.css");
-    }
     //Menu ID
     if (mIdDsk != null) {
         mIdDsk.style.display = "block";//Menu direito
-        mPsIdMob.style.display = "none";//Botão Nome/Id mobile some
+    }
+
+    //Classe desktop botões do menu
+    if (check == undefined) {
+        dNavBar.className += " dNavBarDsk";//Classe desktop botões do menu
+        document.getElementById("css").setAttribute('href', "/VirtualPlay.MyAccount/Content/DskLogon.css");
     }
 
     //Index/Home
     var dIndexDsk = document.getElementById("dIndexDsk");
     if (dIndexDsk != null) {
         dIndexDsk.style.display = "block";
+    }
+    if (check == undefined) {
+        document.getElementById("social_icons").style.display = "none";
     }
 }

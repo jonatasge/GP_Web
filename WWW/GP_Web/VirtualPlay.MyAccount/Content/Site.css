@@ -106,6 +106,10 @@ input[type="checkbox"].input-validation-error {
     text-shadow: 0 0 5px #000;
 }
 
+/*MENU*/
+
+#mIdDsk, #mIdMob {display: none;}
+
 /*Menu desktop*/
 
 #logoutForm {
@@ -154,8 +158,6 @@ input[type="checkbox"].input-validation-error {
     left: 0px;
     width: 200%;
 }
-
-/*jonatas*/
 
 /*Desktop*/
 @media (min-width: 312px) {
@@ -212,3 +214,5 @@ input[type="checkbox"].input-validation-error {
 
     #bMenuDskBill {max-width: 97px;}
 }
+
+/*jonatas*/

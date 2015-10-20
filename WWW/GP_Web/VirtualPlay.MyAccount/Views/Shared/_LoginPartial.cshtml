@@ -7,17 +7,17 @@
 
     <ul id="mIdMob" class="nav navbar-nav navbar-right">
         <li class="bNameMob">
-            <img class="mIconsMob" src="~/Content/Images/icon_x.png" class="imgpinpad" style="display:none" />
+            <img class="mIconsMob imgpinpad" src="~/Content/Images/icon_x.png" style="display:none" />
             @Html.ActionLink("Olá " + @UserManager.User.name + "!", "Profile", "MyAccount", new { area = string.Empty }, htmlAttributes: new { title = "Manage" })
         </li>
     </ul>
     <ul id="mIdDsk" class="nav navbar-nav navbar-right">
         <li class="bNameDsk">
-            <img class="mIconsMob" src="~/Content/Images/icon_x.png" class="imgpinpad" style="display:none" />
+            <img class="mIconsMob imgpinpad" src="~/Content/Images/icon_x.png" style="display:none" />
             @Html.ActionLink("Olá " + @UserManager.User.name + "!", "Profile", "MyAccount", new { area = string.Empty }, htmlAttributes: new { title = "Manage" })
         </li>
         <li>
-            <img class="mIconsMob" src="~/Content/Images/icon_x.png" class="imgpinpad" style="display:none" />
+            <img class="mIconsMob imgpinpad" src="~/Content/Images/icon_x.png" style="display:none" />
             @Html.ActionLink("Sair", "LogOff", "Account", new { area = string.Empty }, htmlAttributes: new { id = "logoutLink" })
         </li>
     </ul>
@@ -27,12 +27,12 @@ else
 {
     <ul class="nav navbar-nav navbar-right">
         <li>
-            <img class="mIconsMob" src="~/Content/Images/icon_register.png" class="imgpinpad" style="display:none" />
+            <img class="mIconsMob imgpinpad" src="~/Content/Images/icon_register.png" style="display:none" />
             @Html.ActionLink("Cadastre-se", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
 
         </li>
         <li>
-            <img class="mIconsMob" src="~/Content/Images/icon_login.png" class="imgpinpad" style="display:none" />
+            <img class="mIconsMob imgpinpad" src="~/Content/Images/icon_login.png" style="display:none" />
             @Html.ActionLink("Minha Conta", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
 
         </li>
